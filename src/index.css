@@ -15,38 +15,33 @@
 }
 
 html {
-    font-family: "Vazirmatn", sans-serif;
+    font-family: var(--default-font), sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--color-surface-2);
-    color: var(--color-text);
-    font-size: var(--fz-400);
+    color: var(--default-color);
+    background-color: var(--background-color);
 }
 
-
-input,
-label,
-select,
-textarea,
-button,
-fieldset,
-legend,
-datalist,
-output,
-option,
-optgroup {
-    font: inherit;
-}
-
-ul {
-    list-style: none;
-}
 
 a {
-    color: var(--color-primary);
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
 
-    &:hover {
-        color: var(--color-primary-dark);
-    }
+a:hover {
+    color: color-mix(in srgb, var(--accent-color), transparent 25%);
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font), sans-serif;
 }
