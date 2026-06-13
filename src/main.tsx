@@ -9,12 +9,14 @@ import "./styles/shapes.css"
 import "./styles/shadows.css"
 import "./styles/typography.css"
 import {BrowserRouter} from "react-router";
+import {DirectionProvider} from "@/components/ui/direction.tsx";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <BrowserRouter>
-
-            <App/>
+            <DirectionProvider dir="ltr">
+                <App/>
+            </DirectionProvider>
         </BrowserRouter>
     </StrictMode>,
 );
