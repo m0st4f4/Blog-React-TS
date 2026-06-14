@@ -10,6 +10,7 @@ import "./styles/shadows.css"
 import "./styles/typography.css"
 import {BrowserRouter} from "react-router";
 import {DirectionProvider} from "@/components/ui/direction.tsx";
+import './i18n';
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
