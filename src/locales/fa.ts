@@ -1,4 +1,5 @@
 export const fa = {
     "site name": "TechMag",
-    "search placeholder": "جستجو..."
+    "search placeholder": "جستجو...",
+    "results": "نتیجه",
 }

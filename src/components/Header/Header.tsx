@@ -5,6 +5,7 @@ import MingcuteTwitterFill from "@/icons/MingcuteTwitterFill.tsx";
 import {Button} from "@/components/ui/button";
 import {LanguageSwitcher} from "@/components/LanguageSwitcher/LanguageSwitcher.tsx";
 import {useTranslation} from "react-i18next";
+import {SearchForm} from "@/components/SearchForm/SearchForm.tsx";
 
 export const Header = (): ReactNode => {
     const {t} = useTranslation()
@@ -13,7 +14,7 @@ export const Header = (): ReactNode => {
             <a href="/" className="no-underline flex items-end">
                 <h1 className="text-3xl font-normal text-primary font-heading m-0">{t("site name")}</h1>
             </a>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center gap-2">
                 <div className="flex items-center">
                     <Button size="lg" variant="link" className="hover:text-accent" title="facebook">
                         <MingcuteFacebookFill/>
@@ -25,6 +26,7 @@ export const Header = (): ReactNode => {
                         <MingcuteInstagramLine/>
                     </Button>
                 </div>
+                <SearchForm/>
                 <LanguageSwitcher/>
             </div>
 
