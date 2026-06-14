@@ -1,4 +1,5 @@
 export const en = {
     "site name": "TechMag",
-    "search placeholder": "Search..."
+    "search placeholder": "Search...",
+    "results": "results",
 }
