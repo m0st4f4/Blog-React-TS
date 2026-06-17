@@ -1,3 +1,10 @@
+# [1.0.0-dev.3](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2026-06-17)
+
+
+### Features
+
+* add json server and mock data ([#18](https://github.com/m0st4f4/Blog-React-TS/issues/18)) ([#27](https://github.com/m0st4f4/Blog-React-TS/issues/27)) ([ab8ee11](https://github.com/m0st4f4/Blog-React-TS/commit/ab8ee11def9e1d1dda6aa62cd6aaf5e03cc91e32))
+
 # [1.0.0-dev.2](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2026-06-17)
 
 
