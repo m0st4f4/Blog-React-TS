@@ -1,0 +1,486 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@example.com",
+      "password": "$2a$10$abcdefghijklmnopqrstuv",
+      "name": "علی محمدی",
+      "username": "alimohammadi",
+      "avatar": "https://i.pravatar.cc/150?u=alimohammadi",
+      "bio": "توسعه‌دهنده وب و نویسنده مقالات فنی",
+      "role": "admin",
+      "isActive": true,
+      "createdAt": "2024-01-15T08:00:00.000Z",
+      "updatedAt": "2024-01-15T08:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "email": "sara@example.com",
+      "password": "$2a$10$zyxwvutsrqponmlk",
+      "name": "سارا احمدی",
+      "username": "saraahmadi",
+      "avatar": "https://i.pravatar.cc/150?u=saraahmadi",
+      "bio": "طراح UI/UX با تجربه ۵ ساله",
+      "role": "author",
+      "isActive": true,
+      "createdAt": "2024-02-01T10:30:00.000Z",
+      "updatedAt": "2024-02-01T10:30:00.000Z"
+    },
+    {
+      "id": 3,
+      "email": "user@example.com",
+      "password": "$2a$10$abcdefghijklmnopqrstuv",
+      "name": "رضا کریمی",
+      "username": "rezakarimi",
+      "avatar": "https://i.pravatar.cc/150?u=rezakarimi",
+      "bio": "علاقه‌مند به تکنولوژی و برنامه‌نویسی",
+      "role": "subscriber",
+      "isActive": true,
+      "createdAt": "2024-03-10T14:20:00.000Z",
+      "updatedAt": "2024-03-10T14:20:00.000Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "برنامه‌نویسی",
+      "slug": "programming",
+      "description": "مقالات مرتبط با برنامه‌نویسی و توسعه نرم‌افزار",
+      "parentId": null,
+      "image": "https://picsum.photos/seed/prog/800/400",
+      "color": "#3B82F6",
+      "isActive": true,
+      "order": 1,
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "جاوااسکریپت",
+      "slug": "javascript",
+      "description": "آموزش و نکات جاوااسکریپت",
+      "parentId": 1,
+      "image": null,
+      "color": "#F7DF1E",
+      "isActive": true,
+      "order": 1,
+      "createdAt": "2024-01-02T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "پایتون",
+      "slug": "python",
+      "description": "آموزش و نکات پایتون",
+      "parentId": 1,
+      "image": null,
+      "color": "#3776AB",
+      "isActive": true,
+      "order": 2,
+      "createdAt": "2024-01-03T00:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "name": "طراحی وب",
+      "slug": "web-design",
+      "description": "اصول و تکنیک‌های طراحی وب",
+      "parentId": null,
+      "image": "https://picsum.photos/seed/design/800/400",
+      "color": "#EC4899",
+      "isActive": true,
+      "order": 2,
+      "createdAt": "2024-01-04T00:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "هوش مصنوعی",
+      "slug": "ai",
+      "description": "مقالات مرتبط با هوش مصنوعی و یادگیری ماشین",
+      "parentId": null,
+      "image": "https://picsum.photos/seed/ai/800/400",
+      "color": "#8B5CF6",
+      "isActive": true,
+      "order": 3,
+      "createdAt": "2024-01-05T00:00:00.000Z"
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "React",
+      "slug": "react",
+      "color": "#61DAFB"
+    },
+    {
+      "id": 2,
+      "name": "Node.js",
+      "slug": "nodejs",
+      "color": "#339933"
+    },
+    {
+      "id": 3,
+      "name": "TypeScript",
+      "slug": "typescript",
+      "color": "#3178C6"
+    },
+    {
+      "id": 4,
+      "name": "Next.js",
+      "slug": "nextjs",
+      "color": "#000000"
+    },
+    {
+      "id": 5,
+      "name": "CSS",
+      "slug": "css",
+      "color": "#1572B6"
+    },
+    {
+      "id": 6,
+      "name": "REST API",
+      "slug": "rest-api",
+      "color": "#FF6B6B"
+    },
+    {
+      "id": 7,
+      "name": "MongoDB",
+      "slug": "mongodb",
+      "color": "#47A248"
+    },
+    {
+      "id": 8,
+      "name": "Docker",
+      "slug": "docker",
+      "color": "#2496ED"
+    },
+    {
+      "id": 9,
+      "name": "Git",
+      "slug": "git",
+      "color": "#F05032"
+    },
+    {
+      "id": 10,
+      "name": "GraphQL",
+      "slug": "graphql",
+      "color": "#E10098"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "آموزش کامل React Hooks",
+      "slug": "complete-guide-to-react-hooks",
+      "excerpt": "در این مقاله با تمام Hooks های React آشنا می‌شوید و یاد می‌گیرید چگونه از آن‌ها استفاده کنید.",
+      "content": "<p>React Hooks قابلیتی هستند که در React 16.8 معرفی شدند...</p><h2>useState</h2><p>useState برای مدیریت state در کامپوننت‌های تابعی استفاده می‌شود...</p><h2>useEffect</h2><p>useEffect برای انجام side effects استفاده می‌شود...</p>",
+      "featuredImage": "https://picsum.photos/seed/react/1200/630",
+      "images": [
+        "https://picsum.photos/seed/react1/800/400",
+        "https://picsum.photos/seed/react2/800/400"
+      ],
+      "authorId": 1,
+      "categoryId": 2,
+      "tagIds": 1,
+      "status": "published",
+      "isFeatured": true,
+      "isPremium": false,
+      "viewCount": 1542,
+      "likeCount": 89,
+      "commentCount": 23,
+      "readTime": 12,
+      "publishedAt": "2024-06-15T10:00:00.000Z",
+      "createdAt": "2024-06-10T08:00:00.000Z",
+      "updatedAt": "2024-06-15T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "ساخت REST API با Node.js و Express",
+      "slug": "build-rest-api-with-nodejs-express",
+      "excerpt": "آموزش گام به گام ساخت یک REST API حرفه‌ای با Node.js، Express و MongoDB.",
+      "content": "<p>در این مقاله یاد می‌گیریم چگونه یک REST API کامل بسازیم...</p>",
+      "featuredImage": "https://picsum.photos/seed/nodejs/1200/630",
+      "images": [],
+      "authorId": 1,
+      "categoryId": 1,
+      "tagIds": 2,
+      "status": "published",
+      "isFeatured": false,
+      "isPremium": true,
+      "viewCount": 892,
+      "likeCount": 45,
+      "commentCount": 12,
+      "readTime": 18,
+      "publishedAt": "2024-06-20T14:30:00.000Z",
+      "createdAt": "2024-06-18T09:00:00.000Z",
+      "updatedAt": "2024-06-20T14:30:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "مقدمه‌ای بر TypeScript",
+      "slug": "introduction-to-typescript",
+      "excerpt": "TypeScript یک زبان تایپ‌دار است که روی JavaScript ساخته شده. در این مقاله با آن آشنا می‌شوید.",
+      "content": "<p>TypeScript توسط مایکروسافت توسعه داده شده است...</p>",
+      "featuredImage": "https://picsum.photos/seed/typescript/1200/630",
+      "images": [],
+      "authorId": 2,
+      "categoryId": 2,
+      "tagIds": 1,
+      "status": "published",
+      "isFeatured": false,
+      "isPremium": false,
+      "viewCount": 654,
+      "likeCount": 32,
+      "commentCount": 8,
+      "readTime": 10,
+      "publishedAt": "2024-06-25T11:00:00.000Z",
+      "createdAt": "2024-06-22T16:00:00.000Z",
+      "updatedAt": "2024-06-25T11:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "title": "آموزش CSS Grid",
+      "slug": "css-grid-tutorial",
+      "excerpt": "CSS Grid یکی از قدرتمندترین ابزارهای چیدمان در CSS است. با این مقاله آن را یاد بگیرید.",
+      "content": "<p>CSS Grid Layout ماژول جدیدی در CSS است که...</p>",
+      "featuredImage": "https://picsum.photos/seed/cssgrid/1200/630",
+      "images": [],
+      "authorId": 2,
+      "categoryId": 4,
+      "tagIds": [
+        1,
+        2
+      ],
+      "status": "published",
+      "isFeatured": true,
+      "isPremium": false,
+      "viewCount": 1203,
+      "likeCount": 67,
+      "commentCount": 19,
+      "readTime": 15,
+      "publishedAt": "2024-07-01T09:00:00.000Z",
+      "createdAt": "2024-06-28T12:00:00.000Z",
+      "updatedAt": "2024-07-01T09:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "title": "Next.js 14: آیا ارتقا لازم است؟",
+      "slug": "nextjs-14-worth-upgrading",
+      "excerpt": "بررسی ویژگی‌های جدید Next.js 14 و اینکه آیا ارتقا از نسخه‌های قبلی ارزشش را دارد.",
+      "content": "<p>Next.js 14 با ویژگی‌های جدیدی منتشر شده است...</p>",
+      "featuredImage": "https://picsum.photos/seed/nextjs/1200/630",
+      "images": [],
+      "authorId": 1,
+      "categoryId": 2,
+      "tagIds": 3,
+      "status": "draft",
+      "isFeatured": false,
+      "isPremium": false,
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0,
+      "readTime": 8,
+      "publishedAt": null,
+      "createdAt": "2024-07-05T14:00:00.000Z",
+      "updatedAt": "2024-07-05T14:00:00.000Z"
+    },
+    {
+      "id": 6,
+      "title": "Docker برای توسعه‌دهندگان",
+      "slug": "docker-for-developers",
+      "excerpt": "آموزش استفاده از Docker برای توسعه و دیپلوی اپلیکیشن‌ها.",
+      "content": "<p>Docker به شما اجازه می‌دهد اپلیکیشن‌ها را در کانتینرها اجرا کنید...</p>",
+      "featuredImage": "https://picsum.photos/seed/docker/1200/630",
+      "images": [],
+      "authorId": 1,
+      "categoryId": 1,
+      "tagIds": 4,
+      "status": "published",
+      "isFeatured": false,
+      "isPremium": true,
+      "viewCount": 445,
+      "likeCount": 28,
+      "commentCount": 5,
+      "readTime": 20,
+      "publishedAt": "2024-07-10T16:00:00.000Z",
+      "createdAt": "2024-07-08T10:00:00.000Z",
+      "updatedAt": "2024-07-10T16:00:00.000Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "articleId": 1,
+      "userId": 3,
+      "parentId": null,
+      "content": "مقاله بسیار عالی بود! مخصوصاً بخش useEffect خیلی واضح توضیح داده شده.",
+      "status": "approved",
+      "likeCount": 5,
+      "createdAt": "2024-06-16T14:30:00.000Z",
+      "updatedAt": "2024-06-16T14:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "articleId": 1,
+      "userId": 2,
+      "parentId": 1,
+      "content": "ممنون از بازخورد مثبت شما! خوشحالم که مفید بوده.",
+      "status": "approved",
+      "likeCount": 2,
+      "createdAt": "2024-06-16T15:00:00.000Z",
+      "updatedAt": "2024-06-16T15:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "articleId": 1,
+      "userId": 3,
+      "parentId": null,
+      "content": "آیا می‌توانید مثال‌های بیشتری از useMemo و useCallback بزنید؟",
+      "status": "approved",
+      "likeCount": 3,
+      "createdAt": "2024-06-17T09:15:00.000Z",
+      "updatedAt": "2024-06-17T09:15:00.000Z"
+    },
+    {
+      "id": 4,
+      "articleId": 2,
+      "userId": 3,
+      "parentId": null,
+      "content": "آموزش خیلی جامعی بود. ممنون از زحمتی که کشیدید.",
+      "status": "approved",
+      "likeCount": 4,
+      "createdAt": "2024-06-21T11:00:00.000Z",
+      "updatedAt": "2024-06-21T11:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "articleId": 4,
+      "userId": 3,
+      "parentId": null,
+      "content": "این مقاله کمکم کرد CSS Grid رو یاد بگیرم. دستتون درد نکنه!",
+      "status": "pending",
+      "likeCount": 0,
+      "createdAt": "2024-07-02T08:30:00.000Z",
+      "updatedAt": "2024-07-02T08:30:00.000Z"
+    }
+  ],
+  "likes": [
+    {
+      "id": 1,
+      "userId": 2,
+      "articleId": 1,
+      "createdAt": "2024-06-16T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "articleId": 1,
+      "createdAt": "2024-06-16T11:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "articleId": 2,
+      "createdAt": "2024-06-21T09:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "articleId": 4,
+      "createdAt": "2024-07-02T14:00:00.000Z"
+    }
+  ],
+  "bookmarks": [
+    {
+      "id": 1,
+      "userId": 3,
+      "articleId": 1,
+      "createdAt": "2024-06-16T12:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "userId": 3,
+      "articleId": 4,
+      "createdAt": "2024-07-02T09:00:00.000Z"
+    }
+  ],
+  "pages": [
+    {
+      "id": 1,
+      "title": "درباره ما",
+      "slug": "about",
+      "content": "<p>ما یک تیم از توسعه‌دهندگان و نویسندگان هستیم که...</p>",
+      "status": "published",
+      "order": 1,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "تماس با ما",
+      "slug": "contact",
+      "content": "<p>برای تماس با ما از فرم زیر استفاده کنید یا...</p>",
+      "status": "published",
+      "order": 2,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "سیاست حریم خصوصی",
+      "slug": "privacy",
+      "content": "<p>این سیاست توضیح می‌دهد که چگونه اطلاعات شما را...</p>",
+      "status": "published",
+      "order": 3,
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    }
+  ],
+  "media": [
+    {
+      "id": 1,
+      "filename": "react-hooks-cover.jpg",
+      "originalName": "react-hooks-cover.jpg",
+      "url": "https://picsum.photos/seed/react/1200/630",
+      "thumbnailUrl": "https://picsum.photos/seed/react/300/150",
+      "mimeType": "image/jpeg",
+      "size": 245000,
+      "width": 1200,
+      "height": 630,
+      "alt": "کاور آموزش React Hooks",
+      "uploadedBy": 1,
+      "createdAt": "2024-06-10T08:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "filename": "nodejs-api-cover.jpg",
+      "originalName": "nodejs-api-cover.jpg",
+      "url": "https://picsum.photos/seed/nodejs/1200/630",
+      "thumbnailUrl": "https://picsum.photos/seed/nodejs/300/150",
+      "mimeType": "image/jpeg",
+      "size": 312000,
+      "width": 1200,
+      "height": 630,
+      "alt": "کاور آموزش Node.js",
+      "uploadedBy": 1,
+      "createdAt": "2024-06-18T09:00:00.000Z"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "محمد رضایی",
+      "email": "mohammad@example.com",
+      "subject": "پیشنهاد همکاری",
+      "message": "سلام، من علاقه‌مند به همکاری با شما هستم...",
+      "status": "read",
+      "createdAt": "2024-06-20T10:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "زهرا کاظمی",
+      "email": "zahra@example.com",
+      "subject": "سوال درباره مقالات",
+      "message": "آیا امکان نوشتن مقاله مهمان وجود دارد؟",
+      "status": "pending",
+      "createdAt": "2024-07-05T14:30:00.000Z"
+    }
+  ]
+}
