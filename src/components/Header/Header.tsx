@@ -6,6 +6,8 @@ import {Button} from "@/components/ui/button";
 import {LanguageSwitcher} from "@/components/LanguageSwitcher/LanguageSwitcher.tsx";
 import {useTranslation} from "react-i18next";
 import {SearchForm} from "@/components/SearchForm/SearchForm.tsx";
+import {Navbar} from "@/components/Navbar/Navbar.tsx";
+import {topNavigation} from "@/config/navigation.ts";
 
 export const Header = (): ReactNode => {
     const {t} = useTranslation()
@@ -30,6 +32,13 @@ export const Header = (): ReactNode => {
                 <LanguageSwitcher/>
             </div>
 
+        </div>
+
+        <div className="bg-secondary p-4 shadow-sm">
+
+            <div className="container flex justify-start ">
+                <Navbar menuItems={topNavigation}/>
+            </div>
         </div>
     </header>
 };
