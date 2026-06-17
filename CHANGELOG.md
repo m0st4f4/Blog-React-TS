@@ -1,3 +1,10 @@
+# [1.0.0-dev.2](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2026-06-17)
+
+
+### Features
+
+* add top navigation ([#20](https://github.com/m0st4f4/Blog-React-TS/issues/20)) ([20cc811](https://github.com/m0st4f4/Blog-React-TS/commit/20cc811fe37656148d4f2f088f2eaf5f4df23a1a))
+
 # 1.0.0-dev.1 (2026-06-14)
 
 
