@@ -1,8 +1,8 @@
-import type {TopNavigation} from "@/types/navigation.types.ts"
+import type { TopNavigation } from "@/types/navigation.types.ts";
 
 export const topNavigation: TopNavigation[] = [
-    {
-        titleKey: "topnav.home",
-        href: "/",
-    }
-]
+  {
+    titleKey: "topnav.home",
+    href: "/",
+  },
+];
