@@ -1,3 +1,10 @@
+# [1.0.0-dev.5](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2026-06-25)
+
+
+### Features
+
+* add notFoundPage ([#36](https://github.com/m0st4f4/Blog-React-TS/issues/36)) ([185380f](https://github.com/m0st4f4/Blog-React-TS/commit/185380fa810c62f4c02a1646212221fdbe2e8b01))
+
 # [1.0.0-dev.4](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2026-06-25)
 
 
