@@ -1,3 +1,10 @@
+# [1.0.0-dev.6](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2026-06-25)
+
+
+### Features
+
+* add category page ([#40](https://github.com/m0st4f4/Blog-React-TS/issues/40)) ([f9abf68](https://github.com/m0st4f4/Blog-React-TS/commit/f9abf687bed5bdcb25385fc52a0a3b240ab47c24)), closes [#22](https://github.com/m0st4f4/Blog-React-TS/issues/22)
+
 # [1.0.0-dev.5](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2026-06-25)
 
 
