@@ -1,3 +1,10 @@
+# [1.0.0-dev.4](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2026-06-25)
+
+
+### Features
+
+* add Error Boundary ([#35](https://github.com/m0st4f4/Blog-React-TS/issues/35)) ([10e699e](https://github.com/m0st4f4/Blog-React-TS/commit/10e699e73065d445252c495fa24bccb349a867b0))
+
 # [1.0.0-dev.3](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2026-06-17)
 
 ### Features
