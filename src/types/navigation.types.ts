@@ -1,13 +1,11 @@
-import type { ReactNode } from "react";
-
-import type { Path } from "react-router";
+import type { ComponentType } from "react";
 
 type BaseNode = {
   titleKey: string;
-  href: string | Partial<Path>;
-  isExternal: false;
+  href: string;
   description?: string;
-  icon?: ReactNode;
+  icon?: ComponentType<{ className?: string }>;
 };
 
 export type TopNavigation = Pick<BaseNode, "titleKey" | "href">;
+export type SocialNavigationType = Pick<BaseNode, "titleKey" | "href" | "icon">;

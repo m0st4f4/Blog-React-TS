@@ -18,4 +18,12 @@ export const ar = {
   "notFoundPage.description":
     "يبدو أن الرابط الذي اتبعته مكسور أو أن الصفحة قد حُذفت.",
   "notFoundPage.backToHome": "العودة للرئيسية",
+
+  // Footer
+  "footer.about":
+    "لوريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر.",
+
+  // Social Navigation
+  "socialnav.linkedin": "LinkedIn",
+  "socialnav.github": "Github",
 };

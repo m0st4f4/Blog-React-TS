@@ -18,4 +18,11 @@ export const fa = {
   "notFoundPage.description":
     "به نظر می رسه پیوندی که به دنبالش بودی خراب است یا صفحه حذف شده.",
   "notFoundPage.backToHome": "برو به صفحه اصلی",
+
+  // Footer
+  "footer.about": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت",
+
+  // Social Navigation
+  "socialnav.linkedin": "لینکداین",
+  "socialnav.github": "گیت هاب",
 };

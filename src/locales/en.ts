@@ -18,4 +18,12 @@ export const en = {
   "notFoundPage.description":
     "Oops! It seems the link you followed is broken or this page no longer exists.",
   "notFoundPage.backToHome": "Back to Home",
+
+  // Footer
+  "footer.about":
+    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, reprehenderit!",
+
+  // Social Navigation
+  "socialnav.linkedin": "LinkedIn",
+  "socialnav.github": "Github",
 };
