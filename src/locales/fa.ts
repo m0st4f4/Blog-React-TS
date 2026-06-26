@@ -25,4 +25,8 @@ export const fa = {
   // Social Navigation
   "socialnav.linkedin": "لینکداین",
   "socialnav.github": "گیت هاب",
+
+  // Copyright
+  "copyright.text": "© تمامی حقوق برای وبسایت تک مگ محفوظ است",
+  "copyright.credits": "توسعه توسط ",
 };

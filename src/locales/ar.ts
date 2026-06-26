@@ -26,4 +26,8 @@ export const ar = {
   // Social Navigation
   "socialnav.linkedin": "LinkedIn",
   "socialnav.github": "Github",
+
+  // Copyright
+  "copyright.text": "© Copyright TechMag All Rights Reserved",
+  "copyright.credits": "Designed by ",
 };
