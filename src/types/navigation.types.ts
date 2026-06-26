@@ -9,3 +9,7 @@ type BaseNode = {
 
 export type TopNavigation = Pick<BaseNode, "titleKey" | "href">;
 export type SocialNavigationType = Pick<BaseNode, "titleKey" | "href" | "icon">;
+export type FooterNavigationType = {
+  groupTitleKey: string;
+  items: Pick<BaseNode, "titleKey" | "href">[];
+};

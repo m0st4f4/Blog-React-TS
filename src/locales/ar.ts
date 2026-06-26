@@ -30,4 +30,19 @@ export const ar = {
   // Copyright
   "copyright.text": "© Copyright TechMag All Rights Reserved",
   "copyright.credits": "Designed by ",
+
+  // Footer Navigation
+  "footerNav.technology": "Technology",
+  "footerNav.ai": "AI",
+  "footerNav.software": "Software",
+  "footerNav.game": "Game",
+  "footerNav.security": "Security",
+  "footerNav.tutorial": "Tutorial",
+  "footerNav.reactTutorial": "React",
+  "footerNav.aiTutorial": "AI",
+  "footerNav.linuxTutorial": "Linux",
+  "footerNav.usefulLinks": "Useful Links",
+  "footerNav.home": "Home",
+  "footerNav.aboutUs": "About Us",
+  "footerNav.contactUs": "Contact Us",
 };

@@ -29,4 +29,19 @@ export const fa = {
   // Copyright
   "copyright.text": "© تمامی حقوق برای وبسایت تک مگ محفوظ است",
   "copyright.credits": "توسعه توسط ",
+
+  // Footer Navigation
+  "footerNav.technology": "تکنولوژی",
+  "footerNav.ai": "هوش مصنوعی",
+  "footerNav.software": "نرم افزار",
+  "footerNav.game": "بازی",
+  "footerNav.security": "امنیت",
+  "footerNav.tutorial": "آموزش",
+  "footerNav.reactTutorial": "ریکت",
+  "footerNav.aiTutorial": "هوش مصنوعی",
+  "footerNav.linuxTutorial": "لینوکس",
+  "footerNav.usefulLinks": "لینک های مفید",
+  "footerNav.home": "خانه",
+  "footerNav.aboutUs": "درباره ما",
+  "footerNav.contactUs": "تماس با ما",
 };
