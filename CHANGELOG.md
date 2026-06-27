@@ -1,3 +1,10 @@
+# [1.0.0-dev.7](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2026-06-27)
+
+
+### Features
+
+* footer section [#16](https://github.com/m0st4f4/Blog-React-TS/issues/16) ([#47](https://github.com/m0st4f4/Blog-React-TS/issues/47)) ([b2d2349](https://github.com/m0st4f4/Blog-React-TS/commit/b2d2349f627c6d39e171fd64a3347ae781dc6fa5))
+
 # [1.0.0-dev.6](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2026-06-25)
 
 
