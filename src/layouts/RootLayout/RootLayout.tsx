@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import { Outlet } from "react-router";
 
+import { Footer } from "@/components/Footer/Footer.tsx";
 import { Header } from "@/components/Header/Header.tsx";
 
 export const RootLayout = (): ReactNode => {
@@ -11,6 +12,7 @@ export const RootLayout = (): ReactNode => {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 };
