@@ -1,3 +1,9 @@
+import { FeaturedPosts } from "@/components/FeaturedPosts/FeaturedPosts.tsx";
+
 export const HomePage = () => {
-  return <div className="">homepage</div>;
+  return (
+    <div className="container">
+      <FeaturedPosts />
+    </div>
+  );
 };
