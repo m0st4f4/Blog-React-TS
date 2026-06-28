@@ -9,3 +9,8 @@ export const fetchCategoryById = async (id: string): Promise<CategoryType> => {
   );
   return response.data;
 };
+export const fetchCategories = async (): Promise<CategoryType[]> => {
+  const response: AxiosResponse<CategoryType[]> =
+    await apiInstance.get("/categories");
+  return response.data;
+};

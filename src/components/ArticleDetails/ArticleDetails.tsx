@@ -46,7 +46,7 @@ export const ArticleDetails = ({ item }: Props): ReactNode => {
         <div>
           <h1 className="text-2xl font-bold">{item.title}</h1>
           <div className="flex items-end justify-between mt-4 mb-4">
-            <AuthorDetails authorId={item.authorId} />
+            <AuthorDetails authorId={item.userId} />
             <div className="flex gap-4">
               <div className="flex gap-1 text-sm">
                 <MingcuteCalendar2Line />

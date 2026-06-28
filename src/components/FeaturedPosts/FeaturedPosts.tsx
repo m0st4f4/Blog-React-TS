@@ -1,0 +1,44 @@
+import { type ReactNode } from "react";
+
+import { Link } from "react-router";
+
+import { cn } from "@/lib/utils.ts";
+
+import { PostCardFullImg } from "@/components/PostCardFullImg/PostCardFullImg.tsx";
+
+import { useGetFeaturedArticles } from "@/hooks/useGetFeaturedArticles.ts";
+
+type Props = {
+  className?: string;
+};
+
+export const FeaturedPosts = ({ className }: Props): ReactNode => {
+  const { data, isPending } = useGetFeaturedArticles();
+  if (!data) {
+    return;
+  }
+
+  return (
+    <div
+      className={cn(
+        "grid gap-4 grid-cols-1 grid-rows-5 md:grid-cols-3 md:grid-rows-3 ",
+        className,
+      )}
+    >
+      {data.map((item, index) => {
+        const className =
+          index == 0
+            ? "md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-3"
+            : index == 1
+              ? "md:row-start-1 md:row-end-3"
+              : "";
+
+        return (
+          <Link key={item.id} to={`/article/${item.id}`} className={className}>
+            <PostCardFullImg item={item} isPending={isPending} />
+          </Link>
+        );
+      })}
+    </div>
+  );
+};
