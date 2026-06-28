@@ -1,3 +1,5 @@
+import type { UserType } from "@/types/user.types.ts";
+
 export type ArticleType = {
   id: string;
   title: string;
@@ -6,9 +8,9 @@ export type ArticleType = {
   content: string;
   featuredImage: string;
   images: string[];
-  authorId: string;
+  userId: string;
   categoryId: string;
-  tagIds: string;
+  tagId: string | string[];
   status: "published" | "draft";
   isFeatured: true;
   isPremium: false;
@@ -19,6 +21,8 @@ export type ArticleType = {
   publishedAt: string;
   createdAt: string;
   updatedAt: string;
+  category?: CategoryType;
+  user?: UserType;
 };
 
 export type TagType = {
