@@ -1,3 +1,10 @@
+# [1.0.0-dev.8](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.7...v1.0.0-dev.8) (2026-06-28)
+
+
+### Features
+
+* add featuredPosts section [#15](https://github.com/m0st4f4/Blog-React-TS/issues/15) ([#50](https://github.com/m0st4f4/Blog-React-TS/issues/50)) ([d0ea401](https://github.com/m0st4f4/Blog-React-TS/commit/d0ea401819d01d6aae4be7f7a1eb3cf702b6d217))
+
 # [1.0.0-dev.7](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2026-06-27)
 
 
