@@ -6,8 +6,16 @@ import type { ArticleType } from "@/types/article.types.ts";
 export const fetchArticleById = async (
   id: string | number,
 ): Promise<ArticleType> => {
+  const params = new URLSearchParams();
+  params.append("_embed", "category");
+  params.append("_embed", "user");
+  params.append("_embed", "comments");
+
   const response: AxiosResponse<ArticleType> = await apiInstance.get(
     `/articles/${id}`,
+    {
+      params,
+    },
   );
   return response.data;
 };
