@@ -11,3 +11,29 @@ export const fetchArticleById = async (
   );
   return response.data;
 };
+
+type FeaturedArticleType = {
+  first: number;
+  prev: number | null;
+  next: number | null;
+  last: number;
+  pages: number;
+  items: number;
+  data: ArticleType[];
+};
+export const fetchFeaturedArticles = async (): Promise<ArticleType[]> => {
+  const params = new URLSearchParams();
+  params.append("isFeatured", "true");
+  params.append("status", "published");
+  params.append("_embed", "category");
+  params.append("_embed", "user");
+  params.append("_sort", "-id");
+  params.append("_page", "1");
+  params.append("_per_page", "5");
+
+  const response: AxiosResponse<FeaturedArticleType> = await apiInstance.get(
+    "/articles",
+    { params },
+  );
+  return response.data.data;
+};
