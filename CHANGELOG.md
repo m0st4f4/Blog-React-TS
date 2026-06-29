@@ -1,3 +1,10 @@
+# [1.0.0-dev.14](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.13...v1.0.0-dev.14) (2026-06-29)
+
+
+### Bug Fixes
+
+* **ui:** fix import type error icon components ([#62](https://github.com/m0st4f4/Blog-React-TS/issues/62)) ([e1a22a6](https://github.com/m0st4f4/Blog-React-TS/commit/e1a22a69dfcd7c03539793fcfd28c7b4c3f8133a))
+
 # [1.0.0-dev.13](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.12...v1.0.0-dev.13) (2026-06-29)
 
 
