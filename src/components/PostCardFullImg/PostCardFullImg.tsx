@@ -45,7 +45,7 @@ export const PostCardFullImg = ({
             <Badge variant="secondary">{item.category.name}</Badge>
           )}
           <span className="text-white text-xs">
-            {formatDate(item.createdAt, "short")}
+            {formatDate(item.createdAt, "medium")}
           </span>
         </div>
         <p className="line-clamp-2 text-md font-medium text-white">

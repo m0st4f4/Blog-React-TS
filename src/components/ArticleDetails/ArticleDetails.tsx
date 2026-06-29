@@ -50,7 +50,7 @@ export const ArticleDetails = ({ item }: Props): ReactNode => {
             <div className="flex gap-4">
               <div className="flex gap-1 text-sm">
                 <MingcuteCalendar2Line />
-                <div>{formatDate(item.createdAt)}</div>
+                <div>{formatDate(item.createdAt, "medium")}</div>
               </div>
               <div className="flex gap-1 text-sm">
                 <MingcuteCommentLine />
