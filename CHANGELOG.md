@@ -1,3 +1,10 @@
+# [1.0.0-dev.15](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.14...v1.0.0-dev.15) (2026-06-29)
+
+
+### Bug Fixes
+
+* **theme:** remove old global styles [#41](https://github.com/m0st4f4/Blog-React-TS/issues/41) ([#63](https://github.com/m0st4f4/Blog-React-TS/issues/63)) ([bb87b52](https://github.com/m0st4f4/Blog-React-TS/commit/bb87b52b48d2bb0770fbcefd56a4b3085d36dbf1))
+
 # [1.0.0-dev.14](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.13...v1.0.0-dev.14) (2026-06-29)
 
 
