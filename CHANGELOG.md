@@ -1,3 +1,10 @@
+# [1.0.0-dev.13](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.12...v1.0.0-dev.13) (2026-06-29)
+
+
+### Bug Fixes
+
+* **hooks:** fix formatDate error [#38](https://github.com/m0st4f4/Blog-React-TS/issues/38) ([#60](https://github.com/m0st4f4/Blog-React-TS/issues/60)) ([31221d5](https://github.com/m0st4f4/Blog-React-TS/commit/31221d5ffc37dcbf761bd7c5eb8161395c6e2976))
+
 # [1.0.0-dev.12](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2026-06-29)
 
 
