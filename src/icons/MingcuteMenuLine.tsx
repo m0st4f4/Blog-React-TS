@@ -1,6 +1,6 @@
-import React, { SVGProps } from "react";
+import { type ReactNode, type SVGProps } from "react";
 
-export function MingcuteMenuLine(props: SVGProps<SVGSVGElement>) {
+export function MingcuteMenuLine(props: SVGProps<SVGSVGElement>): ReactNode {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,6 @@
-import React, { SVGProps } from "react";
+import { type ReactNode, type SVGProps } from "react";
 
-export function MingcuteTwitterFill(props: SVGProps<SVGSVGElement>) {
+export function MingcuteTwitterFill(props: SVGProps<SVGSVGElement>): ReactNode {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
