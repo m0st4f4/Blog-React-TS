@@ -8,8 +8,6 @@ import { CategoryPage } from "@/pages/CategoryPage/CategoryPage.tsx";
 import { HomePage } from "@/pages/HomePage/HomePage.tsx";
 import { NotFoundPage } from "@/pages/NotFoundPage/NotFoundPage.tsx";
 
-import "./App.css";
-
 function App() {
   return (
     <Routes>
