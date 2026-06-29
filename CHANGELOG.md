@@ -1,3 +1,10 @@
+# [1.0.0-dev.11](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2026-06-29)
+
+
+### Features
+
+* **sidebar:** add SidebarSearch component [#54](https://github.com/m0st4f4/Blog-React-TS/issues/54) ([#56](https://github.com/m0st4f4/Blog-React-TS/issues/56)) ([162b826](https://github.com/m0st4f4/Blog-React-TS/commit/162b8260b5fc147dc3af71a0085dea39fbccb942))
+
 # [1.0.0-dev.10](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2026-06-29)
 
 
