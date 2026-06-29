@@ -1,3 +1,10 @@
+# [1.0.0-dev.12](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.11...v1.0.0-dev.12) (2026-06-29)
+
+
+### Features
+
+* **layout:** add SidebarLayout [#54](https://github.com/m0st4f4/Blog-React-TS/issues/54) ([#59](https://github.com/m0st4f4/Blog-React-TS/issues/59)) ([fcf68b8](https://github.com/m0st4f4/Blog-React-TS/commit/fcf68b892166801bd64a641dfdf18bb41797128a))
+
 # [1.0.0-dev.11](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2026-06-29)
 
 
