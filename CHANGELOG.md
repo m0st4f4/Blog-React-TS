@@ -1,3 +1,10 @@
+# [1.0.0-dev.10](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2026-06-29)
+
+
+### Features
+
+* **sidebar:** add SidebarCategories component [#52](https://github.com/m0st4f4/Blog-React-TS/issues/52) ([#55](https://github.com/m0st4f4/Blog-React-TS/issues/55)) ([17f9736](https://github.com/m0st4f4/Blog-React-TS/commit/17f97364c9213e4b070b4113d58b264028e922ac))
+
 # [1.0.0-dev.9](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.8...v1.0.0-dev.9) (2026-06-29)
 
 
