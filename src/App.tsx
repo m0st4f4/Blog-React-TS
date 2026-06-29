@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 
 import { RootLayout } from "@/layouts/RootLayout/RootLayout.tsx";
+import { SidebarLayout } from "@/layouts/SidebarLayout/SidebarLayout.tsx";
 
 import { ArticlePage } from "@/pages/ArticlePage/ArticlePage.tsx";
 import { CategoryPage } from "@/pages/CategoryPage/CategoryPage.tsx";
@@ -14,8 +15,12 @@ function App() {
     <Routes>
       <Route element={<RootLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="article/:id" element={<ArticlePage />} />
-        <Route path="category/:id" element={<CategoryPage />} />
+        <Route path="article" element={<SidebarLayout />}>
+          <Route path=":id" element={<ArticlePage />} />
+        </Route>
+        <Route path="category" element={<SidebarLayout />}>
+          <Route path=":id" element={<CategoryPage />} />
+        </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
