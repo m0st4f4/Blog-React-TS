@@ -16,10 +16,6 @@ import App from "./App.tsx";
 import "./i18n";
 
 import "./index.css";
-import "./styles/colors.css";
-import "./styles/shadows.css";
-import "./styles/shapes.css";
-import "./styles/typography.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
