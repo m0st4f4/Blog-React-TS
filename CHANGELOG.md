@@ -1,3 +1,10 @@
+# [1.0.0-dev.16](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.15...v1.0.0-dev.16) (2026-07-01)
+
+
+### Features
+
+* refactor Article Page and children components [#65](https://github.com/m0st4f4/Blog-React-TS/issues/65) ([#66](https://github.com/m0st4f4/Blog-React-TS/issues/66)) ([8ef7d3f](https://github.com/m0st4f4/Blog-React-TS/commit/8ef7d3f2bbe97d3633de87ce382e80e9d4c4dc06))
+
 # [1.0.0-dev.15](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.14...v1.0.0-dev.15) (2026-06-29)
 
 
