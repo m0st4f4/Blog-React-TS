@@ -32,7 +32,8 @@ export const ArticleDetails = ({ item }: Props): ReactNode => {
           alt={item.title}
         />
         <div className="flex items-center text-primary-foreground gap-2 absolute bottom-0 mbe-4 ms-4 text-sm">
-          <CategoryButton id={item.categoryId} />
+          <CategoryButton item={item.category} />
+
           <Separator orientation="vertical" className="py-1" />
           <div className="flex items-center gap-1 py-1">
             <MingcuteTimeDurationLine />

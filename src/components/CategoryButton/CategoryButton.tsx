@@ -4,32 +4,22 @@ import { Link } from "react-router";
 
 import { cn } from "@/lib/utils.ts";
 
-import { Skeleton } from "@/components/ui/skeleton";
-
-import { useGetCategory } from "@/hooks/useGetCategory.ts";
+import type { CategoryType } from "@/types/article.types.ts";
 
 type Props = {
-  id: string;
+  item?: CategoryType;
 };
-export const CategoryButton = ({ id }: Props): ReactNode => {
-  const { data, isPending, isError } = useGetCategory(id);
-  if (!data) {
-    return <p>Can't find category</p>;
+export const CategoryButton = ({ item }: Props): ReactNode => {
+  if (!item) {
+    return;
   }
-  if (isPending) {
-    return <Skeleton className="rounded h-4 w-8" />;
-  }
-  if (isError) {
-    return <p>Error</p>;
-  }
-
   return (
     <Link
-      to={`/category/${data.id}`}
-      style={{ backgroundColor: data.color }}
+      to={`/category/${item.id}`}
+      style={{ backgroundColor: item.color }}
       className={cn("rounded py-1 px-4 bg-primary")}
     >
-      {data.name}
+      {item.name}
     </Link>
   );
 };
