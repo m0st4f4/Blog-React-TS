@@ -44,4 +44,9 @@ export const fa = {
   "footerNav.home": "خانه",
   "footerNav.aboutUs": "درباره ما",
   "footerNav.contactUs": "تماس با ما",
+
+  // Article Page
+  "articlePage.notfound":
+    "مقاله ای که به دنبال اون بودی وجود نداره یا حذف شده!",
+  "articlePage.articleError": "خطا در دریافت مقاله",
 };

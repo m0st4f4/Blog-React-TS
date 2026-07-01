@@ -22,7 +22,7 @@ export type ArticleType = {
   createdAt: string;
   updatedAt: string;
   category?: CategoryType;
-  user?: UserType;
+  user: UserType;
 };
 
 export type TagType = {
