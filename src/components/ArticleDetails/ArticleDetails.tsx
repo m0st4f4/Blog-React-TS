@@ -27,7 +27,7 @@ export const ArticleDetails = ({ item }: Props): ReactNode => {
     <article>
       <div className="relative">
         <img
-          className="w-full rounded"
+          className="w-full rounded aspect-video"
           src={item.featuredImage}
           alt={item.title}
         />
@@ -61,7 +61,7 @@ export const ArticleDetails = ({ item }: Props): ReactNode => {
           </div>
         </div>
 
-        <Separator className="my-12" />
+        <Separator className="my-6 md:my-12 " />
         <div
           className="prose prose-slate max-w-none dark:prose-invert"
           dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
