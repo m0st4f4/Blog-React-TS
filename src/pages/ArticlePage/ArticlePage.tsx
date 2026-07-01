@@ -2,20 +2,40 @@ import { type ReactNode } from "react";
 
 import { useParams } from "react-router";
 
+import { useTranslation } from "react-i18next";
+
 import { ArticleDetails } from "@/components/ArticleDetails/ArticleDetails.tsx";
+import { ArticleDetailsSkeleton } from "@/components/ArticleDetails/ArticleDetailsSkeleton.tsx";
 
 import { useGetArticle } from "@/hooks/useGetArticle.ts";
 
 export const ArticlePage = (): ReactNode => {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-  const { data, isPending, isError } = useGetArticle(id);
+  const { data, isPending, isError, error } = useGetArticle(id);
 
-  if (isPending)
-    return <div className="text-center p-5">در حال بارگذاری مقاله...</div>;
-  if (isError)
+  if (isPending) {
+    return <ArticleDetailsSkeleton />;
+  }
+
+  if (isError) {
+    if (error?.response?.status === 404) {
+      return (
+        <div className="text-lg text-center p-5">
+          <p>{t("articlePage.notfound")}</p>
+        </div>
+      );
+    }
     return (
-      <div className="text-red-500 text-center p-5">خطا در دریافت مقاله</div>
+      <div className="text-lg text-center p-5">
+        <p>{t("articlePage.articleError")}</p>
+        <p>{error?.message}</p>
+      </div>
     );
-  if (!data) return <div className="text-center p-5">مقاله‌ای یافت نشد.</div>;
+  }
+
+  if (!data) {
+    return;
+  }
   return <ArticleDetails item={data} />;
 };

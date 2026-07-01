@@ -45,4 +45,9 @@ export const en = {
   "footerNav.home": "Home",
   "footerNav.aboutUs": "About Us",
   "footerNav.contactUs": "Contact Us",
+
+  // Article Page
+  "articlePage.notfound":
+    "The article you were looking for does not exist or has been deleted!",
+  "articlePage.articleError": "Error in receiving article",
 };
