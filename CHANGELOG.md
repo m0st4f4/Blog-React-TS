@@ -1,3 +1,10 @@
+# [1.0.0-dev.17](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.16...v1.0.0-dev.17) (2026-07-05)
+
+
+### Features
+
+* **ui:** add post card with top image component [#68](https://github.com/m0st4f4/Blog-React-TS/issues/68) ([#69](https://github.com/m0st4f4/Blog-React-TS/issues/69)) ([a4db716](https://github.com/m0st4f4/Blog-React-TS/commit/a4db7165dec4f14259c7d394b98a6e64dd0b4b23))
+
 # [1.0.0-dev.16](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.15...v1.0.0-dev.16) (2026-07-01)
 
 
