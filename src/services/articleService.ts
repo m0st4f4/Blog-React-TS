@@ -1,7 +1,7 @@
 import apiInstance from "@/services/api.ts";
 import type { AxiosResponse } from "axios";
 
-import type { ArticleType } from "@/types/article.types.ts";
+import type { ArticleStatusType, ArticleType } from "@/types/article.types.ts";
 
 export const fetchArticleById = async (
   id: string | number,
@@ -20,28 +20,48 @@ export const fetchArticleById = async (
   return response.data;
 };
 
-type FeaturedArticleType = {
-  first: number;
-  prev: number | null;
-  next: number | null;
-  last: number;
-  pages: number;
-  items: number;
-  data: ArticleType[];
+type ParamsType = {
+  isFeatured?: boolean;
+  status?: ArticleStatusType;
+  q?: string;
+  _sort?: string;
+  _order?: "desc" | "asc";
+  _embed?: string[];
+  _expand?: string[];
+  _page?: number;
+  _limit?: number;
 };
-export const fetchFeaturedArticles = async (): Promise<ArticleType[]> => {
-  const params = new URLSearchParams();
-  params.append("isFeatured", "true");
-  params.append("status", "published");
-  params.append("_embed", "category");
-  params.append("_embed", "user");
-  params.append("_sort", "-id");
-  params.append("_page", "1");
-  params.append("_per_page", "5");
 
-  const response: AxiosResponse<FeaturedArticleType> = await apiInstance.get(
+export const fetchFilteredArticles = async (
+  inputParams?: ParamsType,
+): Promise<ArticleType[]> => {
+  const defaultParams: ParamsType = {
+    _sort: "id",
+    _order: "desc",
+    _expand: [],
+    _page: 1,
+    _limit: 5,
+  };
+  const outputParams: ParamsType = { ...defaultParams, ...inputParams };
+
+  const params = new URLSearchParams();
+  Object.entries(outputParams).forEach(([key, value]) => {
+    if (key == "q" && typeof value === "string" && value.length > 0) {
+      params.append(key, value.trim());
+      return;
+    }
+    if (Array.isArray(value)) {
+      value.forEach((item) => {
+        params.append(key, String(item));
+      });
+      return;
+    }
+    params.append(key, String(value));
+  });
+
+  const response: AxiosResponse<ArticleType[]> = await apiInstance.get(
     "/articles",
     { params },
   );
-  return response.data.data;
+  return response.data;
 };
