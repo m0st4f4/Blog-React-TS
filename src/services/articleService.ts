@@ -7,8 +7,8 @@ export const fetchArticleById = async (
   id: string | number,
 ): Promise<ArticleType> => {
   const params = new URLSearchParams();
-  params.append("_embed", "category");
-  params.append("_embed", "user");
+  params.append("_expand", "category");
+  params.append("_expand", "user");
   params.append("_embed", "comments");
 
   const response: AxiosResponse<ArticleType> = await apiInstance.get(
