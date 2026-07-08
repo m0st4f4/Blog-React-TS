@@ -1,3 +1,10 @@
+# [1.0.0-dev.18](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.17...v1.0.0-dev.18) (2026-07-08)
+
+
+### Features
+
+* **ui:** latest posts section [#43](https://github.com/m0st4f4/Blog-React-TS/issues/43) ([#70](https://github.com/m0st4f4/Blog-React-TS/issues/70)) ([5d1be1d](https://github.com/m0st4f4/Blog-React-TS/commit/5d1be1df5511311deb1346be9fe38c511545b520))
+
 # [1.0.0-dev.17](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.16...v1.0.0-dev.17) (2026-07-05)
 
 
