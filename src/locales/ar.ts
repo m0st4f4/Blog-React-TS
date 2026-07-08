@@ -45,4 +45,7 @@ export const ar = {
   "footerNav.home": "Home",
   "footerNav.aboutUs": "About Us",
   "footerNav.contactUs": "Contact Us",
+
+  // Latest Article
+  "latestArticle.heading": "أحدث المقالات",
 };
