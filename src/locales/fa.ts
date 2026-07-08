@@ -49,4 +49,7 @@ export const fa = {
   "articlePage.notfound":
     "مقاله ای که به دنبال اون بودی وجود نداره یا حذف شده!",
   "articlePage.articleError": "خطا در دریافت مقاله",
+
+  // Latest Article
+  "latestArticle.heading": "آخرین مقالات",
 };

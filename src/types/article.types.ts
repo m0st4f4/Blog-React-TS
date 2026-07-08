@@ -11,7 +11,7 @@ export type ArticleType = {
   userId: string;
   categoryId: string;
   tagId: string | string[];
-  status: "published" | "draft";
+  status: ArticleStatusType;
   isFeatured: true;
   isPremium: false;
   viewCount: number;
@@ -24,6 +24,7 @@ export type ArticleType = {
   category?: CategoryType;
   user: UserType;
 };
+export type ArticleStatusType = "published" | "draft";
 
 export type TagType = {
   id: string;

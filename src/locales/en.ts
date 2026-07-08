@@ -50,4 +50,7 @@ export const en = {
   "articlePage.notfound":
     "The article you were looking for does not exist or has been deleted!",
   "articlePage.articleError": "Error in receiving article",
+
+  // Latest Article
+  "latestArticle.heading": "Latest Articles",
 };

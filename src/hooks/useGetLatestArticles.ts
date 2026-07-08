@@ -2,20 +2,18 @@ import { useQuery } from "@tanstack/react-query";
 
 import { fetchFilteredArticles } from "@/services/articleService.ts";
 
-export const useGetFeaturedArticles = () => {
-  const { data, isPending, isError } = useQuery({
-    queryKey: ["articles", "featured"],
+export const useGetLatestArticles = () => {
+  const { data, isPending, isError, error } = useQuery({
+    queryKey: ["articles", "latest"],
     queryFn: () =>
       fetchFilteredArticles({
-        isFeatured: true,
         _sort: "id",
         _order: "desc",
         status: "published",
-        _expand: ["category"],
+        _expand: ["category", "user"],
         _page: 1,
-        _limit: 5,
+        _limit: 6,
       }),
   });
-
-  return { data, isPending, isError };
+  return { data, isPending, isError, error };
 };
