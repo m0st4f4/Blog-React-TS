@@ -2,9 +2,8 @@ export const fa = {
   // global
   "site name": "TechMag",
 
-  // Search
-  "search placeholder": "جستجو...",
-  results: "نتیجه",
+  // SearchForm
+  "SearchForm.Placeholder": "جستجو...",
 
   // Top Navigation
   "topnav.home": "خانه",
@@ -52,4 +51,12 @@ export const fa = {
 
   // Latest Article
   "latestArticle.heading": "آخرین مقالات",
+
+  // Search Page
+  "SearchPage.heading": "نتایج جستجو برای",
+  "SearchPage.title": "{{siteName}} - جستجو برای",
+  "SearchPage.noResult": "نتیجه ای یافت نشد",
+
+  // SidebarSearch
+  "SidebarSearch.title": "جستجو",
 };

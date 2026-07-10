@@ -2,9 +2,8 @@ export const en = {
   // global
   "site name": "TechMag",
 
-  // Search
-  "search placeholder": "Search...",
-  results: "results",
+  // SearchForm
+  "SearchForm.Placeholder": "Search...",
 
   // Top Navigation
   "topnav.home": "Home",
@@ -53,4 +52,12 @@ export const en = {
 
   // Latest Article
   "latestArticle.heading": "Latest Articles",
+
+  // Search Page
+  "SearchPage.heading": "Search Results for",
+  "SearchPage.title": "{{siteName}} - Search for",
+  "SearchPage.noResult": "No results found",
+
+  // SidebarSearch
+  "SidebarSearch.title": "Search",
 };
