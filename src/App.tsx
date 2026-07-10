@@ -7,6 +7,7 @@ import { ArticlePage } from "@/pages/ArticlePage/ArticlePage.tsx";
 import { CategoryPage } from "@/pages/CategoryPage/CategoryPage.tsx";
 import { HomePage } from "@/pages/HomePage/HomePage.tsx";
 import { NotFoundPage } from "@/pages/NotFoundPage/NotFoundPage.tsx";
+import { SearchPage } from "@/pages/SearchPage/SearchPage.tsx";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route path="category" element={<SidebarLayout />}>
           <Route path=":id" element={<CategoryPage />} />
+        </Route>
+        <Route path="search" element={<SidebarLayout />}>
+          <Route path=":query?" element={<SearchPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Route>

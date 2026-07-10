@@ -12,6 +12,8 @@ import { DirectionProvider } from "@/components/ui/direction.tsx";
 
 import { ErrorPage } from "@/pages/ErrorPage/ErrorPage.tsx";
 
+import { SearchProvider } from "@/providers/SearchProvider.tsx";
+
 import App from "./App.tsx";
 import "./i18n";
 
@@ -46,8 +48,10 @@ createRoot(document.getElementById("root")!).render(
       <BrowserRouter>
         <DirectionProvider dir="ltr">
           <QueryClientProvider client={queryClient}>
-            <App />
-            <ReactQueryDevtools initialIsOpen={false} />
+            <SearchProvider>
+              <App />
+              <ReactQueryDevtools initialIsOpen={false} />
+            </SearchProvider>
           </QueryClientProvider>
         </DirectionProvider>
       </BrowserRouter>
