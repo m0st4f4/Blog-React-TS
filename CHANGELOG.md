@@ -1,3 +1,10 @@
+# [1.0.0-dev.19](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.18...v1.0.0-dev.19) (2026-07-10)
+
+
+### Features
+
+* **ui:** add search page [#67](https://github.com/m0st4f4/Blog-React-TS/issues/67) ([#71](https://github.com/m0st4f4/Blog-React-TS/issues/71)) ([8c84906](https://github.com/m0st4f4/Blog-React-TS/commit/8c84906d29653a66fc2307705858395ae53037d8))
+
 # [1.0.0-dev.18](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.17...v1.0.0-dev.18) (2026-07-08)
 
 
