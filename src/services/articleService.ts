@@ -21,6 +21,7 @@ export const fetchArticleById = async (
 };
 
 type ParamsType = {
+  categoryId?: string;
   isFeatured?: boolean;
   status?: ArticleStatusType;
   q?: string;

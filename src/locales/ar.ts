@@ -55,4 +55,7 @@ export const ar = {
 
   // SidebarSearch
   "SidebarSearch.title": "Search",
+
+  // CategoryHeader
+  "CategoryHeader.noResult": "No category found",
 };

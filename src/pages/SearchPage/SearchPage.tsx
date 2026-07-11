@@ -1,11 +1,10 @@
 import { type ReactNode, useContext, useEffect } from "react";
 
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
 
 import { useTranslation } from "react-i18next";
 
-import { PostCardTopImg } from "@/components/PostCardTopImg/PostCardTopImg.tsx";
-import { PostCardTopImgSkeleton } from "@/components/PostCardTopImg/PostCardTopImgSkeleton.tsx";
+import { ArticleList } from "@/components/ArticleList/ArticleList.tsx";
 
 import { SearchContext } from "@/context/search-context.ts";
 
@@ -35,36 +34,6 @@ export const SearchPage = ({ className = "" }: Props): ReactNode => {
     };
   }, [query, setQuery, t]);
 
-  if (isPending) {
-    return (
-      <div className={className}>
-        <h1 className="text-center text-2xl mb-8">
-          <span> {t("SearchPage.heading")}</span>
-          &nbsp;
-          <span className="font-bold ms-1">{query}</span>
-        </h1>
-        <div className="grid gap-4 grid-cols-1  md:grid-cols-3">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <PostCardTopImgSkeleton key={index} />
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  if (data?.length === 0) {
-    return (
-      <div className={className}>
-        <h1 className="text-center text-2xl mb-8">
-          <span> {t("SearchPage.heading")}</span>
-          &nbsp;
-          <span className="font-bold ms-1">{query}</span>
-        </h1>
-        <p className="text-center">{t("SearchPage.noResult")}</p>
-      </div>
-    );
-  }
-
   return (
     <div className={className}>
       <h1 className="text-center text-2xl mb-8">
@@ -72,13 +41,7 @@ export const SearchPage = ({ className = "" }: Props): ReactNode => {
         &nbsp;
         <span className="font-bold ms-1">{query}</span>
       </h1>
-      <div className="grid gap-4 grid-cols-1  md:grid-cols-3">
-        {data?.map((item) => (
-          <Link key={item.id} to={`/article/${item.id}`}>
-            <PostCardTopImg item={item} />
-          </Link>
-        ))}
-      </div>
+      <ArticleList isPending={isPending} data={data} />
     </div>
   );
 };
