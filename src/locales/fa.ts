@@ -59,4 +59,7 @@ export const fa = {
 
   // SidebarSearch
   "SidebarSearch.title": "جستجو",
+
+  // CategoryHeader
+  "CategoryHeader.noResult": "دسته بندی یافت نشد",
 };

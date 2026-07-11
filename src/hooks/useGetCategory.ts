@@ -7,9 +7,6 @@ export const useGetCategory = (id: string) => {
     enabled: Boolean(id),
     queryKey: ["category", id],
     queryFn: () => {
-      if (!id) {
-        return;
-      }
       return fetchCategoryById(id);
     },
   });
