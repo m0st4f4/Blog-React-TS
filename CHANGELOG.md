@@ -1,3 +1,10 @@
+# [1.0.0-dev.21](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.20...v1.0.0-dev.21) (2026-07-11)
+
+
+### Features
+
+* **ui:** add aboutUs and contactUs pages [#21](https://github.com/m0st4f4/Blog-React-TS/issues/21) ([#74](https://github.com/m0st4f4/Blog-React-TS/issues/74)) ([50d0f92](https://github.com/m0st4f4/Blog-React-TS/commit/50d0f921ae3c70cdbf627fb8bd8b440288ca9228))
+
 # [1.0.0-dev.20](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.19...v1.0.0-dev.20) (2026-07-11)
 
 
