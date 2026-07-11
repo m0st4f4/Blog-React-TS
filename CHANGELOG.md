@@ -1,3 +1,10 @@
+# [1.0.0-dev.20](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.19...v1.0.0-dev.20) (2026-07-11)
+
+
+### Features
+
+* **ui:** add articles list of a category [#57](https://github.com/m0st4f4/Blog-React-TS/issues/57) ([#73](https://github.com/m0st4f4/Blog-React-TS/issues/73)) ([83701f6](https://github.com/m0st4f4/Blog-React-TS/commit/83701f6ea050027289a59a37de29a4f91e56493d))
+
 # [1.0.0-dev.19](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.18...v1.0.0-dev.19) (2026-07-10)
 
 
