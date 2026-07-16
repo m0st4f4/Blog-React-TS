@@ -12,6 +12,8 @@ import MingcuteFacebookFill from "@/icons/MingcuteFacebookFill.tsx";
 import MingcuteInstagramLine from "@/icons/MingcuteInstagramLine.tsx";
 import MingcuteTwitterFill from "@/icons/MingcuteTwitterFill.tsx";
 
+import { UserMenu } from "../UserMenu/UserMenu";
+
 export const Header = (): ReactNode => {
   const { t } = useTranslation();
   return (
@@ -51,6 +53,7 @@ export const Header = (): ReactNode => {
           </div>
           <SearchForm />
           <LanguageSwitcher />
+          <UserMenu />
         </div>
       </div>
 
