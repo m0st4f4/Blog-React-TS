@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
-    "api": "json-server --watch src/db/db.json --port 4000"
+    "api": "node --watch src/db/server.cjs"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.9",
