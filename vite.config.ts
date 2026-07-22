@@ -17,4 +17,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    watch: {
+      // this line tell vite to ignore change db.json file
+      ignored: ["**/db.json"],
+    },
+  },
 });
