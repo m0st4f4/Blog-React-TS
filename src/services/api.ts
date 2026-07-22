@@ -1,8 +1,10 @@
-import axios, {
-  type AxiosError,
-  type AxiosInstance,
-  type AxiosRequestConfig,
-} from "axios";
+import axios, { type AxiosError, type AxiosInstance, type AxiosRequestConfig } from "axios";
+
+
+
+
+
+
 
 const apiConfig: AxiosRequestConfig = {
   baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:4000",
@@ -17,7 +19,8 @@ const apiConfig: AxiosRequestConfig = {
 const apiInstance: AxiosInstance = axios.create(apiConfig);
 
 const refreshUserToken = async () => {
-  const response = await axios.post("/api/auth/refresh-token");
+  const baseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
+  const response = await axios.post(`${baseURL}/auth/refresh`);
   return response.data.token;
 };
 apiInstance.interceptors.request.use(
