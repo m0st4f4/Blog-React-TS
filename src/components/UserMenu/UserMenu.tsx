@@ -1,7 +1,7 @@
 import { type ReactNode, useState } from "react";
 
+import { RegisterDialog } from "@/components/UserMenu/components/RegisterDialog/RegisterDialog.tsx";
 import { Login } from "@/components/UserMenu/components/login/Login.tsx";
-import { Register } from "@/components/UserMenu/components/register/Register.tsx";
 import { ResetPassword } from "@/components/UserMenu/components/resetPassword/ResetPassword.tsx";
 import { Button } from "@/components/ui/button.tsx";
 
@@ -73,7 +73,7 @@ export const UserMenu = (): ReactNode => {
         RegisterButton={RegisterButton}
         ResetButton={ResetButton}
       />
-      <Register
+      <RegisterDialog
         isOpen={isRegisterOpen}
         onOpenChange={setIsRegisterOpen}
         LoginButton={LoginButton}
