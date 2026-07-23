@@ -62,9 +62,11 @@ server.post("/auth/register", (req, res) => {
     REFRESH_EXPIRES_IN,
   );
 
-  res
-    .status(201)
-    .json({ accessToken, refreshToken, user: { email, username } });
+  res.status(201).json({
+    accessToken,
+    refreshToken,
+    user: { id, email, username, name: username },
+  });
 });
 
 // --- Route (Login) ---
