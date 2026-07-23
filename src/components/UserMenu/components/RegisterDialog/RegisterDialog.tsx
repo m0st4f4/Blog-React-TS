@@ -81,9 +81,10 @@ export const RegisterDialog = ({
             isPending={isPending}
           />
         )}
-
-        {LoginButton}
-        {ResetButton}
+        <div className="flex flex-col w-fit">
+          {LoginButton}
+          {ResetButton}
+        </div>
       </DialogContent>
     </Dialog>
   );

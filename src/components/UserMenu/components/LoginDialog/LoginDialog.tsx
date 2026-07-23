@@ -1,21 +1,40 @@
 import { type ReactNode } from "react";
 
+
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
+
+
 import { LoginForm } from "@/forms/LoginForm/LoginForm.tsx";
 import { LoginSchema } from "@/schema/login-schema.ts";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog.tsx";
+
+
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog.tsx";
+
+
 
 import { useLoginUser } from "@/hooks/useLoginUser.ts";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 type Props = {
   isOpen: boolean;
@@ -72,9 +91,10 @@ export const LoginDialog = ({
             isPending={isPending}
           />
         )}
-
-        {RegisterButton}
-        {ResetButton}
+        <div className="flex flex-col w-fit">
+          {RegisterButton}
+          {ResetButton}
+        </div>
       </DialogContent>
     </Dialog>
   );
