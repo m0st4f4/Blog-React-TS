@@ -10,20 +10,34 @@ export const fetchUserById = async (id: string | number): Promise<UserType> => {
   return response.data;
 };
 
-type ResponseRegisterUserType = {
+type ResponseUserType = {
   accessToken: string;
   refreshToken: string;
-  user: Pick<UserType, "email" | "username">;
+  user: Pick<UserType, "id" | "email" | "username" | "name">;
 };
+
 export type RegisterUserType = Pick<
   UserType,
   "email" | "username" | "password"
 >;
 export const RegisterUser = async (
   userData: RegisterUserType,
-): Promise<ResponseRegisterUserType> => {
-  const response: AxiosResponse<ResponseRegisterUserType> =
-    await apiInstance.post(`/auth/register`, userData);
+): Promise<ResponseUserType> => {
+  const response: AxiosResponse<ResponseUserType> = await apiInstance.post(
+    `/auth/register`,
+    userData,
+  );
 
+  return response.data;
+};
+
+export type LoginUserType = Pick<UserType, "username" | "password">;
+export const LoginUser = async (
+  userData: LoginUserType,
+): Promise<ResponseUserType> => {
+  const response: AxiosResponse<ResponseUserType> = await apiInstance.post(
+    `/auth/login`,
+    userData,
+  );
   return response.data;
 };
