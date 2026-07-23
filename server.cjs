@@ -69,11 +69,13 @@ server.post("/auth/register", (req, res) => {
 
 // --- Route (Login) ---
 server.post("/auth/login", (req, res) => {
-  const { email, password } = req.body;
-  const user = router.db.get("users").find({ email, password }).value();
+  const { username, password } = req.body;
+  const user = router.db.get("users").find({ username, password }).value();
 
   if (!user) {
-    return res.status(401).json({ message: "Email or Password is incorrect" });
+    return res
+      .status(401)
+      .json({ message: "Username or Password is incorrect" });
   }
 
   const accessToken = createToken(
@@ -90,7 +92,12 @@ server.post("/auth/login", (req, res) => {
   res.status(200).json({
     accessToken,
     refreshToken,
-    user: { id: user.id, email: user.email, name: user.name },
+    user: {
+      id: user.id,
+      email: user.email,
+      username: user.username,
+      name: user.name,
+    },
   });
 });
 
