@@ -1,7 +1,7 @@
 import { type ReactNode, useState } from "react";
 
+import { LoginDialog } from "@/components/UserMenu/components/LoginDialog/LoginDialog.tsx";
 import { RegisterDialog } from "@/components/UserMenu/components/RegisterDialog/RegisterDialog.tsx";
-import { Login } from "@/components/UserMenu/components/login/Login.tsx";
 import { ResetPassword } from "@/components/UserMenu/components/resetPassword/ResetPassword.tsx";
 import { Button } from "@/components/ui/button.tsx";
 
@@ -67,7 +67,7 @@ export const UserMenu = (): ReactNode => {
       >
         <MingcuteUser1Line />
       </Button>
-      <Login
+      <LoginDialog
         isOpen={isLoginOpen}
         onOpenChange={setIsLoginOpen}
         RegisterButton={RegisterButton}
