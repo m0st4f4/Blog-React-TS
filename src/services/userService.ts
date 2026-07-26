@@ -10,15 +10,14 @@ export const fetchUserById = async (id: string | number): Promise<UserType> => {
   return response.data;
 };
 
-type ResponseUserType = {
+export type ResponseUserType = {
   accessToken: string;
   refreshToken: string;
-  user: Pick<UserType, "id" | "email" | "username" | "name">;
+  user: UserType;
 };
 
-export type RegisterUserType = Pick<
-  UserType,
-  "email" | "username" | "password"
+export type RegisterUserType = Required<
+  Pick<UserType, "email" | "username" | "password">
 >;
 export const RegisterUser = async (
   userData: RegisterUserType,
@@ -31,7 +30,7 @@ export const RegisterUser = async (
   return response.data;
 };
 
-export type LoginUserType = Pick<UserType, "username" | "password">;
+export type LoginUserType = Required<Pick<UserType, "username" | "password">>;
 export const LoginUser = async (
   userData: LoginUserType,
 ): Promise<ResponseUserType> => {

@@ -7,7 +7,6 @@ import { z } from "zod";
 import { RegisterForm } from "@/forms/RegisterForm/RegisterForm.tsx";
 import { RegisterSchema } from "@/schema/register-schema.ts";
 
-import { DialogDescription } from "@/components/ui/dialog";
 import {
   Dialog,
   DialogContent,
@@ -21,8 +20,7 @@ import { useRegisterUser } from "@/hooks/useRegisterUser.ts";
 type Props = {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
-  LoginButton: ReactNode;
-  ResetButton: ReactNode;
+  extraButtons?: ReactNode[];
 };
 
 type Values = z.infer<typeof RegisterSchema>;
@@ -30,8 +28,7 @@ type Values = z.infer<typeof RegisterSchema>;
 export const RegisterDialog = ({
   isOpen,
   onOpenChange,
-  ResetButton,
-  LoginButton,
+  extraButtons,
 }: Props): ReactNode => {
   const { mutate, isPending, isSuccess, data, isError, error, reset } =
     useRegisterUser();
@@ -57,9 +54,6 @@ export const RegisterDialog = ({
       <DialogContent className="sm:max-w-sm">
         <DialogHeader>
           <DialogTitle>Create Account</DialogTitle>
-          <DialogDescription>
-            if you don't have account , create one
-          </DialogDescription>
         </DialogHeader>
         {isError && (
           <div className="mt-4">
@@ -82,8 +76,7 @@ export const RegisterDialog = ({
           />
         )}
         <div className="flex flex-col w-fit">
-          {LoginButton}
-          {ResetButton}
+          {extraButtons?.map((button) => button)}
         </div>
       </DialogContent>
     </Dialog>

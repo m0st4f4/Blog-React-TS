@@ -17,15 +17,13 @@ import { Label } from "@/components/ui/label.tsx";
 type Props = {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
-  LoginButton: ReactNode;
-  RegisterButton: ReactNode;
+  extraButtons?: ReactNode[];
 };
 
 export const ResetPassword = ({
   isOpen,
   onOpenChange,
-  RegisterButton,
-  LoginButton,
+  extraButtons,
 }: Props): ReactNode => {
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
@@ -48,8 +46,7 @@ export const ResetPassword = ({
             </Field>
 
             <Field orientation="vertical">
-              {LoginButton}
-              {RegisterButton}
+              {extraButtons?.map((button) => button)}
             </Field>
           </FieldGroup>
           <DialogFooter>

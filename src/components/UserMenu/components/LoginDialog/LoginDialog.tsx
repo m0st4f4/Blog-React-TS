@@ -1,63 +1,44 @@
 import { type ReactNode } from "react";
 
-
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
-
-
 import { LoginForm } from "@/forms/LoginForm/LoginForm.tsx";
 import { LoginSchema } from "@/schema/login-schema.ts";
 
-
-
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog.tsx";
-
-
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog.tsx";
 
 import { useLoginUser } from "@/hooks/useLoginUser.ts";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 type Props = {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
-  RegisterButton: ReactNode;
-  ResetButton: ReactNode;
+  extraButtons?: ReactNode[];
 };
 type Values = z.infer<typeof LoginSchema>;
 export const LoginDialog = ({
   isOpen,
   onOpenChange,
-  ResetButton,
-  RegisterButton,
+  extraButtons,
 }: Props): ReactNode => {
-  const { mutate, isPending, isSuccess, data, isError, error, reset } =
-    useLoginUser();
+  const { isPending, isError, error, reset, mutateAsync } = useLoginUser();
   const form = useForm<Values>({
     defaultValues: { username: "", password: "" },
     resolver: zodResolver(LoginSchema),
   });
-  const handleFormSubmit: SubmitHandler<Values> = (data: Values) => {
-    mutate(data);
+  const handleFormSubmit: SubmitHandler<Values> = (values: Values) => {
+    mutateAsync(values).then(() => {
+      onOpenChange(false);
+    });
   };
+
   return (
     <Dialog
       open={isOpen}
@@ -76,24 +57,14 @@ export const LoginDialog = ({
             <p className="p-2 w-fit text-destructive">{error?.message}</p>
           </div>
         )}
-        {isSuccess ? (
-          <div className="text-center flex flex-col items-center">
-            <p className="p-2 w-full rounded-lg">
-              <strong>{data?.user.username}</strong> , You are logged in
-              successfully
-            </p>
-          </div>
-        ) : (
-          <LoginForm
-            noValidate
-            onSubmit={form.handleSubmit(handleFormSubmit)}
-            form={form}
-            isPending={isPending}
-          />
-        )}
+        <LoginForm
+          noValidate
+          onSubmit={form.handleSubmit(handleFormSubmit)}
+          form={form}
+          isPending={isPending}
+        />
         <div className="flex flex-col w-fit">
-          {RegisterButton}
-          {ResetButton}
+          {extraButtons?.map((button) => button)}
         </div>
       </DialogContent>
     </Dialog>

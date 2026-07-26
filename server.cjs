@@ -99,6 +99,12 @@ server.post("/auth/login", (req, res) => {
       email: user.email,
       username: user.username,
       name: user.name,
+      avatar: user.avatar,
+      bio: user.bio,
+      role: user.role,
+      isActive: user.isActive,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
     },
   });
 });

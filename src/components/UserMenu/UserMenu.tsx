@@ -1,13 +1,18 @@
-import { type ReactNode, useState } from "react";
+import { type ReactNode, useContext, useState } from "react";
 
 import { LoginDialog } from "@/components/UserMenu/components/LoginDialog/LoginDialog.tsx";
 import { RegisterDialog } from "@/components/UserMenu/components/RegisterDialog/RegisterDialog.tsx";
+import { UserDropdownMenu } from "@/components/UserMenu/components/UserDropdownMenu/UserDropdownMenu.tsx";
 import { ResetPassword } from "@/components/UserMenu/components/resetPassword/ResetPassword.tsx";
 import { Button } from "@/components/ui/button.tsx";
+
+import { AuthContext } from "@/context/auth-context.ts";
 
 import MingcuteUser1Line from "@/icons/MingcuteUser1Line.tsx";
 
 export const UserMenu = (): ReactNode => {
+  const { user, logout } = useContext(AuthContext);
+
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const handeLoginButtonClick = () => {
     setIsLoginOpen(true);
@@ -59,32 +64,36 @@ export const UserMenu = (): ReactNode => {
   );
   return (
     <>
-      <Button
-        variant="outline"
-        size="icon"
-        onClick={handeLoginButtonClick}
-        aria-label="Login"
-      >
-        <MingcuteUser1Line />
-      </Button>
-      <LoginDialog
-        isOpen={isLoginOpen}
-        onOpenChange={setIsLoginOpen}
-        RegisterButton={RegisterButton}
-        ResetButton={ResetButton}
-      />
-      <RegisterDialog
-        isOpen={isRegisterOpen}
-        onOpenChange={setIsRegisterOpen}
-        LoginButton={LoginButton}
-        ResetButton={ResetButton}
-      />
-      <ResetPassword
-        isOpen={isResetPassOpen}
-        onOpenChange={setIsResetPassOpen}
-        LoginButton={LoginButton}
-        RegisterButton={RegisterButton}
-      />
+      {user ? (
+        <UserDropdownMenu user={user} onLogout={logout} />
+      ) : (
+        <>
+          <Button
+            variant="outline"
+            size="icon"
+            onClick={handeLoginButtonClick}
+            aria-label="Login"
+            className="rounded-full"
+          >
+            <MingcuteUser1Line />
+          </Button>
+          <LoginDialog
+            isOpen={isLoginOpen}
+            onOpenChange={setIsLoginOpen}
+            extraButtons={[RegisterButton]}
+          />
+          <RegisterDialog
+            isOpen={isRegisterOpen}
+            onOpenChange={setIsRegisterOpen}
+            extraButtons={[LoginButton]}
+          />
+          <ResetPassword
+            isOpen={isResetPassOpen}
+            onOpenChange={setIsResetPassOpen}
+            extraButtons={[LoginButton, RegisterButton]}
+          />
+        </>
+      )}
     </>
   );
 };

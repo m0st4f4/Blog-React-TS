@@ -36,6 +36,7 @@ export const RegisterForm = ({
               <FieldLabel htmlFor={field.name}>Username</FieldLabel>
               <Input
                 {...field}
+                type="text"
                 id={field.name}
                 aria-invalid={fieldState.invalid}
                 aria-label={field.name}
@@ -52,6 +53,7 @@ export const RegisterForm = ({
               <FieldLabel htmlFor={field.name}>Email</FieldLabel>
               <Input
                 {...field}
+                type="text"
                 id={field.name}
                 aria-invalid={fieldState.invalid}
                 aria-label={field.name}
@@ -69,6 +71,7 @@ export const RegisterForm = ({
               <FieldLabel htmlFor={field.name}>Password</FieldLabel>
               <Input
                 id={field.name}
+                type="password"
                 aria-invalid={fieldState.invalid}
                 {...field}
                 aria-label={field.name}
