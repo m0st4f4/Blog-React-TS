@@ -12,6 +12,7 @@ import { DirectionProvider } from "@/components/ui/direction.tsx";
 
 import { ErrorPage } from "@/pages/ErrorPage/ErrorPage.tsx";
 
+import { AuthProvider } from "@/providers/AuthProvider/AuthProvider.tsx";
 import { SearchProvider } from "@/providers/SearchProvider.tsx";
 
 import App from "./App.tsx";
@@ -45,16 +46,18 @@ window.__TANSTACK_QUERY_CLIENT__ = queryClient;
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ErrorBoundary FallbackComponent={ErrorPage}>
-      <BrowserRouter>
-        <DirectionProvider dir="ltr">
-          <QueryClientProvider client={queryClient}>
-            <SearchProvider>
-              <App />
-              <ReactQueryDevtools initialIsOpen={false} />
-            </SearchProvider>
-          </QueryClientProvider>
-        </DirectionProvider>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <DirectionProvider dir="ltr">
+            <QueryClientProvider client={queryClient}>
+              <SearchProvider>
+                <App />
+                <ReactQueryDevtools initialIsOpen={false} />
+              </SearchProvider>
+            </QueryClientProvider>
+          </DirectionProvider>
+        </BrowserRouter>
+      </AuthProvider>
     </ErrorBoundary>
   </StrictMode>,
 );
