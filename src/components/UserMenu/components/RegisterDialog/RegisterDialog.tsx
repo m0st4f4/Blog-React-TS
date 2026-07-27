@@ -6,6 +6,7 @@ import { z } from "zod";
 
 import { RegisterForm } from "@/forms/RegisterForm/RegisterForm.tsx";
 import { RegisterSchema } from "@/schema/register-schema.ts";
+import { useTranslation } from "react-i18next";
 
 import {
   Dialog,
@@ -30,6 +31,7 @@ export const RegisterDialog = ({
   onOpenChange,
   extraButtons,
 }: Props): ReactNode => {
+  const { t } = useTranslation();
   const { mutate, isPending, isSuccess, data, isError, error, reset } =
     useRegisterUser();
 
@@ -53,7 +55,7 @@ export const RegisterDialog = ({
       <DialogTrigger />
       <DialogContent className="sm:max-w-sm">
         <DialogHeader>
-          <DialogTitle>Create Account</DialogTitle>
+          <DialogTitle>{t("RegisterDialog.title")}</DialogTitle>
         </DialogHeader>
         {isError && (
           <div className="mt-4">
@@ -63,8 +65,8 @@ export const RegisterDialog = ({
         {isSuccess ? (
           <div className="text-center flex flex-col items-center">
             <p className="p-2 w-full rounded-lg">
-              <strong>{data?.user.username}</strong> , Your account has been
-              created. Log in to your account from the link below
+              <strong>{data?.user.username}</strong> ,{" "}
+              {t("RegisterDialog.successMsg")}
             </p>
           </div>
         ) : (

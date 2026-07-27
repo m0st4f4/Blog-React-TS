@@ -62,4 +62,35 @@ export const fa = {
 
   // CategoryHeader
   "CategoryHeader.noResult": "دسته بندی یافت نشد",
+
+  // UserMenu
+  "UserMenu.loginButton": "ورود به حساب کاربری",
+  "UserMenu.registerButton": "ساخت حساب جدید",
+  "UserMenu.resetPassButton": "بازنشانی کلمه عبور",
+
+  // UserDropdownMenu
+  "UserDropdownMenu.account": "حساب کاربری",
+  "UserDropdownMenu.profile": "پروفایل",
+  "UserDropdownMenu.signOut": "خروج",
+  // LoginDialog
+  "loginDialog.title": "ورود به حساب کاربری",
+  "loginDialog.successMsg": "با موفقیت وارد شدید",
+
+  //LoginForm
+  "LoginForm.userName": "نام کاربری",
+  "LoginForm.password": "کلمه عبور",
+  "LoginForm.login": "ورود",
+  "LoginForm.reset": "ریست",
+
+  // RegisterDialog
+  "RegisterDialog.title": "ساخت حساب کاربری",
+  "RegisterDialog.successMsg":
+    "حساب کاربری شما با موفقیت ساخته شد. از طریق لینک زیر وارد حساب کاربری خود شوید",
+
+  // RegisterForm
+  "RegisterForm.username": "نام کاربری",
+  "RegisterForm.email": "ایمیل",
+  "RegisterForm.password": "کلمه عبور",
+  "RegisterForm.register": "ثبت نام",
+  "RegisterForm.reset": "ریست",
 };

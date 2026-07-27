@@ -3,6 +3,7 @@ import { type ComponentProps, type ReactNode } from "react";
 import { Controller, type UseFormReturn } from "react-hook-form";
 
 import type { LoginUserType } from "@/services/userService.ts";
+import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -25,6 +26,7 @@ export const LoginForm = ({
   isPending,
   ...otherProps
 }: Props): ReactNode => {
+  const { t } = useTranslation();
   return (
     <form onSubmit={onSubmit} {...otherProps}>
       <FieldGroup>
@@ -33,7 +35,9 @@ export const LoginForm = ({
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor={field.name}>Username</FieldLabel>
+              <FieldLabel htmlFor={field.name}>
+                {t("LoginForm.userName")}
+              </FieldLabel>
               <Input
                 {...field}
                 type="text"
@@ -50,7 +54,9 @@ export const LoginForm = ({
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor={field.name}>Password</FieldLabel>
+              <FieldLabel htmlFor={field.name}>
+                {t("LoginForm.password")}
+              </FieldLabel>
               <Input
                 {...field}
                 type="password"
@@ -72,16 +78,16 @@ export const LoginForm = ({
           }}
           disabled={isPending}
         >
-          Reset
+          {t("LoginForm.reset")}
         </Button>
         <Button variant="default" type="submit" disabled={isPending}>
           {isPending ? (
             <>
               <Spinner data-icon="inline-start" />
-              Login...
+              {t("LoginForm.login")}...
             </>
           ) : (
-            "Login"
+            t("LoginForm.login")
           )}
         </Button>
       </div>

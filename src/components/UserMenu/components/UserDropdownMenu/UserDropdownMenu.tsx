@@ -1,5 +1,7 @@
 import { type ReactNode } from "react";
 
+import { useTranslation } from "react-i18next";
+
 import {
   Avatar,
   AvatarFallback,
@@ -27,6 +29,7 @@ type Props = {
 };
 
 export const UserDropdownMenu = ({ user, onLogout }: Props): ReactNode => {
+  const { t } = useTranslation();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -59,10 +62,10 @@ export const UserDropdownMenu = ({ user, onLogout }: Props): ReactNode => {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Account</DropdownMenuLabel>
+          <DropdownMenuLabel>{t("UserDropdownMenu.account")}</DropdownMenuLabel>
           <DropdownMenuItem>
             <MingcuteUser1Line />
-            Profile
+            {t("UserDropdownMenu.profile")}
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
@@ -73,7 +76,7 @@ export const UserDropdownMenu = ({ user, onLogout }: Props): ReactNode => {
             className="cursor-pointer"
           >
             <MingcuteUploadLine />
-            Log out
+            {t("UserDropdownMenu.signOut")}
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

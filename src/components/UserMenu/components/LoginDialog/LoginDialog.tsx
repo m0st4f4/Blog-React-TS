@@ -6,6 +6,8 @@ import { z } from "zod";
 
 import { LoginForm } from "@/forms/LoginForm/LoginForm.tsx";
 import { LoginSchema } from "@/schema/login-schema.ts";
+import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
 
 import {
   Dialog,
@@ -28,7 +30,9 @@ export const LoginDialog = ({
   onOpenChange,
   extraButtons,
 }: Props): ReactNode => {
-  const { isPending, isError, error, reset, mutateAsync } = useLoginUser();
+  const { t } = useTranslation();
+  const { isPending, isError, error, reset, mutateAsync } =
+    useLoginUser();
   const form = useForm<Values>({
     defaultValues: { username: "", password: "" },
     resolver: zodResolver(LoginSchema),
@@ -36,6 +40,10 @@ export const LoginDialog = ({
   const handleFormSubmit: SubmitHandler<Values> = (values: Values) => {
     mutateAsync(values).then(() => {
       onOpenChange(false);
+      const message = t("loginDialog.successMsg");
+      toast.success(message, {
+        position: "bottom-right",
+      });
     });
   };
 
@@ -44,13 +52,14 @@ export const LoginDialog = ({
       open={isOpen}
       onOpenChange={(open) => {
         reset();
+        form.reset();
         onOpenChange(open);
       }}
     >
       <DialogTrigger />
       <DialogContent className="sm:max-w-sm">
         <DialogHeader>
-          <DialogTitle>Login to Your Account</DialogTitle>
+          <DialogTitle>{t("loginDialog.title")}</DialogTitle>
         </DialogHeader>
         {isError && (
           <div className="mt-4">

@@ -3,6 +3,7 @@ import { type ComponentProps, type ReactNode } from "react";
 import { Controller, type UseFormReturn } from "react-hook-form";
 
 import type { RegisterUserType } from "@/services/userService.ts";
+import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button.tsx";
 import {
@@ -25,6 +26,7 @@ export const RegisterForm = ({
   isPending,
   ...otherProps
 }: Props): ReactNode => {
+  const { t } = useTranslation();
   return (
     <form onSubmit={onSubmit} {...otherProps}>
       <FieldGroup>
@@ -33,7 +35,9 @@ export const RegisterForm = ({
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor={field.name}>Username</FieldLabel>
+              <FieldLabel htmlFor={field.name}>
+                {t("RegisterForm.username")}
+              </FieldLabel>
               <Input
                 {...field}
                 type="text"
@@ -50,7 +54,9 @@ export const RegisterForm = ({
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor={field.name}>Email</FieldLabel>
+              <FieldLabel htmlFor={field.name}>
+                {t("RegisterForm.email")}
+              </FieldLabel>
               <Input
                 {...field}
                 type="text"
@@ -68,7 +74,9 @@ export const RegisterForm = ({
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor={field.name}>Password</FieldLabel>
+              <FieldLabel htmlFor={field.name}>
+                {t("RegisterForm.password")}
+              </FieldLabel>
               <Input
                 id={field.name}
                 type="password"
@@ -88,16 +96,16 @@ export const RegisterForm = ({
           onClick={() => form.reset()}
           disabled={isPending}
         >
-          Reset
+          {t("RegisterForm.reset")}
         </Button>
         <Button variant="default" type="submit" disabled={isPending}>
           {isPending ? (
             <>
               <Spinner data-icon="inline-start" />
-              Registering...
+              {t("RegisterForm.register")}...
             </>
           ) : (
-            "Register"
+            t("RegisterForm.register")
           )}
         </Button>
       </div>
