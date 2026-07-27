@@ -6,11 +6,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher/LanguageSwitcher
 import { Navbar } from "@/components/Navbar/Navbar.tsx";
 import { SearchForm } from "@/components/SearchForm/SearchForm.tsx";
 import { SiteLogo } from "@/components/SiteLogo/SiteLogo.tsx";
-import { Button } from "@/components/ui/button";
-
-import MingcuteFacebookFill from "@/icons/MingcuteFacebookFill.tsx";
-import MingcuteInstagramLine from "@/icons/MingcuteInstagramLine.tsx";
-import MingcuteTwitterFill from "@/icons/MingcuteTwitterFill.tsx";
+import { SocialNavigation } from "@/components/SocialNavigation/SocialNavigation.tsx";
 
 import { UserMenu } from "../UserMenu/UserMenu";
 
@@ -20,32 +16,7 @@ export const Header = (): ReactNode => {
       <div className="container pb-2.5 flex items-center justify-between">
         <SiteLogo />
         <div className="flex items-center justify-center gap-2">
-          <div className="flex items-center">
-            <Button
-              size="lg"
-              variant="link"
-              className="hover:text-accent"
-              title="facebook"
-            >
-              <MingcuteFacebookFill />
-            </Button>
-            <Button
-              size="lg"
-              variant="link"
-              className="hover:text-accent"
-              title="Twitter"
-            >
-              <MingcuteTwitterFill />
-            </Button>
-            <Button
-              size="lg"
-              variant="link"
-              className="hover:text-accent"
-              title="Instagram"
-            >
-              <MingcuteInstagramLine />
-            </Button>
-          </div>
+          <SocialNavigation className="flex gap-2" iconClass="w-4 h-4" />
           <SearchForm />
           <LanguageSwitcher />
           <UserMenu />
