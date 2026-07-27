@@ -1,3 +1,10 @@
+# [1.0.0-dev.24](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.23...v1.0.0-dev.24) (2026-07-27)
+
+
+### Features
+
+* **header:** revamp header and top navigation [#88](https://github.com/m0st4f4/Blog-React-TS/issues/88) ([#90](https://github.com/m0st4f4/Blog-React-TS/issues/90)) ([df9e44e](https://github.com/m0st4f4/Blog-React-TS/commit/df9e44ee7c39c6c7a9af3c2e3b97453123a072cc))
+
 # [1.0.0-dev.23](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.22...v1.0.0-dev.23) (2026-07-27)
 
 
