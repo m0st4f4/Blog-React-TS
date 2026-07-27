@@ -1,6 +1,4 @@
-import type { ReactNode } from "react";
-
-import { Link } from "react-router";
+import { type ReactNode } from "react";
 
 import { socialNavigation } from "@/config/navigation.ts";
 import { useTranslation } from "react-i18next";
@@ -8,15 +6,12 @@ import { useTranslation } from "react-i18next";
 type Props = {
   className?: string;
 };
-export const FooterLogo = ({ className }: Props): ReactNode => {
+
+export const FooterAbout = ({ className = "" }: Props): ReactNode => {
   const { t } = useTranslation();
+
   return (
     <div className={className}>
-      <Link to="/">
-        <span className="text-3xl font-normal text-accent">
-          {t("site name")}
-        </span>
-      </Link>
       <div className="pt-4">
         <p>{t("footer.about")}</p>
       </div>

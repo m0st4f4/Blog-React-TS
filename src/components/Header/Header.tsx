@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
 import { topNavigation } from "@/config/navigation.ts";
-import { useTranslation } from "react-i18next";
 
 import { LanguageSwitcher } from "@/components/LanguageSwitcher/LanguageSwitcher.tsx";
 import { Navbar } from "@/components/Navbar/Navbar.tsx";
 import { SearchForm } from "@/components/SearchForm/SearchForm.tsx";
+import { SiteLogo } from "@/components/SiteLogo/SiteLogo.tsx";
 import { Button } from "@/components/ui/button";
 
 import MingcuteFacebookFill from "@/icons/MingcuteFacebookFill.tsx";
@@ -15,15 +15,10 @@ import MingcuteTwitterFill from "@/icons/MingcuteTwitterFill.tsx";
 import { UserMenu } from "../UserMenu/UserMenu";
 
 export const Header = (): ReactNode => {
-  const { t } = useTranslation();
   return (
     <header className="py-5">
       <div className="container pb-2.5 flex items-center justify-between">
-        <a href="/" className="no-underline flex items-end">
-          <h1 className="text-3xl font-normal text-primary font-heading m-0">
-            {t("site name")}
-          </h1>
-        </a>
+        <SiteLogo />
         <div className="flex items-center justify-center gap-2">
           <div className="flex items-center">
             <Button
