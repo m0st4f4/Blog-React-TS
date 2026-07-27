@@ -1,11 +1,11 @@
 import { NavLink } from "react-router";
 
+import { cn } from "@/lib/utils.ts";
 import { useTranslation } from "react-i18next";
 
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
@@ -16,23 +16,23 @@ type Props = {
   menuItems: TopNavigation[];
 };
 export const Navbar = ({ menuItems }: Props) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <NavigationMenu>
-      <NavigationMenuList>
+      <NavigationMenuList dir={i18n.dir()} className="gap-2">
         {menuItems.map((item) => (
           <NavigationMenuItem key={item.href}>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
+            <NavLink
+              to={item.href}
+              className={({ isActive }) => {
+                return cn(
+                  navigationMenuTriggerStyle(),
+                  isActive ? "text-accent bg-secondary" : "",
+                );
+              }}
             >
-              <NavLink
-                to={item.href}
-                className={({ isActive }) => (isActive ? " text-accent " : "")}
-              >
-                {t(item.titleKey)}
-              </NavLink>
-            </NavigationMenuLink>
+              {t(item.titleKey)}
+            </NavLink>
           </NavigationMenuItem>
         ))}
       </NavigationMenuList>

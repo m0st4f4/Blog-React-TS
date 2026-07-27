@@ -6,7 +6,10 @@ export const ar = {
   "SearchForm.Placeholder": "بحث...",
 
   // Top Navigation
-  "topnav.home": "الرئيسية",
+  "topNav.home": "الرئيسية",
+  "topNav.category": "التصنيفات",
+  "topNav.aboutUs": "من نحن",
+  "topNav.contactUs": "تواصل معنا",
 
   // Article Details
   "article.readTime": "قراءة {{count}} دقائق",
@@ -59,34 +62,35 @@ export const ar = {
   // CategoryHeader
   "CategoryHeader.noResult": "No category found",
 
-// UserMenu
+  // UserMenu
   "UserMenu.loginButton": "تسجيل الدخول إلى الحساب",
   "UserMenu.registerButton": "إنشاء حساب جديد",
   "UserMenu.resetPassButton": "إعادة تعيين كلمة المرور",
 
-// UserDropdownMenu
+  // UserDropdownMenu
   "UserDropdownMenu.account": "الحساب",
   "UserDropdownMenu.profile": "الملف الشخصي",
   "UserDropdownMenu.signOut": "تسجيل الخروج",
 
-// LoginDialog
+  // LoginDialog
   "loginDialog.title": "تسجيل الدخول إلى حسابك",
   "loginDialog.successMsg": "تم تسجيل الدخول بنجاح",
 
-// LoginForm
+  // LoginForm
   "LoginForm.userName": "اسم المستخدم",
   "LoginForm.password": "كلمة المرور",
   "LoginForm.login": "تسجيل الدخول",
   "LoginForm.reset": "إعادة تعيين",
 
-// RegisterDialog
+  // RegisterDialog
   "RegisterDialog.title": "إنشاء حساب",
-  "RegisterDialog.successMsg": "تم إنشاء حسابك. سجل الدخول إلى حسابك من الرابط أدناه",
+  "RegisterDialog.successMsg":
+    "تم إنشاء حسابك. سجل الدخول إلى حسابك من الرابط أدناه",
 
-// RegisterForm
+  // RegisterForm
   "RegisterForm.username": "اسم المستخدم",
   "RegisterForm.email": "البريد الإلكتروني",
   "RegisterForm.password": "كلمة المرور",
   "RegisterForm.register": "تسجيل",
-  "RegisterForm.reset": "إعادة تعيين"
+  "RegisterForm.reset": "إعادة تعيين",
 };

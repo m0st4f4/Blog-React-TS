@@ -49,7 +49,7 @@ createRoot(document.getElementById("root")!).render(
     <ErrorBoundary FallbackComponent={ErrorPage}>
       <AuthProvider>
         <BrowserRouter>
-          <DirectionProvider dir="ltr">
+          <DirectionProvider dir="rtl">
             <QueryClientProvider client={queryClient}>
               <SearchProvider>
                 <App />
