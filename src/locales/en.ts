@@ -63,4 +63,35 @@ export const en = {
 
   // CategoryHeader
   "CategoryHeader.noResult": "No category found",
+
+  // UserMenu
+  "UserMenu.loginButton": "Login to account",
+  "UserMenu.registerButton": "Create new account",
+  "UserMenu.resetPassButton": "Reset Password",
+
+  // UserDropdownMenu
+  "UserDropdownMenu.account": "Account",
+  "UserDropdownMenu.profile": "Profile",
+  "UserDropdownMenu.signOut": "Sign out",
+  // LoginDialog
+  "loginDialog.title": "Login to Your Account",
+  "loginDialog.successMsg": "You are logged in successfully",
+
+  //LoginForm
+  "LoginForm.userName": "Username",
+  "LoginForm.password": "Password",
+  "LoginForm.login": "Login",
+  "LoginForm.reset": "Reset",
+
+  // RegisterDialog
+  "RegisterDialog.title": "Create Account",
+  "RegisterDialog.successMsg":
+    "Your account has been created. Log in to your account from the link below",
+
+  // RegisterForm
+  "RegisterForm.username": "Username",
+  "RegisterForm.email": "Email",
+  "RegisterForm.password": "Password",
+  "RegisterForm.register": "Register",
+  "RegisterForm.reset": "Reset",
 };

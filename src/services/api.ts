@@ -17,7 +17,8 @@ const apiConfig: AxiosRequestConfig = {
 const apiInstance: AxiosInstance = axios.create(apiConfig);
 
 const refreshUserToken = async () => {
-  const response = await axios.post("/api/auth/refresh-token");
+  const baseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
+  const response = await axios.post(`${baseURL}/auth/refresh`);
   return response.data.token;
 };
 apiInstance.interceptors.request.use(
@@ -40,27 +41,45 @@ apiInstance.interceptors.response.use(
     return response;
   },
   async (error: AxiosError) => {
-    if (error.response?.status === 401) {
-      console.warn("توکن منقضی شده یا کاربر دسترسی ندارد. فرآیند رفرش توکن...");
+    const originalRequest = error.config as AxiosRequestConfig & {
+      _retry?: boolean;
+    };
 
-      try {
-        const newToken = await refreshUserToken();
-        localStorage.setItem("token", newToken);
-        if (error.config) {
-          error.config.headers["Authorization"] = `Bearer ${newToken}`;
-          return apiInstance.request(error.config);
+    if (error.response?.status === 401 && originalRequest) {
+      // Return error instead of get refresh token in login page
+      if (originalRequest.url?.includes("/auth/login")) {
+        return Promise.reject(error);
+      }
+
+      // Getting new token
+      if (!originalRequest._retry) {
+        originalRequest._retry = true;
+        console.warn(
+          "token is invalid , getting new token",
+        );
+
+        try {
+          const newToken = await refreshUserToken();
+          localStorage.setItem("token", newToken);
+
+          // Append new token to previous request
+          if (originalRequest.headers) {
+            originalRequest.headers["Authorization"] = `Bearer ${newToken}`;
+          }
+          return apiInstance.request(originalRequest);
+        } catch {
+          // If catch error redirect to login page
+          window.location.href = "/login";
         }
-      } catch {
-        window.location.href = "/login";
       }
     }
 
     if (error.response?.status && error.response.status >= 500) {
-      console.error("خطای سرور! لطفاً بعداً تلاش کنید.");
+      console.error("Server Error. try again later");
     }
 
     if (error.message === "Network Error") {
-      console.error("اتصال اینترنت خود را بررسی کنید.");
+      console.error("Check your internet connection");
     }
 
     return Promise.reject(error);

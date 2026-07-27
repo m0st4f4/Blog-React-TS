@@ -9,9 +9,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import { DirectionProvider } from "@/components/ui/direction.tsx";
+import { Toaster } from "@/components/ui/sonner.tsx";
 
 import { ErrorPage } from "@/pages/ErrorPage/ErrorPage.tsx";
 
+import { AuthProvider } from "@/providers/AuthProvider/AuthProvider.tsx";
 import { SearchProvider } from "@/providers/SearchProvider.tsx";
 
 import App from "./App.tsx";
@@ -45,16 +47,19 @@ window.__TANSTACK_QUERY_CLIENT__ = queryClient;
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ErrorBoundary FallbackComponent={ErrorPage}>
-      <BrowserRouter>
-        <DirectionProvider dir="ltr">
-          <QueryClientProvider client={queryClient}>
-            <SearchProvider>
-              <App />
-              <ReactQueryDevtools initialIsOpen={false} />
-            </SearchProvider>
-          </QueryClientProvider>
-        </DirectionProvider>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <DirectionProvider dir="ltr">
+            <QueryClientProvider client={queryClient}>
+              <SearchProvider>
+                <App />
+                <Toaster />
+                <ReactQueryDevtools initialIsOpen={false} />
+              </SearchProvider>
+            </QueryClientProvider>
+          </DirectionProvider>
+        </BrowserRouter>
+      </AuthProvider>
     </ErrorBoundary>
   </StrictMode>,
 );

@@ -10,6 +10,8 @@ import { ContactPage } from "@/pages/ContactPage/ContactPage.tsx";
 import { HomePage } from "@/pages/HomePage/HomePage.tsx";
 import { NotFoundPage } from "@/pages/NotFoundPage/NotFoundPage.tsx";
 import { SearchPage } from "@/pages/SearchPage/SearchPage.tsx";
+import { RegisterPage } from "@/pages/RegisterPage/RegisterPage.tsx";
+import { LoginPage } from "@/pages/LoginPage/LoginPage.tsx";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="aboutus" element={<AboutPage />} />
         <Route path="contactus" element={<ContactPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="login" element={<LoginPage />} />
         <Route path="article" element={<SidebarLayout />}>
           <Route path=":id" element={<ArticlePage />} />
         </Route>
