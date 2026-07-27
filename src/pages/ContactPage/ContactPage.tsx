@@ -2,7 +2,7 @@ import { type ReactNode } from "react";
 
 export const ContactPage = (): ReactNode => {
   return (
-    <div className="container">
+    <div>
       <h1>Contact Us</h1>
     </div>
   );

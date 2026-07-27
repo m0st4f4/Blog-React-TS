@@ -7,9 +7,9 @@ import { Header } from "@/components/Header/Header.tsx";
 
 export const RootLayout = (): ReactNode => {
   return (
-    <div className="">
+    <div>
       <Header />
-      <main>
+      <main className="container">
         <Outlet />
       </main>
       <Footer />
