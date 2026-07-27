@@ -1,3 +1,10 @@
+# [1.0.0-dev.22](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.21...v1.0.0-dev.22) (2026-07-27)
+
+
+### Features
+
+* **auth:** implement authentication of user [#79](https://github.com/m0st4f4/Blog-React-TS/issues/79)  ([#83](https://github.com/m0st4f4/Blog-React-TS/issues/83)) ([da29c3d](https://github.com/m0st4f4/Blog-React-TS/commit/da29c3d9f92c64bd973111c11aa1cd0ba80afe4b))
+
 # [1.0.0-dev.21](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.20...v1.0.0-dev.21) (2026-07-11)
 
 
