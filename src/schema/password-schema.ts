@@ -1,13 +1,3 @@
-import { z } from "zod";
+import { z } from "@/i18n";
 
-
-
-
-
-
-
-export const PasswordSchema = z
-  .string()
-  .trim()
-  .nonempty("Password can't be blank")
-  .min(6,"Password must be at least 6 characters");
+export const PasswordSchema = z.string().trim().nonempty().min(6);

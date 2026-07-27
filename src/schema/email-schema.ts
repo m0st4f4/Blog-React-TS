@@ -1,3 +1,3 @@
-import { z } from "zod";
+import { z } from "@/i18n";
 
-export const EmailSchema = z.email();
+export const EmailSchema = z.string().email()

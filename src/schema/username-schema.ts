@@ -1,13 +1,7 @@
-import { z } from "zod";
-
-
-
-
-
-
+import { z } from "@/i18n";
 
 export const UsernameSchema = z
   .string()
   .trim()
-  .nonempty("Username can't be blank")
-  .regex(/^[a-zA-Z0-9_]{3,20}$/, "Invalid Username");
+  .nonempty()
+  .regex(/^[a-zA-Z0-9_]{3,20}$/);
