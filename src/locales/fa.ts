@@ -6,7 +6,10 @@ export const fa = {
   "SearchForm.Placeholder": "جستجو...",
 
   // Top Navigation
-  "topnav.home": "خانه",
+  "topNav.home": "خانه",
+  "topNav.category": "دسته بندی",
+  "topNav.aboutUs": "درباره ما",
+  "topNav.contactUs": "تماس با ما",
 
   // Article Details
   "article.readTime": "خواندن {{count}} دقیقه",

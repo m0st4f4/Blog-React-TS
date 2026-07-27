@@ -6,7 +6,10 @@ export const en = {
   "SearchForm.Placeholder": "Search...",
 
   // Top Navigation
-  "topnav.home": "Home",
+  "topNav.home": "Home",
+  "topNav.category": "Category",
+  "topNav.aboutUs": "About Us",
+  "topNav.contactUs": "Contact Us",
 
   // Article Details
   "article.readTime": "{{count}} min read",

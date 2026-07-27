@@ -9,8 +9,20 @@ import type {
 
 export const topNavigation: TopNavigation[] = [
   {
-    titleKey: "topnav.home",
+    titleKey: "topNav.home",
     href: "/",
+  },
+  {
+    titleKey: "topNav.category",
+    href: "/category",
+  },
+  {
+    titleKey: "topNav.aboutUs",
+    href: "/aboutus",
+  },
+  {
+    titleKey: "topNav.contactUs",
+    href: "/contactus",
   },
 ];
 

@@ -23,8 +23,8 @@ export const Header = (): ReactNode => {
         </div>
       </div>
 
-      <div className="bg-secondary p-4 shadow-sm">
-        <div className="container flex justify-start ">
+      <div className="p-4 shadow-xs">
+        <div className="container">
           <Navbar menuItems={topNavigation} />
         </div>
       </div>
