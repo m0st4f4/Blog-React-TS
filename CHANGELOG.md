@@ -1,3 +1,10 @@
+# [1.0.0-dev.23](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.22...v1.0.0-dev.23) (2026-07-27)
+
+
+### Bug Fixes
+
+* move container class from pages to rootLayout [#80](https://github.com/m0st4f4/Blog-React-TS/issues/80) ([#86](https://github.com/m0st4f4/Blog-React-TS/issues/86)) ([7479a56](https://github.com/m0st4f4/Blog-React-TS/commit/7479a56c40e39405672e20793ed80f832376ed77))
+
 # [1.0.0-dev.22](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.21...v1.0.0-dev.22) (2026-07-27)
 
 
