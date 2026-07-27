@@ -7,8 +7,8 @@ import { SiteLogo } from "@/components/SiteLogo/SiteLogo.tsx";
 
 export const Footer = (): ReactNode => {
   return (
-    <footer>
-      <div className="container py-12 mt-4 border-t  border-t-border">
+    <footer className="border-t">
+      <div className="container py-12 mt-4 ">
         <div className="flex gap-4 justify-between">
           <div className="basis-1/4">
             <SiteLogo />
@@ -17,7 +17,7 @@ export const Footer = (): ReactNode => {
           <FooterNavigationBar className="basis-3/4 flex gap-4" />
         </div>
       </div>
-      <Copyright className="container text-center mt-4 border-t border-t-border py-4 text-sm" />
+      <Copyright className="text-center mt-4 border-t py-4 text-sm" />
     </footer>
   );
 };
