@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
-    "api": "node --watch server.cjs"
+    "api": "node --watch server.cjs",
+    "test": "vitest --ui",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.9",
@@ -53,6 +55,9 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^12.0.8",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.5",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/babel__core": "^7.20.5",
     "@types/dompurify": "^3.0.5",
@@ -60,6 +65,8 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/coverage-v8": "^4.1.11",
+    "@vitest/ui": "^4.1.11",
     "babel-plugin-react-compiler": "^1.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^10.3.0",
@@ -67,12 +74,14 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.6.0",
     "husky": "^9.1.7",
+    "jsdom": "^30.0.1",
     "json-server": "^0.17.4",
     "prettier": "^3.8.3",
     "semantic-release": "^25.0.5",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.59.2",
-    "vite": "^8.0.12"
+    "vite": "^8.0.12",
+    "vitest": "^4.1.11"
   },
   "config": {
     "commitizen": {
