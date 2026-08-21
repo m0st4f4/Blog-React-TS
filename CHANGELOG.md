@@ -1,3 +1,10 @@
+# [1.0.0-dev.25](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.24...v1.0.0-dev.25) (2026-08-21)
+
+
+### Features
+
+* **test:** install and config unite test [#93](https://github.com/m0st4f4/Blog-React-TS/issues/93) ([#94](https://github.com/m0st4f4/Blog-React-TS/issues/94)) ([2cccc59](https://github.com/m0st4f4/Blog-React-TS/commit/2cccc59514bf03a39e9b3c1d429591a98f14d8f7))
+
 # [1.0.0-dev.24](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.23...v1.0.0-dev.24) (2026-07-27)
 
 
