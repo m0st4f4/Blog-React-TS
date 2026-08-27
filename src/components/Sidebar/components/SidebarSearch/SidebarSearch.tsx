@@ -12,7 +12,7 @@ type Props = {
 export const SidebarSearch = ({ className = "" }: Props): ReactNode => {
   const { t } = useTranslation();
   return (
-    <SidebarGroup className={className} title={t("SidebarSearch.title")}>
+    <SidebarGroup className={className} title={t("sidebar.search.title")}>
       <SearchForm />
     </SidebarGroup>
   );

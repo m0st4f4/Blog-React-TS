@@ -40,7 +40,7 @@ export const LoginDialog = ({
   const handleFormSubmit: SubmitHandler<Values> = (values: Values) => {
     mutateAsync(values).then(() => {
       onOpenChange(false);
-      const message = t("loginDialog.successMsg");
+      const message = t("auth.login.successMsg");
       toast.success(message, {
         position: "bottom-right",
       });
@@ -59,7 +59,7 @@ export const LoginDialog = ({
       <DialogTrigger />
       <DialogContent className="sm:max-w-sm">
         <DialogHeader>
-          <DialogTitle>{t("loginDialog.title")}</DialogTitle>
+          <DialogTitle>{t("auth.login.title")}</DialogTitle>
         </DialogHeader>
         {isError && (
           <div className="mt-4">

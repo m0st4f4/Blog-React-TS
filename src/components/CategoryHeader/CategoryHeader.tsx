@@ -31,7 +31,7 @@ export const CategoryHeader = ({
   if (!data) {
     return (
       <p className={cn("text-center", className)}>
-        {t("CategoryHeader.noResult")}
+        {t("category.noResult")}
       </p>
     );
   }

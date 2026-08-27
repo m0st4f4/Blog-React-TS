@@ -14,7 +14,7 @@ export const FooterAbout = ({ className = "" }: Props): ReactNode => {
   return (
     <div className={className}>
       <div className="pt-4">
-        <p>{t("footer.about")}</p>
+        <p>{t("footer.about.description")}</p>
       </div>
       <SocialNavigation className="flex gap-2 mt-4" iconClass="w-6 h-6" />
     </div>

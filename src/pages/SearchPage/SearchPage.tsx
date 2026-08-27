@@ -25,7 +25,7 @@ export const SearchPage = ({ className = "" }: Props): ReactNode => {
   useEffect(() => {
     setQuery(query);
     document.title =
-      t("SearchPage.title", { siteName: t("site name") }) +
+      t("page.search.title", { siteName: t("common.siteName") }) +
       " " +
       query?.trim().toLowerCase();
 
@@ -37,7 +37,7 @@ export const SearchPage = ({ className = "" }: Props): ReactNode => {
   return (
     <div className={className}>
       <h1 className="text-center text-2xl mb-8">
-        <span> {t("SearchPage.heading")}</span>
+        <span> {t("page.search.heading")}</span>
         &nbsp;
         <span className="font-bold ms-1">{query}</span>
       </h1>

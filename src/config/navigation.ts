@@ -9,31 +9,31 @@ import type {
 
 export const topNavigation: TopNavigation[] = [
   {
-    titleKey: "topNav.home",
+    titleKey: "nav.top.home",
     href: "/",
   },
   {
-    titleKey: "topNav.category",
+    titleKey: "nav.top.category",
     href: "/category",
   },
   {
-    titleKey: "topNav.aboutUs",
+    titleKey: "nav.top.aboutUs",
     href: "/aboutus",
   },
   {
-    titleKey: "topNav.contactUs",
+    titleKey: "nav.top.contactUs",
     href: "/contactus",
   },
 ];
 
 export const socialNavigation: SocialNavigationType[] = [
   {
-    titleKey: "socialnav.linkedin",
+    titleKey: "nav.social.linkedin",
     href: "https://www.linkedin.com/in/seyyed-mostafa-hosseini/",
     icon: MingcuteLinkedinFill,
   },
   {
-    titleKey: "socialnav.github",
+    titleKey: "nav.social.github",
     href: "https://github.com/m0st4f4",
     icon: MingcuteGithub2Fill,
   },
@@ -41,56 +41,56 @@ export const socialNavigation: SocialNavigationType[] = [
 
 export const FooterNavigation: FooterNavigationType[] = [
   {
-    groupTitleKey: "footerNav.technology",
+    groupTitleKey: "nav.footer.technology" as const,
     items: [
       {
-        titleKey: "footerNav.ai",
+        titleKey: "nav.footer.ai" as const,
         href: "/category/ai",
       },
       {
-        titleKey: "footerNav.software",
+        titleKey: "nav.footer.software" as const,
         href: "/category/software",
       },
       {
-        titleKey: "footerNav.game",
+        titleKey: "nav.footer.game" as const,
         href: "/category/game",
       },
       {
-        titleKey: "footerNav.security",
+        titleKey: "nav.footer.security" as const,
         href: "/category/security",
       },
     ],
   },
   {
-    groupTitleKey: "footerNav.tutorial",
+    groupTitleKey: "nav.footer.tutorial" as const,
     items: [
       {
-        titleKey: "footerNav.reactTutorial",
+        titleKey: "nav.footer.reactTutorial" as const,
         href: "/category/react",
       },
       {
-        titleKey: "footerNav.aiTutorial",
+        titleKey: "nav.footer.aiTutorial" as const,
         href: "/category/ai",
       },
       {
-        titleKey: "footerNav.linuxTutorial",
+        titleKey: "nav.footer.linuxTutorial" as const,
         href: "/category/linux",
       },
     ],
   },
   {
-    groupTitleKey: "footerNav.usefulLinks",
+    groupTitleKey: "nav.footer.usefulLinks" as const,
     items: [
       {
-        titleKey: "footerNav.home",
+        titleKey: "nav.footer.home" as const,
         href: "/",
       },
       {
-        titleKey: "footerNav.aboutUs",
+        titleKey: "nav.footer.aboutUs" as const,
         href: "/aboutUs",
       },
       {
-        titleKey: "footerNav.contactUs",
+        titleKey: "nav.footer.contactUs" as const,
         href: "/contactUs",
       },
     ],

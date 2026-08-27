@@ -55,7 +55,7 @@ export const RegisterDialog = ({
       <DialogTrigger />
       <DialogContent className="sm:max-w-sm">
         <DialogHeader>
-          <DialogTitle>{t("RegisterDialog.title")}</DialogTitle>
+          <DialogTitle>{t("auth.register.title")}</DialogTitle>
         </DialogHeader>
         {isError && (
           <div className="mt-4">
@@ -66,7 +66,7 @@ export const RegisterDialog = ({
           <div className="text-center flex flex-col items-center">
             <p className="p-2 w-full rounded-lg">
               <strong>{data?.user.username}</strong> ,{" "}
-              {t("RegisterDialog.successMsg")}
+              {t("auth.register.successMsg")}
             </p>
           </div>
         ) : (

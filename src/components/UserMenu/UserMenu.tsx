@@ -1,10 +1,6 @@
 import { type ReactNode, useContext, useState } from "react";
 
-
-
 import { useTranslation } from "react-i18next";
-
-
 
 import { LoginDialog } from "@/components/UserMenu/components/LoginDialog/LoginDialog.tsx";
 import { RegisterDialog } from "@/components/UserMenu/components/RegisterDialog/RegisterDialog.tsx";
@@ -12,135 +8,9 @@ import { UserDropdownMenu } from "@/components/UserMenu/components/UserDropdownM
 import { ResetPassword } from "@/components/UserMenu/components/resetPassword/ResetPassword.tsx";
 import { Button } from "@/components/ui/button.tsx";
 
-
-
 import { AuthContext } from "@/context/auth-context.ts";
 
-
-
 import MingcuteUser1Line from "@/icons/MingcuteUser1Line.tsx";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export const UserMenu = (): ReactNode => {
   const { user, logout } = useContext(AuthContext);
@@ -172,7 +42,7 @@ export const UserMenu = (): ReactNode => {
       className="justify-start"
       onClick={handeLoginButtonClick}
     >
-      {t("UserMenu.loginButton")}
+      {t("auth.actions.loginButton")}
     </Button>
   );
   const RegisterButton = (
@@ -181,7 +51,7 @@ export const UserMenu = (): ReactNode => {
       className="justify-start"
       onClick={handeRegisterButtonClick}
     >
-      {t("UserMenu.registerButton")}
+      {t("auth.actions.registerButton")}
     </Button>
   );
 
@@ -191,7 +61,7 @@ export const UserMenu = (): ReactNode => {
       className="justify-start"
       onClick={handelResetPassButtonClick}
     >
-      {t("UserMenu.resetPassButton")}
+      {t("auth.actions.resetPassButton")}
     </Button>
   );
   return (

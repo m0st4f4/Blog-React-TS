@@ -1,51 +1,27 @@
 import { type ChangeEvent, type SyntheticEvent, useContext } from "react";
 
-
-
 import { useNavigate } from "react-router";
-
-
 
 import { cn } from "@/lib/utils.ts";
 import { useTranslation } from "react-i18next";
 
-
-
-import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/components/ui/input-group.tsx";
-
-
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+} from "@/components/ui/input-group.tsx";
 
 import { SearchContext } from "@/context/search-context.ts";
 
-
-
 import MingcuteCloseLine from "@/icons/MingcuteCloseLine.tsx";
 import MingcuteSearch2Line from "@/icons/MingcuteSearch2Line.tsx";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 export const SearchForm = () => {
   const { query, setQuery } = useContext(SearchContext);
 
   const { t } = useTranslation();
   const navigate = useNavigate();
-
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const input = e.target.value;
@@ -63,7 +39,7 @@ export const SearchForm = () => {
     >
       <InputGroup className="max-w-xs">
         <InputGroupInput
-          placeholder={t("SearchForm.Placeholder")}
+          placeholder={t("search.placeholder")}
           value={query}
           onChange={handleInputChange}
         />

@@ -22,13 +22,13 @@ export const ArticlePage = (): ReactNode => {
     if (error?.response?.status === 404) {
       return (
         <div className="text-lg text-center p-5">
-          <p>{t("articlePage.notfound")}</p>
+          <p>{t("page.article.notfound")}</p>
         </div>
       );
     }
     return (
       <div className="text-lg text-center p-5">
-        <p>{t("articlePage.articleError")}</p>
+        <p>{t("page.article.articleError")}</p>
         <p>{error?.message}</p>
       </div>
     );

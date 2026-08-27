@@ -2,6 +2,8 @@ import { type ReactNode } from "react";
 
 import { Link } from "react-router";
 
+import { useTranslation } from "react-i18next";
+
 import { SidebarGroup } from "@/components/Sidebar/components/SidebarGroup/SidebarGroup.tsx";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -13,13 +15,14 @@ type Props = {
 
 export const SidebarCategories = ({ className }: Props): ReactNode => {
   const { data, isPending, isError } = useGetCategories();
+  const { t } = useTranslation();
 
   if (isError) {
     return;
   }
 
   return (
-    <SidebarGroup title="categories" className={className}>
+    <SidebarGroup title={t("sidebar.category.title")} className={className}>
       <ul>
         {isPending
           ? Array.from({ length: 5 }).map((_, index) => {

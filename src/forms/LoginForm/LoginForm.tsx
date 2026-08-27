@@ -36,7 +36,7 @@ export const LoginForm = ({
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
               <FieldLabel htmlFor={field.name}>
-                {t("LoginForm.userName")}
+                {t("auth.fields.userName")}
               </FieldLabel>
               <Input
                 {...field}
@@ -55,7 +55,7 @@ export const LoginForm = ({
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
               <FieldLabel htmlFor={field.name}>
-                {t("LoginForm.password")}
+                {t("auth.fields.password")}
               </FieldLabel>
               <Input
                 {...field}
@@ -78,16 +78,16 @@ export const LoginForm = ({
           }}
           disabled={isPending}
         >
-          {t("LoginForm.reset")}
+          {t("auth.actions.reset")}
         </Button>
         <Button variant="default" type="submit" disabled={isPending}>
           {isPending ? (
             <>
               <Spinner data-icon="inline-start" />
-              {t("LoginForm.login")}...
+              {t("auth.actions.login")}...
             </>
           ) : (
-            t("LoginForm.login")
+            t("auth.actions.login")
           )}
         </Button>
       </div>

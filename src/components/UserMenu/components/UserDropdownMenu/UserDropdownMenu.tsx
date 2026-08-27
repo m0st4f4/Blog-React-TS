@@ -62,10 +62,10 @@ export const UserDropdownMenu = ({ user, onLogout }: Props): ReactNode => {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuLabel>{t("UserDropdownMenu.account")}</DropdownMenuLabel>
+          <DropdownMenuLabel>{t("auth.actions.account")}</DropdownMenuLabel>
           <DropdownMenuItem>
             <MingcuteUser1Line />
-            {t("UserDropdownMenu.profile")}
+            {t("auth.actions.profile")}
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
@@ -76,7 +76,7 @@ export const UserDropdownMenu = ({ user, onLogout }: Props): ReactNode => {
             className="cursor-pointer"
           >
             <MingcuteUploadLine />
-            {t("UserDropdownMenu.signOut")}
+            {t("auth.actions.signOut")}
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>
