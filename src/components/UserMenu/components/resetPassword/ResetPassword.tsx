@@ -1,9 +1,10 @@
 import { type ReactNode } from "react";
 
+import { useTranslation } from "react-i18next";
+
 import { Button } from "@/components/ui/button.tsx";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogFooter,
   DialogHeader,
@@ -25,17 +26,19 @@ export const ResetPassword = ({
   onOpenChange,
   extraButtons,
 }: Props): ReactNode => {
+  const { t } = useTranslation();
+
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <form>
         <DialogTrigger />
         <DialogContent className="sm:max-w-sm">
           <DialogHeader>
-            <DialogTitle>Create Account</DialogTitle>
+            <DialogTitle>{t("auth.resetPass.title")}</DialogTitle>
           </DialogHeader>
           <FieldGroup>
             <Field>
-              <Label htmlFor="username">Email</Label>
+              <Label htmlFor="username">{t("auth.fields.email")}</Label>
               <Input
                 id="email"
                 name="email"
@@ -50,8 +53,7 @@ export const ResetPassword = ({
             </Field>
           </FieldGroup>
           <DialogFooter>
-            <DialogClose>Close</DialogClose>
-            <Button type="submit">Reset password</Button>
+            <Button type="submit">{t("auth.actions.reset")}</Button>
           </DialogFooter>
         </DialogContent>
       </form>

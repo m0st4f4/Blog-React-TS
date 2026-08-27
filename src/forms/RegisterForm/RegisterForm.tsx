@@ -36,7 +36,7 @@ export const RegisterForm = ({
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
               <FieldLabel htmlFor={field.name}>
-                {t("RegisterForm.username")}
+                {t("auth.fields.userName")}
               </FieldLabel>
               <Input
                 {...field}
@@ -55,7 +55,7 @@ export const RegisterForm = ({
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
               <FieldLabel htmlFor={field.name}>
-                {t("RegisterForm.email")}
+                {t("auth.fields.email")}
               </FieldLabel>
               <Input
                 {...field}
@@ -75,7 +75,7 @@ export const RegisterForm = ({
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
               <FieldLabel htmlFor={field.name}>
-                {t("RegisterForm.password")}
+                {t("auth.fields.password")}
               </FieldLabel>
               <Input
                 id={field.name}
@@ -96,16 +96,16 @@ export const RegisterForm = ({
           onClick={() => form.reset()}
           disabled={isPending}
         >
-          {t("RegisterForm.reset")}
+          {t("auth.actions.reset")}
         </Button>
         <Button variant="default" type="submit" disabled={isPending}>
           {isPending ? (
             <>
               <Spinner data-icon="inline-start" />
-              {t("RegisterForm.register")}...
+              {t("auth.actions.register")}...
             </>
           ) : (
-            t("RegisterForm.register")
+            t("auth.actions.register")
           )}
         </Button>
       </div>

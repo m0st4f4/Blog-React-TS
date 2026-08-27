@@ -13,7 +13,7 @@ export const SiteLogo = ({ className }: Props): ReactNode => {
     <div className={className}>
       <Link to="/">
         <span className="text-3xl font-bold text-shadow-2xs text-accent">
-          {t("site name")}
+          {t("common.siteName")}
         </span>
       </Link>
     </div>

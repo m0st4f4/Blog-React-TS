@@ -1,100 +1,121 @@
 export const en = {
-  // global
-  "site name": "TechMag",
+  common: {
+    siteName: "TechMag",
+  },
 
-  // SearchForm
-  "SearchForm.Placeholder": "Search...",
+  search: {
+    placeholder: "Search...",
+  },
 
-  // Top Navigation
-  "topNav.home": "Home",
-  "topNav.category": "Category",
-  "topNav.aboutUs": "About Us",
-  "topNav.contactUs": "Contact Us",
+  nav: {
+    top: {
+      home: "Home",
+      category: "Category",
+      aboutUs: "About Us",
+      contactUs: "Contact Us",
+    },
+    social: {
+      linkedin: "LinkedIn",
+      github: "Github",
+    },
+    footer: {
+      technology: "Technology",
+      ai: "AI",
+      software: "Software",
+      game: "Game",
+      security: "Security",
+      tutorial: "Tutorial",
+      reactTutorial: "React",
+      aiTutorial: "AI",
+      linuxTutorial: "Linux",
+      usefulLinks: "Useful Links",
+      home: "Home",
+      aboutUs: "About Us",
+      contactUs: "Contact Us",
+    },
+  },
 
-  // Article Details
-  "article.readTime": "{{count}} min read",
-  "article.commentsCount": "{{count}} comments",
+  article: {
+    readTime: "{{count}} min read",
+    commentsCount: "{{count}} comments",
+  },
 
-  // Not Found Page
-  "notFoundPage.heading": "Page Not Found!",
-  "notFoundPage.description":
-    "Oops! It seems the link you followed is broken or this page no longer exists.",
-  "notFoundPage.backToHome": "Back to Home",
+  page: {
+    notFound: {
+      heading: "Page Not Found!",
+      description:
+        "Oops! It seems the link you followed is broken or this page no longer exists.",
+      backToHome: "Back to Home",
+    },
+    article: {
+      notfound:
+        "The article you were looking for does not exist or has been deleted!",
+      articleError: "Error in receiving article",
+    },
+    search: {
+      heading: "Search Results for",
+      title: "{{siteName}} - Search for",
+      noResult: "No results found",
+    },
+  },
 
-  // Footer
-  "footer.about":
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, reprehenderit!",
+  footer: {
+    about: {
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, reprehenderit!",
+    },
+    copyright: {
+      text: "© Copyright TechMag All Rights Reserved",
+      credits: "Designed by ",
+    },
+  },
 
-  // Social Navigation
-  "socialnav.linkedin": "LinkedIn",
-  "socialnav.github": "Github",
+  latestArticle: {
+    heading: "Latest Articles",
+  },
 
-  // Copyright
-  "copyright.text": "© Copyright TechMag All Rights Reserved",
-  "copyright.credits": "Designed by ",
+  sidebar: {
+    search: {
+      title: "Search",
+    },
+    category: {
+      title: "categories",
+    },
+  },
 
-  // Footer Navigation
-  "footerNav.technology": "Technology",
-  "footerNav.ai": "AI",
-  "footerNav.software": "Software",
-  "footerNav.game": "Game",
-  "footerNav.security": "Security",
-  "footerNav.tutorial": "Tutorial",
-  "footerNav.reactTutorial": "React",
-  "footerNav.aiTutorial": "AI",
-  "footerNav.linuxTutorial": "Linux",
-  "footerNav.usefulLinks": "Useful Links",
-  "footerNav.home": "Home",
-  "footerNav.aboutUs": "About Us",
-  "footerNav.contactUs": "Contact Us",
+  category: {
+    noResult: "No category found",
+  },
 
-  // Article Page
-  "articlePage.notfound":
-    "The article you were looking for does not exist or has been deleted!",
-  "articlePage.articleError": "Error in receiving article",
-
-  // Latest Article
-  "latestArticle.heading": "Latest Articles",
-
-  // Search Page
-  "SearchPage.heading": "Search Results for",
-  "SearchPage.title": "{{siteName}} - Search for",
-  "SearchPage.noResult": "No results found",
-
-  // SidebarSearch
-  "SidebarSearch.title": "Search",
-
-  // CategoryHeader
-  "CategoryHeader.noResult": "No category found",
-
-  // UserMenu
-  "UserMenu.loginButton": "Login to account",
-  "UserMenu.registerButton": "Create new account",
-  "UserMenu.resetPassButton": "Reset Password",
-
-  // UserDropdownMenu
-  "UserDropdownMenu.account": "Account",
-  "UserDropdownMenu.profile": "Profile",
-  "UserDropdownMenu.signOut": "Sign out",
-  // LoginDialog
-  "loginDialog.title": "Login to Your Account",
-  "loginDialog.successMsg": "You are logged in successfully",
-
-  //LoginForm
-  "LoginForm.userName": "Username",
-  "LoginForm.password": "Password",
-  "LoginForm.login": "Login",
-  "LoginForm.reset": "Reset",
-
-  // RegisterDialog
-  "RegisterDialog.title": "Create Account",
-  "RegisterDialog.successMsg":
-    "Your account has been created. Log in to your account from the link below",
-
-  // RegisterForm
-  "RegisterForm.username": "Username",
-  "RegisterForm.email": "Email",
-  "RegisterForm.password": "Password",
-  "RegisterForm.register": "Register",
-  "RegisterForm.reset": "Reset",
+  auth: {
+    fields: {
+      userName: "Username",
+      password: "Password",
+      email: "Email",
+    },
+    actions: {
+      login: "Login",
+      reset: "Reset",
+      register: "Register",
+      registerButton: "Create new account",
+      resetPassButton: "Reset Password",
+      loginButton: "Login to account",
+      account: "Account",
+      profile: "Profile",
+      signOut: "Sign out",
+    },
+    login: {
+      title: "Login to Your Account",
+      successMsg: "You are logged in successfully",
+    },
+    register: {
+      title: "Create Account",
+      successMsg:
+        "Your account has been created. Log in to your account from the link below",
+    },
+    resetPass: {
+      title: "Reset Password",
+      successMsg: "Reset password link sent to your email address.",
+    },
+  },
 };

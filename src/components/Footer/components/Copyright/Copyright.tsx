@@ -11,9 +11,9 @@ export const Copyright = ({ className }: Props): ReactNode => {
   return (
     <div className={className}>
       <div className="container">
-        <p>{t("copyright.text")}</p>
+        <p>{t("footer.copyright.text")}</p>
         <div className="text-sm">
-          {t("copyright.credits")}
+          {t("footer.copyright.credits")}
           <a href="https://github.com/m0st4f4">m0st4f4</a>
         </div>
       </div>

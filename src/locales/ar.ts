@@ -1,96 +1,119 @@
 export const ar = {
-  // global
-  "site name": "TechMag",
+  common: {
+    siteName: "TechMag",
+  },
 
-  // SearchForm
-  "SearchForm.Placeholder": "بحث...",
+  search: {
+    placeholder: "بحث...",
+  },
 
-  // Top Navigation
-  "topNav.home": "الرئيسية",
-  "topNav.category": "التصنيفات",
-  "topNav.aboutUs": "من نحن",
-  "topNav.contactUs": "تواصل معنا",
+  nav: {
+    top: {
+      home: "الرئيسية",
+      category: "التصنيفات",
+      aboutUs: "من نحن",
+      contactUs: "تواصل معنا",
+    },
+    social: {
+      linkedin: "LinkedIn",
+      github: "Github",
+    },
+    footer: {
+      technology: "Technology",
+      ai: "AI",
+      software: "Software",
+      game: "Game",
+      security: "Security",
+      tutorial: "Tutorial",
+      reactTutorial: "React",
+      aiTutorial: "AI",
+      linuxTutorial: "Linux",
+      usefulLinks: "Useful Links",
+      home: "الرئيسية",
+      aboutUs: "من نحن",
+      contactUs: "تواصل معنا",
+    },
+  },
 
-  // Article Details
-  "article.readTime": "قراءة {{count}} دقائق",
-  "article.commentsCount": "{{count}} comments",
+  article: {
+    readTime: "قراءة {{count}} دقائق",
+    commentsCount: "{{count}} comments",
+  },
 
-  // Not Found Page
-  "notFoundPage.heading": "لم يتم العثور على الصفحة!",
-  "notFoundPage.description":
-    "يبدو أن الرابط الذي اتبعته مكسور أو أن الصفحة قد حُذفت.",
-  "notFoundPage.backToHome": "العودة للرئيسية",
+  page: {
+    notFound: {
+      heading: "لم يتم العثور على الصفحة!",
+      description: "يبدو أن الرابط الذي اتبعته مكسور أو أن الصفحة قد حُذفت.",
+      backToHome: "العودة للرئيسية",
+    },
+    article: {
+      notfound:
+        "The article you were looking for does not exist or has been deleted!",
+      articleError: "Error in receiving article",
+    },
+    search: {
+      heading: "Search Results for",
+      title: "{{siteName}} - Search for",
+      noResult: "No results found",
+    },
+  },
 
-  // Footer
-  "footer.about":
-    "لوريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر.",
+  footer: {
+    about: {
+      description:
+        "لوريم إيبسوم هو ببساطة نص شكلي (بمعنى أن الغاية هي الشكل وليس المحتوى) ويُستخدم في صناعات المطابع ودور النشر.",
+    },
+    copyright: {
+      text: "© Copyright TechMag All Rights Reserved",
+      credits: "Designed by ",
+    },
+  },
 
-  // Social Navigation
-  "socialnav.linkedin": "LinkedIn",
-  "socialnav.github": "Github",
+  latestArticle: {
+    heading: "أحدث المقالات",
+  },
 
-  // Copyright
-  "copyright.text": "© Copyright TechMag All Rights Reserved",
-  "copyright.credits": "Designed by ",
+  sidebar: {
+    search: {
+      title: "بحث",
+    },
+    category: {
+      title: "categories",
+    },
+  },
 
-  // Footer Navigation
-  "footerNav.technology": "Technology",
-  "footerNav.ai": "AI",
-  "footerNav.software": "Software",
-  "footerNav.game": "Game",
-  "footerNav.security": "Security",
-  "footerNav.tutorial": "Tutorial",
-  "footerNav.reactTutorial": "React",
-  "footerNav.aiTutorial": "AI",
-  "footerNav.linuxTutorial": "Linux",
-  "footerNav.usefulLinks": "Useful Links",
-  "footerNav.home": "Home",
-  "footerNav.aboutUs": "About Us",
-  "footerNav.contactUs": "Contact Us",
+  category: {
+    noResult: "No category found",
+  },
 
-  // Latest Article
-  "latestArticle.heading": "أحدث المقالات",
-
-  // Search Page
-  "SearchPage.heading": "Search Results for",
-  "SearchPage.title": "{{siteName}} - Search for",
-  "SearchPage.noResult": "No results found",
-
-  // SidebarSearch
-  "SidebarSearch.title": "Search",
-
-  // CategoryHeader
-  "CategoryHeader.noResult": "No category found",
-
-  // UserMenu
-  "UserMenu.loginButton": "تسجيل الدخول إلى الحساب",
-  "UserMenu.registerButton": "إنشاء حساب جديد",
-  "UserMenu.resetPassButton": "إعادة تعيين كلمة المرور",
-
-  // UserDropdownMenu
-  "UserDropdownMenu.account": "الحساب",
-  "UserDropdownMenu.profile": "الملف الشخصي",
-  "UserDropdownMenu.signOut": "تسجيل الخروج",
-
-  // LoginDialog
-  "loginDialog.title": "تسجيل الدخول إلى حسابك",
-  "loginDialog.successMsg": "تم تسجيل الدخول بنجاح",
-
-  // LoginForm
-  "LoginForm.userName": "اسم المستخدم",
-  "LoginForm.password": "كلمة المرور",
-  "LoginForm.login": "تسجيل الدخول",
-  "LoginForm.reset": "إعادة تعيين",
-
-  // RegisterDialog
-  "RegisterDialog.title": "إنشاء حساب",
-  "RegisterDialog.successMsg":
-    "تم إنشاء حسابك. سجل الدخول إلى حسابك من الرابط أدناه",
-
-  // RegisterForm
-  "RegisterForm.username": "اسم المستخدم",
-  "RegisterForm.email": "البريد الإلكتروني",
-  "RegisterForm.password": "كلمة المرور",
-  "RegisterForm.register": "تسجيل",
-  "RegisterForm.reset": "إعادة تعيين",
+  auth: {
+    fields: {
+      userName: "اسم المستخدم",
+      password: "كلمة المرور",
+      email: "البريد الإلكتروني",
+    },
+    actions: {
+      login: "تسجيل الدخول",
+      reset: "إعادة تعيين",
+      register: "تسجيل",
+      registerButton: "إنشاء حساب جديد",
+      resetPassButton: "إعادة تعيين كلمة المرور",
+      loginButton: "تسجيل الدخول إلى الحساب",
+      account: "الحساب",
+      profile: "الملف الشخصي",
+      signOut: "تسجيل الخروج",
+    },
+    login: {
+      title: "تسجيل الدخول إلى حسابك",
+      successMsg: "تم تسجيل الدخول بنجاح",
+    },
+    register: {
+      title: "إنشاء حساب",
+      successMsg: "تم إنشاء حسابك. سجل الدخول إلى حسابك من الرابط أدناه",
+    },
+    resetPass: {
+      title: "Reset Password",
+      successMsg: "Reset password link sent to your email address.",
+    },
+  },
 };

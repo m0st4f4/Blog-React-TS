@@ -1,99 +1,120 @@
 export const fa = {
-  // global
-  "site name": "TechMag",
+  common: {
+    siteName: "TechMag",
+  },
 
-  // SearchForm
-  "SearchForm.Placeholder": "جستجو...",
+  search: {
+    placeholder: "جستجو...",
+  },
 
-  // Top Navigation
-  "topNav.home": "خانه",
-  "topNav.category": "دسته بندی",
-  "topNav.aboutUs": "درباره ما",
-  "topNav.contactUs": "تماس با ما",
+  nav: {
+    top: {
+      home: "خانه",
+      category: "دسته بندی",
+      aboutUs: "درباره ما",
+      contactUs: "تماس با ما",
+    },
+    social: {
+      linkedin: "لینکداین",
+      github: "گیت هاب",
+    },
+    footer: {
+      technology: "تکنولوژی",
+      ai: "هوش مصنوعی",
+      software: "نرم افزار",
+      game: "بازی",
+      security: "امنیت",
+      tutorial: "آموزش",
+      reactTutorial: "ریکت",
+      aiTutorial: "هوش مصنوعی",
+      linuxTutorial: "لینوکس",
+      usefulLinks: "لینک های مفید",
+      home: "خانه",
+      aboutUs: "درباره ما",
+      contactUs: "تماس با ما",
+    },
+  },
 
-  // Article Details
-  "article.readTime": "خواندن {{count}} دقیقه",
-  "article.commentsCount": "{{count}} نظر",
+  article: {
+    readTime: "خواندن {{count}} دقیقه",
+    commentsCount: "{{count}} نظر",
+  },
 
-  // Not Found Page
-  "notFoundPage.heading": "صفحه پیدا نشد!",
-  "notFoundPage.description":
-    "به نظر می رسه پیوندی که به دنبالش بودی خراب است یا صفحه حذف شده.",
-  "notFoundPage.backToHome": "برو به صفحه اصلی",
+  page: {
+    notFound: {
+      heading: "صفحه پیدا نشد!",
+      description:
+        "به نظر می رسه پیوندی که به دنبالش بودی خراب است یا صفحه حذف شده.",
+      backToHome: "برو به صفحه اصلی",
+    },
+    article: {
+      notfound: "مقاله ای که به دنبال اون بودی وجود نداره یا حذف شده!",
+      articleError: "خطا در دریافت مقاله",
+    },
+    search: {
+      heading: "نتایج جستجو برای",
+      title: "{{siteName}} - جستجو برای",
+      noResult: "نتیجه ای یافت نشد",
+    },
+  },
 
-  // Footer
-  "footer.about": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت",
+  footer: {
+    about: {
+      description: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت",
+    },
+    copyright: {
+      text: "© تمامی حقوق برای وبسایت تک مگ محفوظ است",
+      credits: "توسعه توسط ",
+    },
+  },
 
-  // Social Navigation
-  "socialnav.linkedin": "لینکداین",
-  "socialnav.github": "گیت هاب",
+  latestArticle: {
+    heading: "آخرین مقالات",
+  },
 
-  // Copyright
-  "copyright.text": "© تمامی حقوق برای وبسایت تک مگ محفوظ است",
-  "copyright.credits": "توسعه توسط ",
+  sidebar: {
+    search: {
+      title: "جستجو",
+    },
+    category: {
+      title: "دسته بندی ها",
+    },
+  },
 
-  // Footer Navigation
-  "footerNav.technology": "تکنولوژی",
-  "footerNav.ai": "هوش مصنوعی",
-  "footerNav.software": "نرم افزار",
-  "footerNav.game": "بازی",
-  "footerNav.security": "امنیت",
-  "footerNav.tutorial": "آموزش",
-  "footerNav.reactTutorial": "ریکت",
-  "footerNav.aiTutorial": "هوش مصنوعی",
-  "footerNav.linuxTutorial": "لینوکس",
-  "footerNav.usefulLinks": "لینک های مفید",
-  "footerNav.home": "خانه",
-  "footerNav.aboutUs": "درباره ما",
-  "footerNav.contactUs": "تماس با ما",
+  category: {
+    noResult: "دسته بندی یافت نشد",
+  },
 
-  // Article Page
-  "articlePage.notfound":
-    "مقاله ای که به دنبال اون بودی وجود نداره یا حذف شده!",
-  "articlePage.articleError": "خطا در دریافت مقاله",
+  auth: {
+    fields: {
+      userName: "نام کاربری",
+      password: "رمز عبور",
+      email: "ایمیل",
+    },
+    actions: {
+      login: "ورود",
+      reset: "بازنشانی",
+      register: "ثبت نام",
+      registerButton: "ساخت حساب جدید",
+      resetPassButton: "بازنشانی کلمه عبور",
+      loginButton: "ورود به حساب کاربری",
+      account: "حساب کاربری",
+      profile: "پروفایل",
+      signOut: "خروج",
+    },
+    login: {
+      title: "ورود به حساب کاربری",
+      successMsg: "با موفقیت وارد شدید",
+    },
+    register: {
+      title: "ساخت حساب کاربری",
+      successMsg:
+        "حساب کاربری شما با موفقیت ساخته شد. از طریق لینک زیر وارد حساب کاربری خود شوید",
+    },
+    resetPass: {
+      title: "بازنشانی کلمه عبور",
+      successMsg: "لینک بازنشانی رمز عبور به ایمیل شما ارسال شد",
+    },
+  },
 
-  // Latest Article
-  "latestArticle.heading": "آخرین مقالات",
-
-  // Search Page
-  "SearchPage.heading": "نتایج جستجو برای",
-  "SearchPage.title": "{{siteName}} - جستجو برای",
-  "SearchPage.noResult": "نتیجه ای یافت نشد",
-
-  // SidebarSearch
-  "SidebarSearch.title": "جستجو",
-
-  // CategoryHeader
-  "CategoryHeader.noResult": "دسته بندی یافت نشد",
-
-  // UserMenu
-  "UserMenu.loginButton": "ورود به حساب کاربری",
-  "UserMenu.registerButton": "ساخت حساب جدید",
-  "UserMenu.resetPassButton": "بازنشانی کلمه عبور",
-
-  // UserDropdownMenu
-  "UserDropdownMenu.account": "حساب کاربری",
-  "UserDropdownMenu.profile": "پروفایل",
-  "UserDropdownMenu.signOut": "خروج",
-  // LoginDialog
-  "loginDialog.title": "ورود به حساب کاربری",
-  "loginDialog.successMsg": "با موفقیت وارد شدید",
-
-  //LoginForm
-  "LoginForm.userName": "نام کاربری",
-  "LoginForm.password": "کلمه عبور",
-  "LoginForm.login": "ورود",
-  "LoginForm.reset": "ریست",
-
-  // RegisterDialog
-  "RegisterDialog.title": "ساخت حساب کاربری",
-  "RegisterDialog.successMsg":
-    "حساب کاربری شما با موفقیت ساخته شد. از طریق لینک زیر وارد حساب کاربری خود شوید",
-
-  // RegisterForm
-  "RegisterForm.username": "نام کاربری",
-  "RegisterForm.email": "ایمیل",
-  "RegisterForm.password": "کلمه عبور",
-  "RegisterForm.register": "ثبت نام",
-  "RegisterForm.reset": "ریست",
 };
