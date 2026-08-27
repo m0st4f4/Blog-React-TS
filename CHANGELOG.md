@@ -1,3 +1,10 @@
+# [1.0.0-dev.26](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.25...v1.0.0-dev.26) (2026-08-27)
+
+
+### Features
+
+* **locale:** improve locales files structure [#37](https://github.com/m0st4f4/Blog-React-TS/issues/37) ([#95](https://github.com/m0st4f4/Blog-React-TS/issues/95)) ([9fb029d](https://github.com/m0st4f4/Blog-React-TS/commit/9fb029d835a030b7e7e9e176506a8869df150271))
+
 # [1.0.0-dev.25](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.24...v1.0.0-dev.25) (2026-08-21)
 
 
