@@ -6,9 +6,9 @@ export type UserType = {
   username: string;
   avatar?: string;
   bio?: string;
-  role?: RoleType;
+  role: RoleType;
   isActive?: boolean;
   createdAt?: string;
   updatedAt?: string;
 };
-type RoleType = "admin" | "author" | "subscriber";
+export type RoleType = "admin" | "author" | "subscriber";

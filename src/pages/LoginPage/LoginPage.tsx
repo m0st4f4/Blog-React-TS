@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type SubmitHandler, useForm } from "react-hook-form";
@@ -14,16 +14,27 @@ import { Button } from "@/components/ui/button.tsx";
 import { useLoginUser } from "@/hooks/useLoginUser.ts";
 
 type Values = z.infer<typeof LoginSchema>;
+type LocationState = {
+  from?: { pathname: string };
+};
 
 export const LoginPage = (): ReactNode => {
-  const { mutate, isPending, isSuccess, data, isError, error} =
+  const { mutateAsync, isPending, isSuccess, data, isError, error } =
     useLoginUser();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const fromLocation =
+    (location.state as LocationState)?.from?.pathname || "profile";
+
   const form = useForm<Values>({
     defaultValues: { username: "", password: "" },
     resolver: zodResolver(LoginSchema),
   });
-  const handleFormSubmit: SubmitHandler<Values> = (data: Values) => {
-    mutate(data);
+
+  const handleFormSubmit: SubmitHandler<Values> = async (data: Values) => {
+    await mutateAsync(data);
+    navigate(fromLocation, { replace: true });
   };
   return (
     <>
