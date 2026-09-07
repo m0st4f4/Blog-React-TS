@@ -11,6 +11,7 @@ import {
   FieldError,
   FieldGroup,
   FieldLabel,
+  FieldSeparator,
 } from "@/components/ui/field.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import { Spinner } from "@/components/ui/spinner.tsx";
@@ -29,7 +30,7 @@ export const UserInfoForm = ({
   const { t } = useTranslation();
   return (
     <form onSubmit={onSubmit} {...otherProps}>
-      <FieldGroup>
+      <FieldGroup className="grid grid-cols-3 ">
         <Controller
           name="name"
           control={form.control}
@@ -49,6 +50,7 @@ export const UserInfoForm = ({
             </Field>
           )}
         />
+
         <Controller
           name="username"
           control={form.control}
@@ -63,44 +65,7 @@ export const UserInfoForm = ({
                 id={field.name}
                 aria-invalid={fieldState.invalid}
                 aria-label={field.name}
-              />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-            </Field>
-          )}
-        />
-        <Controller
-          name="password"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor={field.name}>
-                {t("auth.fields.password")}
-              </FieldLabel>
-              <Input
-                {...field}
-                type="password"
-                id={field.name}
-                aria-invalid={fieldState.invalid}
-                aria-label={field.name}
-              />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-            </Field>
-          )}
-        />
-        <Controller
-          name="password"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor={field.name}>
-                {t("auth.fields.password")}
-              </FieldLabel>
-              <Input
-                {...field}
-                type="password"
-                id={field.name}
-                aria-invalid={fieldState.invalid}
-                aria-label={field.name}
+                dir="ltr"
               />
               {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
@@ -111,23 +76,73 @@ export const UserInfoForm = ({
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor={field.name}>{t("auth.fields.email")}</FieldLabel>
+              <FieldLabel htmlFor={field.name}>
+                {t("auth.fields.email")}
+              </FieldLabel>
               <Input
                 {...field}
                 type="text"
                 id={field.name}
                 aria-invalid={fieldState.invalid}
                 aria-label={field.name}
+                dir="ltr"
               />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
           )}
         />
+      </FieldGroup>
+      <FieldSeparator className="my-4" />
+      <FieldGroup className="grid grid-cols-2 ">
+        <Controller
+          name="password"
+          control={form.control}
+          render={({ field, fieldState }) => (
+            <Field data-invalid={fieldState.invalid}>
+              <FieldLabel htmlFor={field.name}>
+                {t("auth.fields.password")}
+              </FieldLabel>
+              <Input
+                {...field}
+                type="password"
+                id={field.name}
+                aria-invalid={fieldState.invalid}
+                aria-label={field.name}
+              />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+            </Field>
+          )}
+        />
+        <Controller
+          name="password"
+          control={form.control}
+          render={({ field, fieldState }) => (
+            <Field data-invalid={fieldState.invalid}>
+              <FieldLabel htmlFor={field.name}>
+                {t("auth.fields.password")}
+              </FieldLabel>
+              <Input
+                {...field}
+                type="password"
+                id={field.name}
+                aria-invalid={fieldState.invalid}
+                aria-label={field.name}
+              />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+            </Field>
+          )}
+        />
+      </FieldGroup>
+      <FieldSeparator className="my-4" />
+      <FieldGroup className="grid grid-cols-2 ">
         <Controller
           name="bio"
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor={field.name}>{t("auth.fields.bio")}</FieldLabel>
+              <FieldLabel htmlFor={field.name}>
+                {t("auth.fields.bio")}
+              </FieldLabel>
               <Input
                 {...field}
                 type="text"
@@ -135,6 +150,7 @@ export const UserInfoForm = ({
                 aria-invalid={fieldState.invalid}
                 aria-label={field.name}
               />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
           )}
         />
@@ -143,18 +159,23 @@ export const UserInfoForm = ({
           control={form.control}
           render={({ field, fieldState }) => (
             <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor={field.name}>{t("auth.fields.avatar")}</FieldLabel>
+              <FieldLabel htmlFor={field.name}>
+                {t("auth.fields.avatar")}
+              </FieldLabel>
               <Input
                 {...field}
                 type="text"
                 id={field.name}
                 aria-invalid={fieldState.invalid}
                 aria-label={field.name}
+                dir="ltr"
               />
+              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
             </Field>
           )}
         />
       </FieldGroup>
+
       <div className="flex gap-2 mt-4 items-center justify-start">
         <Button
           variant="outline"
