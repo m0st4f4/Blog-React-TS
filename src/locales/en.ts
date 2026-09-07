@@ -96,6 +96,10 @@ export const en = {
       userName: "Username",
       password: "Password",
       email: "Email",
+      name: "Name",
+      avatar: "Avatar",
+      bio: "bio",
+      role: "Role",
     },
     actions: {
       login: "Login",
@@ -107,6 +111,7 @@ export const en = {
       account: "Account",
       profile: "Profile",
       signOut: "Sign out",
+      submit: "submit",
     },
     login: {
       title: "Login to Your Account",

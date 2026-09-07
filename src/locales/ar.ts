@@ -95,6 +95,10 @@ export const ar = {
       userName: "اسم المستخدم",
       password: "كلمة المرور",
       email: "البريد الإلكتروني",
+      name: "اسم",
+      avatar: "الصورة الرمزية",
+      bio: "نبذة",
+      role: "الدور",
     },
     actions: {
       login: "تسجيل الدخول",
@@ -106,6 +110,7 @@ export const ar = {
       account: "الحساب",
       profile: "الملف الشخصي",
       signOut: "تسجيل الخروج",
+      submit: "إرسال",
     },
     login: {
       title: "تسجيل الدخول إلى حسابك",
