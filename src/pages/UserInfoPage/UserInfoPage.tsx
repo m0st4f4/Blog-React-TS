@@ -4,7 +4,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { type SubmitHandler, useForm } from "react-hook-form";
 
 import { UserInfoForm } from "@/forms/UserInfoForm/UserInfoForm.tsx";
-import { type UserInfoType, UserSchema } from "@/schema/user-schema.ts";
+import {
+  type UserInfoType,
+  type UserPayloadType,
+  UserSchema,
+} from "@/schema/user-schema.ts";
 import { toast } from "sonner";
 
 import { useAuth } from "@/hooks/useAuth.ts";
@@ -20,6 +24,7 @@ export const UserInfoPage = ({ className = "" }: Props): ReactNode => {
   const form = useForm<UserInfoType>({
     values: user ?? undefined,
     resolver: zodResolver(UserSchema),
+    mode: "onChange",
   });
   const {
     formState: { dirtyFields },
@@ -31,10 +36,12 @@ export const UserInfoPage = ({ className = "" }: Props): ReactNode => {
       return;
     }
 
+    const { confirmPassword, ...payload } = values;
+
     const changedValues = (
-      Object.keys(dirtyFields) as Array<keyof UserInfoType>
-    ).reduce<Partial<UserInfoType>>((acc, key) => {
-      acc[key] = values[key];
+      Object.keys(dirtyFields) as Array<keyof UserPayloadType>
+    ).reduce<Partial<UserPayloadType>>((acc, key) => {
+      acc[key] = payload[key];
       return acc;
     }, {});
 

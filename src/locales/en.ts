@@ -95,6 +95,7 @@ export const en = {
     fields: {
       userName: "Username",
       password: "Password",
+      confirmPassword: "Repeat Password",
       email: "Email",
       name: "Name",
       avatar: "Avatar",

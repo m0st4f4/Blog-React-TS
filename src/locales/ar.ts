@@ -94,6 +94,7 @@ export const ar = {
     fields: {
       userName: "اسم المستخدم",
       password: "كلمة المرور",
+      confirmPassword: "تکرار كلمة المرور",
       email: "البريد الإلكتروني",
       name: "اسم",
       avatar: "الصورة الرمزية",

@@ -93,6 +93,7 @@ export const fa = {
     fields: {
       userName: "نام کاربری",
       password: "رمز عبور",
+      confirmPassword: "تکرار رمز عبور",
       email: "ایمیل",
       name: "نام",
       avatar: "تصویر پروفایل",
