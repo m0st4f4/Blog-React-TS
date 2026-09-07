@@ -1,3 +1,10 @@
+# [1.0.0-dev.28](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.27...v1.0.0-dev.28) (2026-09-07)
+
+
+### Bug Fixes
+
+* main content full height ([#100](https://github.com/m0st4f4/Blog-React-TS/issues/100)) ([d9a29cc](https://github.com/m0st4f4/Blog-React-TS/commit/d9a29cc2c73a3c62a872eece684194f335d2e334))
+
 # [1.0.0-dev.27](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.26...v1.0.0-dev.27) (2026-09-07)
 
 
