@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 
-import { UnauthorizedPage } from "@/UnauthorizedPage/UnauthorizedPage.tsx";
+import { UnauthorizedPage } from "@/pages/UnauthorizedPage/UnauthorizedPage.tsx";
 
 import { ProtectedRoute } from "@/components/ProtectedRoute/ProtectedRoute.tsx";
 import { Sidebar } from "@/components/Sidebar/Sidebar.tsx";
