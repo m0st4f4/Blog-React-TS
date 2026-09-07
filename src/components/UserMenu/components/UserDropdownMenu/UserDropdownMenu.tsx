@@ -1,5 +1,7 @@
 import { type ReactNode } from "react";
 
+import { useNavigate } from "react-router";
+
 import { useTranslation } from "react-i18next";
 
 import {
@@ -30,6 +32,7 @@ type Props = {
 
 export const UserDropdownMenu = ({ user, onLogout }: Props): ReactNode => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -63,7 +66,10 @@ export const UserDropdownMenu = ({ user, onLogout }: Props): ReactNode => {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuLabel>{t("auth.actions.account")}</DropdownMenuLabel>
-          <DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() => navigate("profile")}
+            className="cursor-pointer"
+          >
             <MingcuteUser1Line />
             {t("auth.actions.profile")}
           </DropdownMenuItem>

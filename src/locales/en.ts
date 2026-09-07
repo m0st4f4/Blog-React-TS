@@ -81,6 +81,10 @@ export const en = {
     category: {
       title: "categories",
     },
+    profile: {
+      title: "User Menu",
+      userInfo: "User Information",
+    },
   },
 
   category: {
@@ -91,7 +95,12 @@ export const en = {
     fields: {
       userName: "Username",
       password: "Password",
+      confirmPassword: "Repeat Password",
       email: "Email",
+      name: "Name",
+      avatar: "Avatar",
+      bio: "bio",
+      role: "Role",
     },
     actions: {
       login: "Login",
@@ -103,6 +112,7 @@ export const en = {
       account: "Account",
       profile: "Profile",
       signOut: "Sign out",
+      submit: "submit",
     },
     login: {
       title: "Login to Your Account",

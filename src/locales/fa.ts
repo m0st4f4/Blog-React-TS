@@ -79,6 +79,10 @@ export const fa = {
     category: {
       title: "دسته بندی ها",
     },
+    profile: {
+      title: "منوی کاربر",
+      userInfo: "اطلاعات کاربر",
+    },
   },
 
   category: {
@@ -89,7 +93,12 @@ export const fa = {
     fields: {
       userName: "نام کاربری",
       password: "رمز عبور",
+      confirmPassword: "تکرار رمز عبور",
       email: "ایمیل",
+      name: "نام",
+      avatar: "تصویر پروفایل",
+      bio: "درباره من",
+      role: "نقش",
     },
     actions: {
       login: "ورود",
@@ -101,6 +110,7 @@ export const fa = {
       account: "حساب کاربری",
       profile: "پروفایل",
       signOut: "خروج",
+      submit: "ثبت",
     },
     login: {
       title: "ورود به حساب کاربری",
@@ -116,5 +126,4 @@ export const fa = {
       successMsg: "لینک بازنشانی رمز عبور به ایمیل شما ارسال شد",
     },
   },
-
 };

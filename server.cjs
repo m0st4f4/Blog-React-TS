@@ -1,15 +1,17 @@
 const jsonServer = require("json-server");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 const path = require("path");
 
 const server = jsonServer.create();
 const router = jsonServer.router(path.join(__dirname, "db.json"));
 const middlewares = jsonServer.defaults();
 
-const SECRET_KEY = "123456789";
-const REFRESH_SECRET_KEY = "987654321";
+const SECRET_KEY = process.env.JWT_SECRET_KEY || "123456789";
+const REFRESH_SECRET_KEY = process.env.JWT_REFRESH_SECRET_KEY || "987654321";
 const EXPIRES_IN = "1h";
 const REFRESH_EXPIRES_IN = "7d";
+const SALT_ROUNDS = 10;
 
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
@@ -18,8 +20,29 @@ const createToken = (payload, secret, expiresIn) => {
   return jwt.sign(payload, secret, { expiresIn });
 };
 
+const buildUserResponse = (user) => ({
+  id: user.id,
+  email: user.email,
+  username: user.username,
+  name: user.name,
+  avatar: user.avatar,
+  bio: user.bio,
+  role: user.role,
+  isActive: user.isActive,
+  createdAt: user.createdAt,
+  updatedAt: user.updatedAt,
+});
+
+const getNextUserId = (usersDb) => {
+  const ids = usersDb
+    .value()
+    .map((u) => Number(u.id))
+    .filter((n) => !Number.isNaN(n));
+  return ids.length ? Math.max(...ids) + 1 : 1;
+};
+
 // --- Route (Register) ---
-server.post("/auth/register", (req, res) => {
+server.post("/auth/register", async (req, res) => {
   const { email, password, username } = req.body;
 
   // Validate user data
@@ -30,34 +53,43 @@ server.post("/auth/register", (req, res) => {
   }
 
   const usersDb = router.db.get("users");
+  const normalizedEmail = String(email).trim().toLowerCase();
 
-  if (usersDb.find({ email }).value()) {
+  if (usersDb.find({ email: normalizedEmail }).value()) {
     return res.status(400).json({ message: "This email already exists" });
   }
 
-  const lastUser = usersDb.sortBy("id").last().value();
-  const id = lastUser ? Number(lastUser.id) + 1 : 1;
+  if (usersDb.find({ username }).value()) {
+    return res.status(400).json({ message: "This username already exists" });
+  }
+
+  const id = getNextUserId(usersDb);
+  const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+
+  const newUser = {
+    id,
+    email: normalizedEmail,
+    password: hashedPassword,
+    name: username,
+    username,
+    avatar: "https://i.pravatar.cc/150?u=" + username,
+    bio: "",
+    role: "subscriber",
+    isActive: true,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  };
 
   // Write Data on DB
-  usersDb
-    .push({
-      id,
-      email,
-      password,
-      name: username,
-      username,
-      avatar: "https://i.pravatar.cc/150?u=" + username,
-      bio: "",
-      role: "subscriber",
-      isActive: true,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    })
-    .write();
+  usersDb.push(newUser).write();
 
-  const accessToken = createToken({ email, id }, SECRET_KEY, EXPIRES_IN);
+  const accessToken = createToken(
+    { email: normalizedEmail, id },
+    SECRET_KEY,
+    EXPIRES_IN,
+  );
   const refreshToken = createToken(
-    { email, id },
+    { email: normalizedEmail, id },
     REFRESH_SECRET_KEY,
     REFRESH_EXPIRES_IN,
   );
@@ -65,16 +97,27 @@ server.post("/auth/register", (req, res) => {
   res.status(201).json({
     accessToken,
     refreshToken,
-    user: { id, email, username, name: username },
+    user: buildUserResponse(newUser),
   });
 });
 
 // --- Route (Login) ---
-server.post("/auth/login", (req, res) => {
+server.post("/auth/login", async (req, res) => {
   const { username, password } = req.body;
-  const user = router.db.get("users").find({ username, password }).value();
 
-  if (!user) {
+  if (!username || !password) {
+    return res
+      .status(400)
+      .json({ message: "Username and password are required" });
+  }
+
+  const user = router.db.get("users").find({ username }).value();
+
+  const isValidPassword = user
+    ? await bcrypt.compare(password, user.password)
+    : false;
+
+  if (!user || !isValidPassword) {
     return res
       .status(401)
       .json({ message: "Username or Password is incorrect" });
@@ -94,18 +137,7 @@ server.post("/auth/login", (req, res) => {
   res.status(200).json({
     accessToken,
     refreshToken,
-    user: {
-      id: user.id,
-      email: user.email,
-      username: user.username,
-      name: user.name,
-      avatar: user.avatar,
-      bio: user.bio,
-      role: user.role,
-      isActive: user.isActive,
-      createdAt: user.createdAt,
-      updatedAt: user.updatedAt,
-    },
+    user: buildUserResponse(user),
   });
 });
 
@@ -134,7 +166,7 @@ server.post("/auth/refresh", (req, res) => {
     res
       .status(200)
       .json({ accessToken: newAccessToken, refreshToken: newRefreshToken });
-  } catch (err) {
+  } catch (error) {
     res.status(401).json({ message: "Refresh token is invalid or expired" });
   }
 });

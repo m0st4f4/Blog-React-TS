@@ -80,6 +80,10 @@ export const ar = {
     category: {
       title: "categories",
     },
+    profile: {
+      title: "User Menu",
+      userInfo: "User Information",
+    },
   },
 
   category: {
@@ -90,7 +94,12 @@ export const ar = {
     fields: {
       userName: "اسم المستخدم",
       password: "كلمة المرور",
+      confirmPassword: "تکرار كلمة المرور",
       email: "البريد الإلكتروني",
+      name: "اسم",
+      avatar: "الصورة الرمزية",
+      bio: "نبذة",
+      role: "الدور",
     },
     actions: {
       login: "تسجيل الدخول",
@@ -102,6 +111,7 @@ export const ar = {
       account: "الحساب",
       profile: "الملف الشخصي",
       signOut: "تسجيل الخروج",
+      submit: "إرسال",
     },
     login: {
       title: "تسجيل الدخول إلى حسابك",
