@@ -12,7 +12,7 @@ import { UserMenu } from "../UserMenu/UserMenu";
 
 export const Header = (): ReactNode => {
   return (
-    <header className="py-5">
+    <header className="py-5 shrink-0">
       <div className="container pb-2.5 flex items-center justify-between">
         <SiteLogo />
         <div className="flex items-center justify-center gap-2">

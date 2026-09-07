@@ -19,7 +19,7 @@ export const LatestPosts = ({ className = "" }: Props): ReactNode => {
   const { t } = useTranslation();
   if (!data) return;
   return (
-    <div className={cn("my-8", className)}>
+    <div className={cn(className)}>
       <h2 className="text-2xl border-s-2 border-accent mbe-4 ps-4 font-bold">
         {t("latestArticle.heading")}
       </h2>
