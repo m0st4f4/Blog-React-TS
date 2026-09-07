@@ -79,6 +79,10 @@ export const fa = {
     category: {
       title: "دسته بندی ها",
     },
+    profile: {
+      title: "منوی کاربر",
+      userInfo: "اطلاعات کاربر",
+    },
   },
 
   category: {

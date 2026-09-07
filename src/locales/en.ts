@@ -81,6 +81,10 @@ export const en = {
     category: {
       title: "categories",
     },
+    profile: {
+      title: "User Menu",
+      userInfo: "User Information",
+    },
   },
 
   category: {

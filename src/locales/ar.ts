@@ -80,6 +80,10 @@ export const ar = {
     category: {
       title: "categories",
     },
+    profile: {
+      title: "User Menu",
+      userInfo: "User Information",
+    },
   },
 
   category: {
