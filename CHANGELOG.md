@@ -1,3 +1,10 @@
+# [1.0.0-dev.27](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.26...v1.0.0-dev.27) (2026-09-07)
+
+
+### Features
+
+* profile [#87](https://github.com/m0st4f4/Blog-React-TS/issues/87) ([#99](https://github.com/m0st4f4/Blog-React-TS/issues/99)) ([cd339c0](https://github.com/m0st4f4/Blog-React-TS/commit/cd339c07bebc7aa1c23fec8eaeb37a333cbfb51c))
+
 # [1.0.0-dev.26](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.25...v1.0.0-dev.26) (2026-08-27)
 
 
