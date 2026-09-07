@@ -16,14 +16,28 @@ const apiConfig: AxiosRequestConfig = {
 
 const apiInstance: AxiosInstance = axios.create(apiConfig);
 
-const refreshUserToken = async () => {
+type RefreshResponse = {
+  accessToken: string;
+  refreshToken: string;
+};
+
+const refreshUserToken = async (): Promise<RefreshResponse> => {
   const baseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
-  const response = await axios.post(`${baseURL}/auth/refresh`);
-  return response.data.token;
+  const refreshToken = localStorage.getItem("refreshToken");
+
+  if (!refreshToken) {
+    throw new Error("No refresh token available");
+  }
+
+  const response = await axios.post<RefreshResponse>(
+    `${baseURL}/auth/refresh`,
+    { refreshToken },
+  );
+  return response.data;
 };
 apiInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("accessToken");
 
     if (token && config.headers) {
       config.headers.Authorization = `Bearer ${token}`;
@@ -46,7 +60,7 @@ apiInstance.interceptors.response.use(
     };
 
     if (error.response?.status === 401 && originalRequest) {
-      // Return error instead of get refresh token in login page
+      // Return error instead of getting a refresh token when the login request itself fails
       if (originalRequest.url?.includes("/auth/login")) {
         return Promise.reject(error);
       }
@@ -54,21 +68,25 @@ apiInstance.interceptors.response.use(
       // Getting new token
       if (!originalRequest._retry) {
         originalRequest._retry = true;
-        console.warn(
-          "token is invalid , getting new token",
-        );
+        console.warn("token is invalid , getting new token");
 
         try {
-          const newToken = await refreshUserToken();
-          localStorage.setItem("token", newToken);
+          const { accessToken, refreshToken } = await refreshUserToken();
+
+          localStorage.setItem("accessToken", accessToken);
+          localStorage.setItem("refreshToken", refreshToken);
 
           // Append new token to previous request
           if (originalRequest.headers) {
-            originalRequest.headers["Authorization"] = `Bearer ${newToken}`;
+            originalRequest.headers["Authorization"] = `Bearer ${accessToken}`;
           }
           return apiInstance.request(originalRequest);
         } catch {
-          // If catch error redirect to login page
+          // If refresh fails, clear stale auth state and redirect to login page
+          localStorage.removeItem("user");
+          localStorage.removeItem("isAuthenticated");
+          localStorage.removeItem("accessToken");
+          localStorage.removeItem("refreshToken");
           window.location.href = "/login";
         }
       }

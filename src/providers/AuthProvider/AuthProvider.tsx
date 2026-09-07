@@ -6,11 +6,10 @@ import { AuthContext } from "@/context/auth-context.ts";
 
 import type { UserType } from "@/types/user.types.ts";
 
-
 type Props = PropsWithChildren;
 export const AuthProvider = ({ children }: Props): ReactNode => {
   const [user, setUser] = useState<UserType | null>(
-    JSON.parse(localStorage.getItem("user") || 'null'),
+    JSON.parse(localStorage.getItem("user") || "null"),
   );
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
     localStorage.getItem("isAuthenticated") === "true",
@@ -21,8 +20,8 @@ export const AuthProvider = ({ children }: Props): ReactNode => {
     setIsAuthenticated(true);
     localStorage.setItem("user", JSON.stringify(data.user));
     localStorage.setItem("isAuthenticated", "true");
-    localStorage.setItem("accessToken", JSON.stringify(data.accessToken));
-    localStorage.setItem("refreshToken", JSON.stringify(data.refreshToken));
+    localStorage.setItem("accessToken", data.accessToken);
+    localStorage.setItem("refreshToken", data.refreshToken);
   };
 
   const logout = () => {
