@@ -7,7 +7,7 @@ type Props = {
 };
 export const SidebarLayout = ({ sidebar }: Props): ReactNode => {
   return (
-    <div className="grid gap-4 pt-12 md:grid-cols-4">
+    <div className="grid gap-4 md:grid-cols-4">
       <div className="col-span-full md:col-span-3">
         <Outlet />
       </div>

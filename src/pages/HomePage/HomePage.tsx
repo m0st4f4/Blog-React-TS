@@ -5,7 +5,7 @@ export const HomePage = () => {
   return (
     <>
       <FeaturedPosts />
-      <LatestPosts />
+      <LatestPosts className="my-8" />
     </>
   );
 };

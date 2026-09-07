@@ -21,7 +21,7 @@ export const FeaturedPosts = ({ className }: Props): ReactNode => {
   return (
     <div
       className={cn(
-        "grid gap-4 grid-cols-1 grid-rows-5 md:grid-cols-3 md:grid-rows-3 my-8",
+        "grid gap-4 grid-cols-1 grid-rows-5 md:grid-cols-3 md:grid-rows-3",
         className,
       )}
     >
