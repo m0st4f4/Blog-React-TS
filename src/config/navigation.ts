@@ -41,56 +41,56 @@ export const socialNavigation: SocialNavigationType[] = [
 
 export const FooterNavigation: FooterNavigationType[] = [
   {
-    groupTitleKey: "nav.footer.technology" as const,
+    groupTitleKey: "nav.footer.technology" ,
     items: [
       {
-        titleKey: "nav.footer.ai" as const,
+        titleKey: "nav.footer.ai" ,
         href: "/category/ai",
       },
       {
-        titleKey: "nav.footer.software" as const,
+        titleKey: "nav.footer.software" ,
         href: "/category/software",
       },
       {
-        titleKey: "nav.footer.game" as const,
+        titleKey: "nav.footer.game" ,
         href: "/category/game",
       },
       {
-        titleKey: "nav.footer.security" as const,
+        titleKey: "nav.footer.security" ,
         href: "/category/security",
       },
     ],
   },
   {
-    groupTitleKey: "nav.footer.tutorial" as const,
+    groupTitleKey: "nav.footer.tutorial" ,
     items: [
       {
-        titleKey: "nav.footer.reactTutorial" as const,
+        titleKey: "nav.footer.reactTutorial" ,
         href: "/category/react",
       },
       {
-        titleKey: "nav.footer.aiTutorial" as const,
+        titleKey: "nav.footer.aiTutorial" ,
         href: "/category/ai",
       },
       {
-        titleKey: "nav.footer.linuxTutorial" as const,
+        titleKey: "nav.footer.linuxTutorial" ,
         href: "/category/linux",
       },
     ],
   },
   {
-    groupTitleKey: "nav.footer.usefulLinks" as const,
+    groupTitleKey: "nav.footer.usefulLinks" ,
     items: [
       {
-        titleKey: "nav.footer.home" as const,
+        titleKey: "nav.footer.home" ,
         href: "/",
       },
       {
-        titleKey: "nav.footer.aboutUs" as const,
+        titleKey: "nav.footer.aboutUs" ,
         href: "/aboutUs",
       },
       {
-        titleKey: "nav.footer.contactUs" as const,
+        titleKey: "nav.footer.contactUs" ,
         href: "/contactUs",
       },
     ],
