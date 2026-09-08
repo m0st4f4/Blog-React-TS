@@ -1,3 +1,10 @@
+# [1.0.0-dev.29](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.28...v1.0.0-dev.29) (2026-09-08)
+
+
+### Bug Fixes
+
+* **locale:** fix dynamic key translation bug ([#101](https://github.com/m0st4f4/Blog-React-TS/issues/101)) ([a326e20](https://github.com/m0st4f4/Blog-React-TS/commit/a326e207559643791e324e43eebcccb7eeca0a22))
+
 # [1.0.0-dev.28](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.27...v1.0.0-dev.28) (2026-09-07)
 
 
