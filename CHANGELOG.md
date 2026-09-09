@@ -1,3 +1,10 @@
+# [1.0.0-dev.30](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.29...v1.0.0-dev.30) (2026-09-09)
+
+
+### Features
+
+* category list page [#58](https://github.com/m0st4f4/Blog-React-TS/issues/58) ([#102](https://github.com/m0st4f4/Blog-React-TS/issues/102)) ([37aaecf](https://github.com/m0st4f4/Blog-React-TS/commit/37aaecf7efb511811c83725d645cfc4e86c8b719))
+
 # [1.0.0-dev.29](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.28...v1.0.0-dev.29) (2026-09-08)
 
 
