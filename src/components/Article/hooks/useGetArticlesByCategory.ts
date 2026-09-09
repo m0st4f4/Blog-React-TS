@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchFilteredArticles } from "@/services/articleService.ts";
 
 export const useGetArticlesByCategory = (categoryId: string) => {
-  const { data, isPending, isError, error } = useQuery({
+  return useQuery({
     queryKey: ["articlesByCategoryId", categoryId],
     queryFn: () => {
       return fetchFilteredArticles({
@@ -17,6 +17,4 @@ export const useGetArticlesByCategory = (categoryId: string) => {
       });
     },
   });
-
-  return { data, isPending, isError, error };
 };

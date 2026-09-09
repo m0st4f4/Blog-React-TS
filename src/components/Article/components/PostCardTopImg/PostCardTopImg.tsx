@@ -1,7 +1,7 @@
 import { type ComponentProps, type ReactNode } from "react";
 
 import { AuthorDetails } from "@/components/AuthorDetails/AuthorDetails.tsx";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge.tsx";
 import {
   Card,
   CardAction,
@@ -9,7 +9,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui/card.tsx";
 
 import type { ArticleType } from "@/types/article.types.ts";
 
@@ -20,7 +20,7 @@ type Props = ComponentProps<typeof Card> & {
 export const PostCardTopImg = ({ item, ...otherProps }: Props): ReactNode => {
   return (
     <Card
-      className="relative mx-auto w-full max-w-sm pt-0 hover:shadow transition-shadow duration-300"
+      className="relative mx-auto w-full h-full max-w-sm pt-0 hover:shadow transition-shadow duration-300"
       {...otherProps}
     >
       <div className="absolute inset-0 z-30 aspect-video" />

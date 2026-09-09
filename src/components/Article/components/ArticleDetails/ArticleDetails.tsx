@@ -4,7 +4,7 @@ import DOMPurify from "dompurify";
 import { useTranslation } from "react-i18next";
 
 import { AuthorDetails } from "@/components/AuthorDetails/AuthorDetails.tsx";
-import { CategoryButton } from "@/components/CategoryButton/CategoryButton.tsx";
+import { CategoryButton } from "@/components/Category/components/CategoryButton/CategoryButton.tsx";
 import { Separator } from "@/components/ui/separator.tsx";
 
 import { useLocalizedDate } from "@/hooks/useLocalizedDate.ts";

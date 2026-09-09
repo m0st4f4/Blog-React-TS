@@ -4,10 +4,10 @@ import { useParams } from "react-router";
 
 import { useTranslation } from "react-i18next";
 
-import { ArticleDetails } from "@/components/ArticleDetails/ArticleDetails.tsx";
-import { ArticleDetailsSkeleton } from "@/components/ArticleDetails/ArticleDetailsSkeleton.tsx";
+import { ArticleDetails } from "@/components/Article/components/ArticleDetails/ArticleDetails.tsx";
+import { ArticleDetailsSkeleton } from "@/components/Article/components/ArticleDetails/ArticleDetailsSkeleton.tsx";
 
-import { useGetArticle } from "@/hooks/useGetArticle.ts";
+import { useGetArticle } from "@/components/Article/hooks/useGetArticle.ts";
 
 export const ArticlePage = (): ReactNode => {
   const { t } = useTranslation();

@@ -5,10 +5,10 @@ import { Link } from "react-router";
 import { cn } from "@/lib/utils.ts";
 import { useTranslation } from "react-i18next";
 
-import { PostCardTopImg } from "@/components/PostCardTopImg/PostCardTopImg.tsx";
-import { PostCardTopImgSkeleton } from "@/components/PostCardTopImg/PostCardTopImgSkeleton.tsx";
+import { PostCardTopImg } from "@/components/Article/components/PostCardTopImg/PostCardTopImg.tsx";
+import { PostCardTopImgSkeleton } from "@/components/Article/components/PostCardTopImg/PostCardTopImgSkeleton.tsx";
 
-import { useGetLatestArticles } from "@/hooks/useGetLatestArticles.ts";
+import { useGetLatestArticles } from "@/components/Article/hooks/useGetLatestArticles.ts";
 
 type Props = {
   className?: string;
