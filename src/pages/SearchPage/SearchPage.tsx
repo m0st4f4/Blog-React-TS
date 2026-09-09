@@ -10,8 +10,8 @@ import { useTranslation } from "react-i18next";
 
 
 
-import { ArticleList } from "@/components/ArticleList/ArticleList.tsx";
-import ArticleListSkeleton from "@/components/ArticleList/ArticleListSkeleton.tsx";
+import { ArticleList } from "@/components/Article/components/ArticleList/ArticleList.tsx";
+import ArticleListSkeleton from "@/components/Article/components/ArticleList/ArticleListSkeleton.tsx";
 
 
 

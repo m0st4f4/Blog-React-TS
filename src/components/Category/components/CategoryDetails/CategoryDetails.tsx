@@ -1,13 +1,13 @@
 import { type ReactNode } from "react";
 
-import { ArticleList } from "@/components/ArticleList/ArticleList.tsx";
-import ArticleListSkeleton from "@/components/ArticleList/ArticleListSkeleton.tsx";
+import { ArticleList } from "@/components/Article/components/ArticleList/ArticleList.tsx";
+import ArticleListSkeleton from "@/components/Article/components/ArticleList/ArticleListSkeleton.tsx";
 import { CategoryHeader } from "@/components/Category/components/CategoryHeader/CategoryHeader.tsx";
 import CategoryHeaderSkeleton from "@/components/Category/components/CategoryHeader/CategoryHeaderSkeleton.tsx";
 import { useGetCategory } from "@/components/Category/hooks/useGetCategory.ts";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
 
-import { useGetArticlesByCategory } from "@/hooks/useGetArticlesByCategory.ts";
+import { useGetArticlesByCategory } from "@/components/Article/hooks/useGetArticlesByCategory.ts";
 
 type Props = {
   className?: string;

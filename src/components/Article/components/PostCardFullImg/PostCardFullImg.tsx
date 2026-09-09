@@ -2,8 +2,8 @@ import { type ReactNode } from "react";
 
 import { cn } from "@/lib/utils.ts";
 
-import { Badge } from "@/components/ui/badge";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Badge } from "@/components/ui/badge.tsx";
+import { Skeleton } from "@/components/ui/skeleton.tsx";
 
 import { useLocalizedDate } from "@/hooks/useLocalizedDate.ts";
 

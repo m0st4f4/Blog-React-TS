@@ -1,7 +1,7 @@
 import { type ComponentProps, type ReactNode } from "react";
 
 import { AuthorDetails } from "@/components/AuthorDetails/AuthorDetails.tsx";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge.tsx";
 import {
   Card,
   CardAction,
@@ -9,7 +9,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/components/ui/card.tsx";
 
 import type { ArticleType } from "@/types/article.types.ts";
 

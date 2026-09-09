@@ -4,9 +4,9 @@ import { Link } from "react-router";
 
 import { cn } from "@/lib/utils.ts";
 
-import { PostCardFullImg } from "@/components/PostCardFullImg/PostCardFullImg.tsx";
+import { PostCardFullImg } from "@/components/Article/components/PostCardFullImg/PostCardFullImg.tsx";
 
-import { useGetFeaturedArticles } from "@/hooks/useGetFeaturedArticles.ts";
+import { useGetFeaturedArticles } from "@/components/Article/hooks/useGetFeaturedArticles.ts";
 
 type Props = {
   className?: string;
