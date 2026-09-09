@@ -3,39 +3,20 @@ import { type ReactNode } from "react";
 import { cn } from "@/lib/utils.ts";
 import { useTranslation } from "react-i18next";
 
-import { Skeleton } from "@/components/ui/skeleton.tsx";
-
 import type { CategoryType } from "@/types/article.types.ts";
 
 type Props = {
   className?: string;
-  data?: CategoryType;
-  isPending?: boolean;
+  data: CategoryType;
 };
 
-export const CategoryHeader = ({
-  className = "",
-  data,
-  isPending,
-}: Props): ReactNode => {
+export const CategoryHeader = ({ className = "", data }: Props): ReactNode => {
   const { t } = useTranslation();
-  if (isPending) {
-    return (
-      <div className={className}>
-        <Skeleton className="w-full h-48 object-cover rounded-lg" />
-        <Skeleton className="w-1/4 h-4 my-4" />
-        <Skeleton className="w-1/2 h-4" />
-      </div>
-    );
-  }
   if (!data) {
     return (
-      <p className={cn("text-center", className)}>
-        {t("category.noResult")}
-      </p>
+      <p className={cn("text-center", className)}>{t("category.noResult")}</p>
     );
   }
-
   return (
     <div className={className}>
       <img

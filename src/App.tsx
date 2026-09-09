@@ -38,7 +38,7 @@ function App() {
           path="category"
           element={<SidebarLayout sidebar={<Sidebar />} />}
         >
-          <Route path=":id" element={<CategoryPage />} />
+          <Route path=":id?" element={<CategoryPage />} />
         </Route>
         <Route path="search" element={<SidebarLayout sidebar={<Sidebar />} />}>
           <Route path=":query?" element={<SearchPage />} />

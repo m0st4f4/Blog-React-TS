@@ -20,7 +20,7 @@ type Props = ComponentProps<typeof Card> & {
 export const PostCardTopImg = ({ item, ...otherProps }: Props): ReactNode => {
   return (
     <Card
-      className="relative mx-auto w-full max-w-sm pt-0 hover:shadow transition-shadow duration-300"
+      className="relative mx-auto w-full h-full max-w-sm pt-0 hover:shadow transition-shadow duration-300"
       {...otherProps}
     >
       <div className="absolute inset-0 z-30 aspect-video" />

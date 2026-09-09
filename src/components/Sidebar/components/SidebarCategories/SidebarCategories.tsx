@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { SidebarGroup } from "@/components/Sidebar/components/SidebarGroup/SidebarGroup.tsx";
 import { Skeleton } from "@/components/ui/skeleton";
 
-import { useGetCategories } from "@/hooks/useGetCategories.ts";
+import { useGetCategories } from "@/components/Category/hooks/useGetCategories.ts";
 
 type Props = {
   className?: string;

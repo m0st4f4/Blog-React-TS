@@ -38,6 +38,7 @@ export const fa = {
   article: {
     readTime: "خواندن {{count}} دقیقه",
     commentsCount: "{{count}} نظر",
+    noResult: "مقاله ای وجود ندارد",
   },
 
   page: {
@@ -124,6 +125,13 @@ export const fa = {
     resetPass: {
       title: "بازنشانی کلمه عبور",
       successMsg: "لینک بازنشانی رمز عبور به ایمیل شما ارسال شد",
+    },
+  },
+
+  error: {
+    message: "خطایی رخ داد",
+    action: {
+      retry: "تلاش مجدد",
     },
   },
 };

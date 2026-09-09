@@ -38,6 +38,7 @@ export const en = {
   article: {
     readTime: "{{count}} min read",
     commentsCount: "{{count}} comments",
+    noResult: "No article found",
   },
 
   page: {
@@ -126,6 +127,13 @@ export const en = {
     resetPass: {
       title: "Reset Password",
       successMsg: "Reset password link sent to your email address.",
+    },
+  },
+
+  error: {
+    message: "Something went wrong",
+    action: {
+      retry: "Retry",
     },
   },
 };

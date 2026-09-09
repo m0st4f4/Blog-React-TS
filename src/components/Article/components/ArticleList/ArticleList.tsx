@@ -6,39 +6,21 @@ import { cn } from "@/lib/utils.ts";
 import { useTranslation } from "react-i18next";
 
 import { PostCardTopImg } from "@/components/PostCardTopImg/PostCardTopImg.tsx";
-import { PostCardTopImgSkeleton } from "@/components/PostCardTopImg/PostCardTopImgSkeleton.tsx";
 
 import type { ArticleType } from "@/types/article.types.ts";
 
 type Props = {
   className?: string;
-  data?: ArticleType[];
-  isPending: boolean;
+  data: ArticleType[];
 };
 
-export const ArticleList = ({
-  className = "",
-  data,
-  isPending,
-}: Props): ReactNode => {
+export const ArticleList = ({ className = "", data }: Props): ReactNode => {
   const { t } = useTranslation();
-
-  if (isPending) {
+  if (data.length === 0) {
     return (
-      <div className={cn("grid gap-4 grid-cols-1  md:grid-cols-3", className)}>
-        {Array.from({ length: 3 }).map((_, index) => (
-          <PostCardTopImgSkeleton key={index} />
-        ))}
-      </div>
+      <p className={cn("text-center", className)}>{t("article.noResult")}</p>
     );
   }
-
-  if (data?.length === 0) {
-    return (
-      <p className={cn("text-center", className)}>{t("SearchPage.noResult")}</p>
-    );
-  }
-
   return (
     <div className={cn("grid gap-4 grid-cols-1  md:grid-cols-3", className)}>
       {data?.map((item) => (

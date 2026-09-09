@@ -1,14 +1,70 @@
 import { type ReactNode, useContext, useEffect } from "react";
 
+
+
 import { useParams } from "react-router";
+
+
 
 import { useTranslation } from "react-i18next";
 
+
+
 import { ArticleList } from "@/components/ArticleList/ArticleList.tsx";
+import ArticleListSkeleton from "@/components/ArticleList/ArticleListSkeleton.tsx";
+
+
 
 import { SearchContext } from "@/context/search-context.ts";
 
+
+
 import { useSearchArticle } from "@/hooks/useSearchArticle.ts";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 type Props = {
   className?: string;
@@ -20,7 +76,7 @@ export const SearchPage = ({ className = "" }: Props): ReactNode => {
   const query =
     useParams<{ query: string }>().query?.trim().toLowerCase() || "";
   const { setQuery } = useContext(SearchContext);
-  const { data, isPending } = useSearchArticle(query);
+  const { data, isPending ,isError,error,refetch } = useSearchArticle(query);
 
   useEffect(() => {
     setQuery(query);
@@ -34,6 +90,31 @@ export const SearchPage = ({ className = "" }: Props): ReactNode => {
     };
   }, [query, setQuery, t]);
 
+  if (isPending) {
+    return (
+      <div className={className}>
+        <h1 className="text-center text-2xl mb-8">
+          <span> {t("page.search.heading")}</span>
+          &nbsp;
+          <span className="font-bold ms-1">{query}</span>
+        </h1>
+        <ArticleListSkeleton />
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className={className}>
+        <h1 className="text-center text-2xl mb-8">
+          <span> {t("page.search.heading")}</span>
+          &nbsp;
+          <span className="font-bold ms-1">{query}</span>
+        </h1>
+       <ErrorMessage onRetry={refetch} message={error.message}/>
+      </div>
+    );
+  }
   return (
     <div className={className}>
       <h1 className="text-center text-2xl mb-8">
@@ -41,7 +122,7 @@ export const SearchPage = ({ className = "" }: Props): ReactNode => {
         &nbsp;
         <span className="font-bold ms-1">{query}</span>
       </h1>
-      <ArticleList isPending={isPending} data={data} />
+      <ArticleList data={data} />
     </div>
   );
 };
