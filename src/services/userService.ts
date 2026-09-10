@@ -1,8 +1,9 @@
+import type { UserLoginType } from "@/schema/login-schema.ts";
+import type { UserInfoType } from "@/schema/user-schema.ts";
 import apiInstance from "@/services/api.ts";
 import type { AxiosResponse } from "axios";
 
 import type { UserType } from "@/types/user.types.ts";
-import type { UserInfoType } from "@/schema/user-schema.ts";
 
 export const fetchUserById = async (id: string | number): Promise<UserType> => {
   const response: AxiosResponse<UserType> = await apiInstance.get(
@@ -31,9 +32,8 @@ export const RegisterUser = async (
   return response.data;
 };
 
-export type LoginUserType = Required<Pick<UserType, "username" | "password">>;
 export const LoginUser = async (
-  userData: LoginUserType,
+  userData: UserLoginType,
 ): Promise<ResponseUserType> => {
   const response: AxiosResponse<ResponseUserType> = await apiInstance.post(
     `/auth/login`,

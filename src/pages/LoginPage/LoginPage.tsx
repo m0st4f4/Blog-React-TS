@@ -7,6 +7,7 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import type z from "zod";
 
 import { LoginForm } from "@/forms/LoginForm/LoginForm.tsx";
+import { getApiErrorMessage } from "@/lib/getApiErrorMesage.ts";
 import { LoginSchema } from "@/schema/login-schema.ts";
 
 import { Button } from "@/components/ui/button.tsx";
@@ -40,7 +41,9 @@ export const LoginPage = (): ReactNode => {
     <>
       {isError && (
         <div className="mt-4">
-          <p className="p-2 w-fit text-destructive">{error?.message}</p>
+          <p className="p-2 w-fit text-destructive">
+            {getApiErrorMessage(error)}
+          </p>
         </div>
       )}
       {isSuccess ? (

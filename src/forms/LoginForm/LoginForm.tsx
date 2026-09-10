@@ -2,7 +2,7 @@ import { type ComponentProps, type ReactNode } from "react";
 
 import { Controller, type UseFormReturn } from "react-hook-form";
 
-import type { LoginUserType } from "@/services/userService.ts";
+import type { UserLoginType } from "@/schema/login-schema.ts";
 import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button";
@@ -16,7 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 
 type Props = ComponentProps<"form"> & {
-  form: UseFormReturn<LoginUserType>;
+  form: UseFormReturn<UserLoginType>;
   isPending: boolean;
 };
 

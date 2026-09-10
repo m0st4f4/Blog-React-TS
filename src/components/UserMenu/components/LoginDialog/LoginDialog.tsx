@@ -5,6 +5,7 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { LoginForm } from "@/forms/LoginForm/LoginForm.tsx";
+import { getApiErrorMessage } from "@/lib/getApiErrorMesage.ts";
 import { LoginSchema } from "@/schema/login-schema.ts";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
@@ -31,8 +32,7 @@ export const LoginDialog = ({
   extraButtons,
 }: Props): ReactNode => {
   const { t } = useTranslation();
-  const { isPending, isError, error, reset, mutateAsync } =
-    useLoginUser();
+  const { isPending, isError, error, reset, mutateAsync } = useLoginUser();
   const form = useForm<Values>({
     defaultValues: { username: "", password: "" },
     resolver: zodResolver(LoginSchema),
@@ -63,7 +63,9 @@ export const LoginDialog = ({
         </DialogHeader>
         {isError && (
           <div className="mt-4">
-            <p className="p-2 w-fit text-destructive">{error?.message}</p>
+            <p className="p-2 w-fit text-destructive">
+              {getApiErrorMessage(error)}
+            </p>
           </div>
         )}
         <LoginForm
