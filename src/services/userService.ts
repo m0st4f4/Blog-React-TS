@@ -13,7 +13,7 @@ export const fetchUserById = async (id: string | number): Promise<UserType> => {
   return response.data;
 };
 
-export type ResponseUserType = {
+export type AuthResponseType = {
   accessToken: string;
   refreshToken: string;
   user: UserType;
@@ -21,8 +21,8 @@ export type ResponseUserType = {
 
 export const RegisterUser = async (
   userData: UserRegisterType,
-): Promise<ResponseUserType> => {
-  const response: AxiosResponse<ResponseUserType> = await apiInstance.post(
+): Promise<AuthResponseType> => {
+  const response: AxiosResponse<AuthResponseType> = await apiInstance.post(
     `/auth/register`,
     userData,
   );
@@ -32,8 +32,8 @@ export const RegisterUser = async (
 
 export const LoginUser = async (
   userData: UserLoginType,
-): Promise<ResponseUserType> => {
-  const response: AxiosResponse<ResponseUserType> = await apiInstance.post(
+): Promise<AuthResponseType> => {
+  const response: AxiosResponse<AuthResponseType> = await apiInstance.post(
     `/auth/login`,
     userData,
   );

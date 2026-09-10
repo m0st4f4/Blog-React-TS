@@ -1,6 +1,6 @@
 import { type PropsWithChildren, type ReactNode, useState } from "react";
 
-import type { ResponseUserType } from "@/services/userService";
+import type { AuthResponseType } from "@/services/userService";
 
 import { AuthContext } from "@/context/auth-context.ts";
 
@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }: Props): ReactNode => {
     localStorage.getItem("isAuthenticated") === "true",
   );
 
-  const login = (data: ResponseUserType) => {
+  const login = (data: AuthResponseType) => {
     setUser(data.user);
     setIsAuthenticated(true);
     localStorage.setItem("user", JSON.stringify(data.user));
