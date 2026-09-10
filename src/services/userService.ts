@@ -4,6 +4,7 @@ import apiInstance from "@/services/api.ts";
 import type { AxiosResponse } from "axios";
 
 import type { UserType } from "@/types/user.types.ts";
+import type { UserRegisterType } from "@/schema/register-schema.ts";
 
 export const fetchUserById = async (id: string | number): Promise<UserType> => {
   const response: AxiosResponse<UserType> = await apiInstance.get(
@@ -18,11 +19,8 @@ export type ResponseUserType = {
   user: UserType;
 };
 
-export type RegisterUserType = Required<
-  Pick<UserType, "email" | "username" | "password">
->;
 export const RegisterUser = async (
-  userData: RegisterUserType,
+  userData: UserRegisterType,
 ): Promise<ResponseUserType> => {
   const response: AxiosResponse<ResponseUserType> = await apiInstance.post(
     `/auth/register`,

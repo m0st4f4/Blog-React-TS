@@ -1,14 +1,12 @@
 import { useMutation } from "@tanstack/react-query";
 
-import { RegisterUser, type RegisterUserType } from "@/services/userService.ts";
+import type { UserRegisterType } from "@/schema/register-schema.ts";
+import { RegisterUser, type ResponseUserType } from "@/services/userService.ts";
+
+import type { ApiError } from "@/types/api.types.ts";
 
 export const useRegisterUser = () => {
-  const { mutate, isPending, isSuccess, data, isError, error, reset } =
-    useMutation({
-      mutationFn: (data: RegisterUserType) => {
-        return RegisterUser(data);
-      },
-    });
-
-  return { mutate, isPending, isSuccess, data, isError, error, reset };
+  return useMutation<ResponseUserType, ApiError, UserRegisterType>({
+    mutationFn: RegisterUser,
+  });
 };

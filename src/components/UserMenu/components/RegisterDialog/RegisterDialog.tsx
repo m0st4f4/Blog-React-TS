@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dialog.tsx";
 
 import { useRegisterUser } from "@/hooks/useRegisterUser.ts";
+import { getApiErrorMessage } from "@/lib/getApiErrorMesage.ts";
 
 type Props = {
   isOpen: boolean;
@@ -59,7 +60,7 @@ export const RegisterDialog = ({
         </DialogHeader>
         {isError && (
           <div className="mt-4">
-            <p className="p-2 w-fit text-destructive">{error?.message}</p>
+            <p className="p-2 w-fit text-destructive">{getApiErrorMessage(error)}</p>
           </div>
         )}
         {isSuccess ? (
