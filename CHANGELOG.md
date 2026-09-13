@@ -1,3 +1,10 @@
+# [1.0.0-dev.31](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.30...v1.0.0-dev.31) (2026-09-13)
+
+
+### Features
+
+* server error handling [#81](https://github.com/m0st4f4/Blog-React-TS/issues/81) ([#105](https://github.com/m0st4f4/Blog-React-TS/issues/105)) ([42dc634](https://github.com/m0st4f4/Blog-React-TS/commit/42dc6346d603b86466bf4b52877aba298b5a51ff))
+
 # [1.0.0-dev.30](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.29...v1.0.0-dev.30) (2026-09-09)
 
 
