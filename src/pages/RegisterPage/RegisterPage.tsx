@@ -7,9 +7,9 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { RegisterForm } from "@/forms/RegisterForm/RegisterForm.tsx";
-import { getApiErrorMessage } from "@/lib/getApiErrorMesage.ts";
 import { RegisterSchema } from "@/schema/register-schema.ts";
 
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
 import { Button } from "@/components/ui/button.tsx";
 
 import { useRegisterUser } from "@/hooks/useRegisterUser.ts";
@@ -30,13 +30,7 @@ export const RegisterPage = (): ReactNode => {
 
   return (
     <>
-      {isError && (
-        <div className="mt-4">
-          <p className="p-2 w-fit text-destructive">
-            {getApiErrorMessage(error)}
-          </p>
-        </div>
-      )}
+      {isError && <ErrorMessage error={error} className="mt-4" />}
       {isSuccess ? (
         <div className="text-center flex flex-col items-center">
           <p className="p-2 w-full rounded-lg">

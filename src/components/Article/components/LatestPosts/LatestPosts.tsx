@@ -7,17 +7,20 @@ import { useTranslation } from "react-i18next";
 
 import { PostCardTopImg } from "@/components/Article/components/PostCardTopImg/PostCardTopImg.tsx";
 import { PostCardTopImgSkeleton } from "@/components/Article/components/PostCardTopImg/PostCardTopImgSkeleton.tsx";
-
 import { useGetLatestArticles } from "@/components/Article/hooks/useGetLatestArticles.ts";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
 
 type Props = {
   className?: string;
 };
 
 export const LatestPosts = ({ className = "" }: Props): ReactNode => {
-  const { data, isPending } = useGetLatestArticles();
+  const { data, isPending, isError, error, refetch } = useGetLatestArticles();
   const { t } = useTranslation();
-  if (!data) return;
+  if (isError && error) {
+    return <ErrorMessage error={error} onRetry={refetch} />;
+  }
+  if (!data) return null;
   return (
     <div className={cn(className)}>
       <h2 className="text-2xl border-s-2 border-accent mbe-4 ps-4 font-bold">

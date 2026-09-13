@@ -1,14 +1,18 @@
 import type { UserLoginType } from "@/schema/login-schema.ts";
+import type { UserRegisterType } from "@/schema/register-schema.ts";
 import type { UserInfoType } from "@/schema/user-schema.ts";
 import apiInstance from "@/services/api.ts";
 import type { AxiosResponse } from "axios";
 
 import type { UserType } from "@/types/user.types.ts";
-import type { UserRegisterType } from "@/schema/register-schema.ts";
 
-export const fetchUserById = async (id: string | number): Promise<UserType> => {
+export const fetchUserById = async (
+  id: string | number,
+  signal?: AbortSignal,
+): Promise<UserType> => {
   const response: AxiosResponse<UserType> = await apiInstance.get(
     `/users/${id}`,
+    { signal },
   );
   return response.data;
 };

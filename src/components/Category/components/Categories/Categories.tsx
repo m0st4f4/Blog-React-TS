@@ -13,6 +13,7 @@ type Props = {
 
 export const Categories = ({ className = "" }: Props): ReactNode => {
   const { data, isPending, isError, error, refetch } = useGetCategories();
+
   if (isPending) {
     return (
       <div className={cn("grid gap-4 grid-cols-1  md:grid-cols-3", className)}>
@@ -22,8 +23,9 @@ export const Categories = ({ className = "" }: Props): ReactNode => {
       </div>
     );
   }
-  if (isError) {
-    return <ErrorMessage onRetry={refetch} message={error.message} />;
+
+  if (isError && error) {
+    return <ErrorMessage onRetry={refetch} error={error} />;
   }
 
   return <CategoryList data={data} className={className} />;

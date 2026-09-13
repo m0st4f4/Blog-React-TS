@@ -2,12 +2,11 @@ import { type ReactNode } from "react";
 
 import { ArticleList } from "@/components/Article/components/ArticleList/ArticleList.tsx";
 import ArticleListSkeleton from "@/components/Article/components/ArticleList/ArticleListSkeleton.tsx";
+import { useGetArticlesByCategory } from "@/components/Article/hooks/useGetArticlesByCategory.ts";
 import { CategoryHeader } from "@/components/Category/components/CategoryHeader/CategoryHeader.tsx";
 import CategoryHeaderSkeleton from "@/components/Category/components/CategoryHeader/CategoryHeaderSkeleton.tsx";
 import { useGetCategory } from "@/components/Category/hooks/useGetCategory.ts";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
-
-import { useGetArticlesByCategory } from "@/components/Article/hooks/useGetArticlesByCategory.ts";
 
 type Props = {
   className?: string;
@@ -31,7 +30,7 @@ export const CategoryDetails = ({ className = "", id }: Props): ReactNode => {
     return (
       <ErrorMessage
         onRetry={categoryQuery.refetch}
-        message={categoryQuery.error.message}
+        error={categoryQuery.error}
       />
     );
   }
@@ -40,7 +39,7 @@ export const CategoryDetails = ({ className = "", id }: Props): ReactNode => {
     return (
       <ErrorMessage
         onRetry={articleQuery.refetch}
-        message={articleQuery.error.message}
+        error={articleQuery.error}
       />
     );
   }

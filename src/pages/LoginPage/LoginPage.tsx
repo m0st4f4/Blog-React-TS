@@ -7,9 +7,9 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import type z from "zod";
 
 import { LoginForm } from "@/forms/LoginForm/LoginForm.tsx";
-import { getApiErrorMessage } from "@/lib/getApiErrorMesage.ts";
 import { LoginSchema } from "@/schema/login-schema.ts";
 
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
 import { Button } from "@/components/ui/button.tsx";
 
 import { useLoginUser } from "@/hooks/useLoginUser.ts";
@@ -39,13 +39,7 @@ export const LoginPage = (): ReactNode => {
   };
   return (
     <>
-      {isError && (
-        <div className="mt-4">
-          <p className="p-2 w-fit text-destructive">
-            {getApiErrorMessage(error)}
-          </p>
-        </div>
-      )}
+      {isError && <ErrorMessage error={error} className="mt-4" />}
       {isSuccess ? (
         <div className="text-center flex flex-col items-center">
           <p className="p-2 w-full rounded-lg">

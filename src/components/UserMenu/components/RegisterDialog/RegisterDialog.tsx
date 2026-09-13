@@ -8,6 +8,7 @@ import { RegisterForm } from "@/forms/RegisterForm/RegisterForm.tsx";
 import { RegisterSchema } from "@/schema/register-schema.ts";
 import { useTranslation } from "react-i18next";
 
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
 import {
   Dialog,
   DialogContent,
@@ -17,7 +18,6 @@ import {
 } from "@/components/ui/dialog.tsx";
 
 import { useRegisterUser } from "@/hooks/useRegisterUser.ts";
-import { getApiErrorMessage } from "@/lib/getApiErrorMesage.ts";
 
 type Props = {
   isOpen: boolean;
@@ -59,9 +59,7 @@ export const RegisterDialog = ({
           <DialogTitle>{t("auth.register.title")}</DialogTitle>
         </DialogHeader>
         {isError && (
-          <div className="mt-4">
-            <p className="p-2 w-fit text-destructive">{getApiErrorMessage(error)}</p>
-          </div>
+          <ErrorMessage error={error} className="mt-4" />
         )}
         {isSuccess ? (
           <div className="text-center flex flex-col items-center">

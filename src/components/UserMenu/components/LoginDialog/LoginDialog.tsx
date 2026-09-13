@@ -5,11 +5,11 @@ import { type SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { LoginForm } from "@/forms/LoginForm/LoginForm.tsx";
-import { getApiErrorMessage } from "@/lib/getApiErrorMesage.ts";
 import { LoginSchema } from "@/schema/login-schema.ts";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
 import {
   Dialog,
   DialogContent,
@@ -61,13 +61,7 @@ export const LoginDialog = ({
         <DialogHeader>
           <DialogTitle>{t("auth.login.title")}</DialogTitle>
         </DialogHeader>
-        {isError && (
-          <div className="mt-4">
-            <p className="p-2 w-fit text-destructive">
-              {getApiErrorMessage(error)}
-            </p>
-          </div>
-        )}
+        {isError && <ErrorMessage error={error} className="mt-4" />}
         <LoginForm
           noValidate
           onSubmit={form.handleSubmit(handleFormSubmit)}
