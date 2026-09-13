@@ -16,6 +16,8 @@ import { ErrorPage } from "@/pages/ErrorPage/ErrorPage.tsx";
 import { AuthProvider } from "@/providers/AuthProvider/AuthProvider.tsx";
 import { SearchProvider } from "@/providers/SearchProvider.tsx";
 
+import type { ApiError } from "@/types/api.types.ts";
+
 import App from "./App.tsx";
 import "./i18n";
 
@@ -29,10 +31,28 @@ const queryClient = new QueryClient({
       refetchOnWindowFocus: true,
       refetchOnMount: true,
       refetchOnReconnect: true,
-      retry: 3,
+      retry: (failureCount, error) => {
+        const apiError = error as ApiError;
+        const status = apiError?.response?.status;
+
+        if (status && status >= 400 && status < 500) return false;
+        if (!apiError.response) {
+          return failureCount < 3;
+        }
+        return failureCount < 3;
+      },
     },
     mutations: {
-      retry: 3,
+      retry: (failureCount, error) => {
+        const apiError = error as ApiError;
+        const status = apiError?.response?.status;
+
+        if (status && status >= 400 && status < 500) return false;
+        if (!apiError.response) {
+          return failureCount < 3;
+        }
+        return failureCount < 3;
+      },
     },
   },
 });

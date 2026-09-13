@@ -4,21 +4,21 @@ import { Link } from "react-router";
 
 import { useTranslation } from "react-i18next";
 
+import { useGetCategories } from "@/components/Category/hooks/useGetCategories.ts";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
 import { SidebarGroup } from "@/components/Sidebar/components/SidebarGroup/SidebarGroup.tsx";
 import { Skeleton } from "@/components/ui/skeleton";
-
-import { useGetCategories } from "@/components/Category/hooks/useGetCategories.ts";
 
 type Props = {
   className?: string;
 };
 
 export const SidebarCategories = ({ className }: Props): ReactNode => {
-  const { data, isPending, isError } = useGetCategories();
+  const { data, isPending, isError, error, refetch } = useGetCategories();
   const { t } = useTranslation();
 
-  if (isError) {
-    return;
+  if (isError && error) {
+    return <ErrorMessage error={error} onRetry={refetch} />;
   }
 
   return (

@@ -6,36 +6,36 @@ import { useTranslation } from "react-i18next";
 
 import { ArticleDetails } from "@/components/Article/components/ArticleDetails/ArticleDetails.tsx";
 import { ArticleDetailsSkeleton } from "@/components/Article/components/ArticleDetails/ArticleDetailsSkeleton.tsx";
-
 import { useGetArticle } from "@/components/Article/hooks/useGetArticle.ts";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
 
 export const ArticlePage = (): ReactNode => {
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const { data, isPending, isError, error } = useGetArticle(id);
 
-  if (isPending) {
-    return <ArticleDetailsSkeleton />;
-  }
-
-  if (isError) {
-    if (error?.response?.status === 404) {
-      return (
-        <div className="text-lg text-center p-5">
-          <p>{t("page.article.notfound")}</p>
-        </div>
-      );
-    }
+  if (!id) {
     return (
       <div className="text-lg text-center p-5">
-        <p>{t("page.article.articleError")}</p>
-        <p>{error?.message}</p>
+        <p>{t("page.article.notfound")}</p>
       </div>
     );
   }
 
+  if (isPending) {
+    return <ArticleDetailsSkeleton />;
+  }
+
+  if (isError && error) {
+    return <ErrorMessage error={error} />;
+  }
+
   if (!data) {
-    return;
+    return (
+      <div className="text-lg text-center p-5">
+        <p>{t("page.article.notfound")}</p>
+      </div>
+    );
   }
   return <ArticleDetails item={data} />;
 };

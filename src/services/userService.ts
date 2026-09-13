@@ -1,29 +1,32 @@
+import type { UserLoginType } from "@/schema/login-schema.ts";
+import type { UserRegisterType } from "@/schema/register-schema.ts";
+import type { UserInfoType } from "@/schema/user-schema.ts";
 import apiInstance from "@/services/api.ts";
 import type { AxiosResponse } from "axios";
 
 import type { UserType } from "@/types/user.types.ts";
-import type { UserInfoType } from "@/schema/user-schema.ts";
 
-export const fetchUserById = async (id: string | number): Promise<UserType> => {
+export const fetchUserById = async (
+  id: string | number,
+  signal?: AbortSignal,
+): Promise<UserType> => {
   const response: AxiosResponse<UserType> = await apiInstance.get(
     `/users/${id}`,
+    { signal },
   );
   return response.data;
 };
 
-export type ResponseUserType = {
+export type AuthResponseType = {
   accessToken: string;
   refreshToken: string;
   user: UserType;
 };
 
-export type RegisterUserType = Required<
-  Pick<UserType, "email" | "username" | "password">
->;
 export const RegisterUser = async (
-  userData: RegisterUserType,
-): Promise<ResponseUserType> => {
-  const response: AxiosResponse<ResponseUserType> = await apiInstance.post(
+  userData: UserRegisterType,
+): Promise<AuthResponseType> => {
+  const response: AxiosResponse<AuthResponseType> = await apiInstance.post(
     `/auth/register`,
     userData,
   );
@@ -31,11 +34,10 @@ export const RegisterUser = async (
   return response.data;
 };
 
-export type LoginUserType = Required<Pick<UserType, "username" | "password">>;
 export const LoginUser = async (
-  userData: LoginUserType,
-): Promise<ResponseUserType> => {
-  const response: AxiosResponse<ResponseUserType> = await apiInstance.post(
+  userData: UserLoginType,
+): Promise<AuthResponseType> => {
+  const response: AxiosResponse<AuthResponseType> = await apiInstance.post(
     `/auth/login`,
     userData,
   );

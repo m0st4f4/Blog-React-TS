@@ -11,6 +11,8 @@ import {
 } from "@/schema/user-schema.ts";
 import { toast } from "sonner";
 
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
+
 import { useAuth } from "@/hooks/useAuth.ts";
 import { useChangeUserInfo } from "@/hooks/useChangeUserInfo.ts";
 
@@ -59,11 +61,7 @@ export const UserInfoPage = ({ className = "" }: Props): ReactNode => {
   };
   return (
     <div className={className}>
-      {isError && (
-        <div className="mt-4">
-          <p className="p-2 w-fit text-destructive">{error.message}</p>
-        </div>
-      )}
+      {isError && <ErrorMessage error={error} className="mt-4" />}
       <UserInfoForm
         form={form}
         isPending={isPending}

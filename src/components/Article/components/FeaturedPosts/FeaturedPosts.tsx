@@ -1,21 +1,46 @@
 import { type ReactNode } from "react";
 
+
+
 import { Link } from "react-router";
+
+
 
 import { cn } from "@/lib/utils.ts";
 
-import { PostCardFullImg } from "@/components/Article/components/PostCardFullImg/PostCardFullImg.tsx";
 
+
+import { PostCardFullImg } from "@/components/Article/components/PostCardFullImg/PostCardFullImg.tsx";
 import { useGetFeaturedArticles } from "@/components/Article/hooks/useGetFeaturedArticles.ts";
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 type Props = {
   className?: string;
 };
 
 export const FeaturedPosts = ({ className }: Props): ReactNode => {
-  const { data, isPending } = useGetFeaturedArticles();
+  const { data, isPending, isError, error ,refetch } = useGetFeaturedArticles();
+
+  if (isError && error) {
+    return <ErrorMessage error={error} onRetry={refetch} />;
+  }
+  
   if (!data) {
-    return;
+    return null;
   }
 
   return (

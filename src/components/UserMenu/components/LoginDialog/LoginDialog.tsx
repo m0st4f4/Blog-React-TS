@@ -9,6 +9,7 @@ import { LoginSchema } from "@/schema/login-schema.ts";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 
+import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
 import {
   Dialog,
   DialogContent,
@@ -31,8 +32,7 @@ export const LoginDialog = ({
   extraButtons,
 }: Props): ReactNode => {
   const { t } = useTranslation();
-  const { isPending, isError, error, reset, mutateAsync } =
-    useLoginUser();
+  const { isPending, isError, error, reset, mutateAsync } = useLoginUser();
   const form = useForm<Values>({
     defaultValues: { username: "", password: "" },
     resolver: zodResolver(LoginSchema),
@@ -61,11 +61,7 @@ export const LoginDialog = ({
         <DialogHeader>
           <DialogTitle>{t("auth.login.title")}</DialogTitle>
         </DialogHeader>
-        {isError && (
-          <div className="mt-4">
-            <p className="p-2 w-fit text-destructive">{error?.message}</p>
-          </div>
-        )}
+        {isError && <ErrorMessage error={error} className="mt-4" />}
         <LoginForm
           noValidate
           onSubmit={form.handleSubmit(handleFormSubmit)}

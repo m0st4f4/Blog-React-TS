@@ -5,6 +5,7 @@ import type { ArticleStatusType, ArticleType } from "@/types/article.types.ts";
 
 export const fetchArticleById = async (
   id: string | number,
+  signal?: AbortSignal,
 ): Promise<ArticleType> => {
   const params = new URLSearchParams();
   params.append("_expand", "category");
@@ -15,6 +16,7 @@ export const fetchArticleById = async (
     `/articles/${id}`,
     {
       params,
+      signal,
     },
   );
   return response.data;
@@ -35,6 +37,7 @@ type ParamsType = {
 
 export const fetchFilteredArticles = async (
   inputParams?: ParamsType,
+  signal?:AbortSignal,
 ): Promise<ArticleType[]> => {
   const defaultParams: ParamsType = {
     _sort: "id",
@@ -62,7 +65,7 @@ export const fetchFilteredArticles = async (
 
   const response: AxiosResponse<ArticleType[]> = await apiInstance.get(
     "/articles",
-    { params },
+    { params,signal },
   );
   return response.data;
 };
