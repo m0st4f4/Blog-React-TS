@@ -7,8 +7,8 @@ import { Navbar } from "@/components/Navbar/Navbar.tsx";
 import { SearchForm } from "@/components/SearchForm/SearchForm.tsx";
 import { SiteLogo } from "@/components/SiteLogo/SiteLogo.tsx";
 import { SocialNavigation } from "@/components/SocialNavigation/SocialNavigation.tsx";
-
-import { UserMenu } from "../UserMenu/UserMenu";
+import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle.tsx";
+import { UserMenu } from "@/components/UserMenu/UserMenu.tsx";
 
 export const Header = (): ReactNode => {
   return (
@@ -18,6 +18,7 @@ export const Header = (): ReactNode => {
         <div className="flex items-center justify-center gap-2">
           <SocialNavigation className="flex gap-2" iconClass="w-4 h-4" />
           <SearchForm />
+          <ThemeToggle />
           <LanguageSwitcher />
           <UserMenu />
         </div>

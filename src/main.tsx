@@ -15,6 +15,7 @@ import { ErrorPage } from "@/pages/ErrorPage/ErrorPage.tsx";
 
 import { AuthProvider } from "@/providers/AuthProvider/AuthProvider.tsx";
 import { SearchProvider } from "@/providers/SearchProvider.tsx";
+import { ThemeProvider } from "@/providers/ThemeProvider/ThemeProvider.tsx";
 
 import type { ApiError } from "@/types/api.types.ts";
 
@@ -72,7 +73,9 @@ createRoot(document.getElementById("root")!).render(
           <DirectionProvider dir="rtl">
             <QueryClientProvider client={queryClient}>
               <SearchProvider>
-                <App />
+                <ThemeProvider>
+                  <App />
+                </ThemeProvider>
                 <Toaster />
                 <ReactQueryDevtools initialIsOpen={false} />
               </SearchProvider>
