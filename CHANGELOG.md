@@ -1,3 +1,10 @@
+# [1.0.0-dev.32](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.31...v1.0.0-dev.32) (2026-09-14)
+
+
+### Features
+
+* dark mode ([#106](https://github.com/m0st4f4/Blog-React-TS/issues/106)) ([409cd6b](https://github.com/m0st4f4/Blog-React-TS/commit/409cd6b6ca22b439d10678b5d3c0c609d3aa00b7))
+
 # [1.0.0-dev.31](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.30...v1.0.0-dev.31) (2026-09-13)
 
 
