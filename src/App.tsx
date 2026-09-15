@@ -1,9 +1,7 @@
 import { Route, Routes } from "react-router";
 
-import { UnauthorizedPage } from "@/pages/UnauthorizedPage/UnauthorizedPage.tsx";
-
 import { ProtectedRoute } from "@/components/ProtectedRoute/ProtectedRoute.tsx";
-import { Sidebar } from "@/components/Sidebar/Sidebar.tsx";
+import { SidebarArticle } from "@/components/Sidebar/components/SidebarArticle/SidebarArticle.tsx";
 import { SidebarProfile } from "@/components/Sidebar/components/SidebarProfile/SidebarProfile.tsx";
 
 import { RootLayout } from "@/layouts/RootLayout/RootLayout.tsx";
@@ -19,7 +17,10 @@ import { LoginPage } from "@/pages/LoginPage/LoginPage.tsx";
 import { NotFoundPage } from "@/pages/NotFoundPage/NotFoundPage.tsx";
 import { RegisterPage } from "@/pages/RegisterPage/RegisterPage.tsx";
 import { SearchPage } from "@/pages/SearchPage/SearchPage.tsx";
+import { UnauthorizedPage } from "@/pages/UnauthorizedPage/UnauthorizedPage.tsx";
 import { UserInfoPage } from "@/pages/UserInfoPage/UserInfoPage.tsx";
+import { UserPage } from "@/pages/UserPage/UserPage.tsx";
+import { SidebarUser } from "@/components/Sidebar/components/SidebarUser/SidebarUser.tsx";
 
 function App() {
   return (
@@ -31,16 +32,22 @@ function App() {
         <Route path="register" element={<RegisterPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="unauthorized" element={<UnauthorizedPage />} />
-        <Route path="article" element={<SidebarLayout sidebar={<Sidebar />} />}>
+        <Route
+          path="article"
+          element={<SidebarLayout sidebar={<SidebarArticle />} />}
+        >
           <Route path=":id" element={<ArticlePage />} />
         </Route>
         <Route
           path="category"
-          element={<SidebarLayout sidebar={<Sidebar />} />}
+          element={<SidebarLayout sidebar={<SidebarArticle />} />}
         >
           <Route path=":id?" element={<CategoryPage />} />
         </Route>
-        <Route path="search" element={<SidebarLayout sidebar={<Sidebar />} />}>
+        <Route
+          path="search"
+          element={<SidebarLayout sidebar={<SidebarArticle />} />}
+        >
           <Route path=":query?" element={<SearchPage />} />
         </Route>
 
@@ -55,6 +62,10 @@ function App() {
 
         <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
           <Route path="admin" element={<AdminPage />} />
+        </Route>
+
+        <Route path="user" element={<SidebarLayout sidebar={<SidebarUser />} />}>
+          <Route path=":username" element={<UserPage />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Route>

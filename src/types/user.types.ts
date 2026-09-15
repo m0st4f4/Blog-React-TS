@@ -6,6 +6,7 @@ export type UserType = {
   username: string;
   avatar?: string;
   bio?: string;
+  title?: string;
   role: RoleType;
   isActive?: boolean;
   createdAt?: string;

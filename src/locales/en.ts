@@ -92,6 +92,10 @@ export const en = {
     noResult: "No category found",
   },
 
+  user:{
+    notFound:"User not found",
+  },
+
   auth: {
     fields: {
       userName: "Username",

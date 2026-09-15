@@ -9,7 +9,7 @@ type Props = {
   className?: string;
 };
 
-export const Sidebar = ({ className = "" }: Props): ReactNode => {
+export const SidebarArticle = ({ className = "" }: Props): ReactNode => {
   return (
     <div className={cn("flex flex-col gap-4", className)}>
       <SidebarSearch />

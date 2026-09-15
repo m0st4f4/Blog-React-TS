@@ -6,15 +6,15 @@ import type { AxiosResponse } from "axios";
 
 import type { UserType } from "@/types/user.types.ts";
 
-export const fetchUserById = async (
-  id: string | number,
+export const fetchUserByUserName = async (
+  username: string,
   signal?: AbortSignal,
 ): Promise<UserType> => {
-  const response: AxiosResponse<UserType> = await apiInstance.get(
-    `/users/${id}`,
-    { signal },
-  );
-  return response.data;
+  const response: AxiosResponse<UserType[]> = await apiInstance.get(`/users`, {
+    params: { username },
+    signal,
+  });
+  return response.data?.[0];
 };
 
 export type AuthResponseType = {

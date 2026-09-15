@@ -12,8 +12,8 @@ export type ArticleType = {
   categoryId: string;
   tagId: string | string[];
   status: ArticleStatusType;
-  isFeatured: true;
-  isPremium: false;
+  isFeatured: boolean;
+  isPremium: boolean;
   viewCount: number;
   likeCount: number;
   commentCount: number;
