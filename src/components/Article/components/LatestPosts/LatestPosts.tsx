@@ -9,13 +9,15 @@ import { PostCardTopImg } from "@/components/Article/components/PostCardTopImg/P
 import { PostCardTopImgSkeleton } from "@/components/Article/components/PostCardTopImg/PostCardTopImgSkeleton.tsx";
 import { useGetLatestArticles } from "@/components/Article/hooks/useGetLatestArticles.ts";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
+import type { fetchArticlesParamsType } from "@/services/articleService";
 
 type Props = {
   className?: string;
+  params: fetchArticlesParamsType;
 };
 
-export const LatestPosts = ({ className = "" }: Props): ReactNode => {
-  const { data, isPending, isError, error, refetch } = useGetLatestArticles();
+export const LatestPosts = ({ className = "", params }: Props): ReactNode => {
+  const { data, isPending, isError, error, refetch } = useGetLatestArticles(params);
   const { t } = useTranslation();
   if (isError && error) {
     return <ErrorMessage error={error} onRetry={refetch} />;
@@ -29,15 +31,15 @@ export const LatestPosts = ({ className = "" }: Props): ReactNode => {
       <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
         {isPending
           ? Array.from({ length: 6 }).map((_, index) => (
-              <PostCardTopImgSkeleton key={index} />
-            ))
+            <PostCardTopImgSkeleton key={index} />
+          ))
           : data.map((item) => {
-              return (
-                <Link to={`/article/${item.id}`}>
-                  <PostCardTopImg item={item} />
-                </Link>
-              );
-            })}
+            return (
+              <Link to={`/article/${item.id}`}>
+                <PostCardTopImg item={item} />
+              </Link>
+            );
+          })}
       </div>
     </div>
   );
