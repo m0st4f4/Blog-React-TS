@@ -7,7 +7,7 @@ type Props = {
   user: UserType
 }
 
-const UserInfoCard = ({ className, user }: Props): ReactNode => {
+export const UserInfoCard = ({ className, user }: Props): ReactNode => {
   return <div className={cn(className, "flex flex-col items-center gap-2 text-center")}>
 
     <div className="flex justify-center items-center w-full aspect-square  overflow-hidden p-6">
@@ -19,5 +19,3 @@ const UserInfoCard = ({ className, user }: Props): ReactNode => {
     <p className="text-sm"> {user.bio}</p>
   </div>;
 };
-
-export default UserInfoCard;

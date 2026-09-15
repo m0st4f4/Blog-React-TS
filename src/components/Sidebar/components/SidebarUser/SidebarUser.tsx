@@ -1,11 +1,13 @@
 import { type ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 import { useParams } from "react-router";
 
 import { SidebarGroup } from "@/components/Sidebar/components/SidebarGroup/SidebarGroup.tsx";
 import { useFetchUser } from "@/hooks/useFetchUser";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage";
-import UserInfoCard from "../UserInfoCard/UserInfoCard";
+import { UserInfoCard } from "@/components/Sidebar/components/UserInfoCard/UserInfoCard";
+import { UserInfoCardSkeleton } from "@/components/Sidebar/components/UserInfoCard/UserInfoCardSkeleton";
 
 type Props = {
   className?: string;
@@ -14,31 +16,33 @@ type Props = {
 export const SidebarUser = ({ className = "" }: Props): ReactNode => {
   const params = useParams<{ username: string }>();
   const { data, error, isError, isPending, refetch } = useFetchUser(params.username ?? "");
-
+  const { t } = useTranslation()
   if (!params.username) {
-    return <SidebarGroup title="About User" className={className}>
-      <div>Username not found</div>
+    return <SidebarGroup className={className}>
+      <div>{t("user.notFound")}</div>
     </SidebarGroup>
   }
 
   if (isPending) {
-    return <SidebarGroup title="About User" className={className}></SidebarGroup>
+    return <SidebarGroup className={className}>
+      <UserInfoCardSkeleton />
+    </SidebarGroup>
   }
 
   if (isError && error) {
-    return <SidebarGroup title="About User" className={className}>
+    return <SidebarGroup className={className}>
       <ErrorMessage error={error} onRetry={refetch} />
     </SidebarGroup>
   }
 
   if (!data) {
-    return <SidebarGroup title="About User" className={className}>
-      <div>Username not found</div>
+    return <SidebarGroup className={className}>
+      <div>{t("user.notFound")}</div>
     </SidebarGroup>
   }
 
   return (
-    <SidebarGroup title="About User" className={className}>
+    <SidebarGroup className={className}>
       <UserInfoCard user={data} />
     </SidebarGroup>
   );

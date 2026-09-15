@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils.ts";
 
 type Props = PropsWithChildren & {
   className?: string;
-  title: string;
+  title?: string;
 };
 
 export const SidebarGroup = ({
@@ -19,9 +19,11 @@ export const SidebarGroup = ({
         className,
       )}
     >
-      <h3 className="border-s-4 border-accent ps-2 text-lg font-bold capitalize">
-        {title}
-      </h3>
+      {title && (
+        <h3 className="border-s-4 border-accent ps-2 text-lg font-bold capitalize">
+          {title}
+        </h3>
+      )}
       <div className="body">{children}</div>
     </div>
   );
