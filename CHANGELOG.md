@@ -1,3 +1,17 @@
+# [1.0.0-dev.33](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.32...v1.0.0-dev.33) (2026-09-15)
+
+
+### Features
+
+* Enhance user public profile and article fetching features [#23](https://github.com/m0st4f4/Blog-React-TS/issues/23)  ([#107](https://github.com/m0st4f4/Blog-React-TS/issues/107)) ([92eafff](https://github.com/m0st4f4/Blog-React-TS/commit/92eafff7d4f567ec642ba5e4e980d7a26946ca4a))
+
+
+### BREAKING CHANGES
+
+* rename fetchArticle service
+
+* feat: add latest article of user in user page
+
 # [1.0.0-dev.32](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.31...v1.0.0-dev.32) (2026-09-14)
 
 
