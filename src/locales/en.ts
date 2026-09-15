@@ -96,6 +96,10 @@ export const en = {
     notFound:"User not found",
   },
 
+  comment:{
+    title: "Comment",
+  },
+
   auth: {
     fields: {
       userName: "Username",

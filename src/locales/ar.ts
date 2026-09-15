@@ -91,6 +91,14 @@ export const ar = {
     noResult: "No category found",
   },
 
+  user: {
+    notFound: "User not found",
+  },
+
+  comment: {
+    title: "Comment",
+  },
+
   auth: {
     fields: {
       userName: "اسم المستخدم",
