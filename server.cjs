@@ -41,6 +41,15 @@ const getNextUserId = (usersDb) => {
   return ids.length ? Math.max(...ids) + 1 : 1;
 };
 
+const getNextId = (collectionDb) => {
+  const ids = collectionDb
+    .value()
+    .map((item) => Number(item.id))
+    .filter((n) => !Number.isNaN(n));
+  const nextId = ids.length ? Math.max(...ids) + 1 : 1;
+  return String(nextId);
+};
+
 // --- Route (Register) ---
 server.post("/auth/register", async (req, res) => {
   const { email, password, username } = req.body;
@@ -192,6 +201,53 @@ server.use(/^(?!\/auth).*$/, (req, res, next) => {
   } catch (err) {
     res.status(401).json({ message: "Token is invalid or expired" });
   }
+});
+
+server.post("/comments", (req, res) => {
+  const { articleId, content, parentId } = req.body;
+
+  if (!articleId || !content || !String(content).trim()) {
+    return res.status(400).json({
+      message: "articleId و content الزامی هستند",
+    });
+  }
+
+  const article = router.db
+    .get("articles")
+    .find({ id: String(articleId) })
+    .value();
+  if (!article) {
+    return res.status(404).json({ message: "مقاله مورد نظر یافت نشد" });
+  }
+
+  if (parentId) {
+    const parentComment = router.db
+      .get("comments")
+      .find({ id: String(parentId) })
+      .value();
+    if (!parentComment) {
+      return res.status(404).json({ message: "کامنت والد یافت نشد" });
+    }
+  }
+
+  const commentsDb = router.db.get("comments");
+  const now = new Date().toISOString();
+
+  const newComment = {
+    id: getNextId(commentsDb),
+    articleId: String(articleId),
+    userId: String(req.user.id),
+    parentId: parentId ? String(parentId) : null,
+    content: String(content).trim(),
+    status: "pending",
+    likeCount: 0,
+    createdAt: now,
+    updatedAt: now,
+  };
+
+  commentsDb.push(newComment).write();
+
+  res.status(201).json(newComment);
 });
 
 server.use(router);
