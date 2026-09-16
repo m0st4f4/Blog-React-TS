@@ -1,3 +1,10 @@
+# [1.0.0-dev.34](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.33...v1.0.0-dev.34) (2026-09-16)
+
+
+### Features
+
+* submit comments for articles [#26](https://github.com/m0st4f4/Blog-React-TS/issues/26) ([#108](https://github.com/m0st4f4/Blog-React-TS/issues/108)) ([4b902ba](https://github.com/m0st4f4/Blog-React-TS/commit/4b902ba066447a3a8fe4377c6ef0f701d2351af1))
+
 # [1.0.0-dev.33](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.32...v1.0.0-dev.33) (2026-09-15)
 
 
