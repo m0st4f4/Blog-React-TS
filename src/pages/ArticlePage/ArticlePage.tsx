@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import { type ReactNode, useRef } from "react";
 
 import { useParams } from "react-router";
 
@@ -8,11 +8,17 @@ import { ArticleDetails } from "@/components/Article/components/ArticleDetails/A
 import { ArticleDetailsSkeleton } from "@/components/Article/components/ArticleDetails/ArticleDetailsSkeleton.tsx";
 import { useGetArticle } from "@/components/Article/hooks/useGetArticle.ts";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
+import { Comments } from "@/components/Comments/components/Comments/Comments.tsx";
 
 export const ArticlePage = (): ReactNode => {
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const { data, isPending, isError, error } = useGetArticle(id);
+
+  const commentSectionRef = useRef<HTMLDivElement>(null);
+  const handleCommentButtonClick = () => {
+    commentSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   if (!id) {
     return (
@@ -37,5 +43,10 @@ export const ArticlePage = (): ReactNode => {
       </div>
     );
   }
-  return <ArticleDetails item={data} />;
+  return (
+    <>
+      <ArticleDetails item={data} onCommentClick={handleCommentButtonClick} />
+      <Comments articleId={id} ref={commentSectionRef}/>
+    </>
+  );
 };

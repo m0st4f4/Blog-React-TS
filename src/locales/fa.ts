@@ -3,6 +3,10 @@ export const fa = {
     siteName: "TechMag",
   },
 
+  form: {
+    noChangeToSave: "تغییری برای ذخیره وجود نداردّ",
+  },
+
   search: {
     placeholder: "جستجو...",
   },
@@ -90,6 +94,23 @@ export const fa = {
     noResult: "دسته بندی یافت نشد",
   },
 
+  user: {
+    notFound: "کاربر یافت نشد",
+  },
+
+  comment: {
+    title: "نظرات",
+    successMsg: "نظر ارسال شد",
+    accessMsg: "برای ارسال نظر وارد شوید",
+    fields: {
+      content: "متن",
+    },
+    actions: {
+      reset: "بازنشانی",
+      submit: "ثبت",
+    },
+  },
+
   auth: {
     fields: {
       userName: "نام کاربری",
@@ -130,7 +151,8 @@ export const fa = {
 
   error: {
     General: "خطای رخ داد. صفحه را بارگزاری مجدد کنید",
-    Network: "اتصال اینترنت برقرار نیست. اینترنت خود را چک کنید و دوباره تلاش کنید",
+    Network:
+      "اتصال اینترنت برقرار نیست. اینترنت خود را چک کنید و دوباره تلاش کنید",
     NotAuthenticated: "برای ادامه وارد سایت شوید",
     AccessDenied: "شما دسترسی لازم برای این عمل را ندارید",
     NotFound: "چیزی یافت نشد!",
@@ -140,7 +162,8 @@ export const fa = {
     UsernameAlreadyExists: "نام کاربری قبلا استفاده شده است",
     UsernamePasswordRequired: "نام کاربری و رمز عبور الزامی است",
     UsernamePasswordIncorrect: "نام کاربری یا رمز عبور اشتباه است",
-    TokenInvalidLogin: "توکن شما منقضی شده است . برای ادامه دوباره وارد سایت شوید.",
+    TokenInvalidLogin:
+      "توکن شما منقضی شده است . برای ادامه دوباره وارد سایت شوید.",
     action: {
       retry: "تلاش مجدد",
     },

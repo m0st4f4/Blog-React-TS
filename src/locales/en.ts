@@ -3,6 +3,10 @@ export const en = {
     siteName: "TechMag",
   },
 
+  form: {
+    noChangeToSave: "No change to Save",
+  },
+
   search: {
     placeholder: "Search...",
   },
@@ -92,8 +96,21 @@ export const en = {
     noResult: "No category found",
   },
 
-  user:{
-    notFound:"User not found",
+  user: {
+    notFound: "User not found",
+  },
+
+  comment: {
+    title: "Comment",
+    successMsg: "Comment successfully submitted!",
+    accessMsg: "Login to site for submit comment",
+    fields: {
+      content: "Comment",
+    },
+    actions: {
+      reset: "Reset",
+      submit: "submit",
+    },
   },
 
   auth: {
@@ -136,17 +153,17 @@ export const en = {
 
   error: {
     General: "Something went wrong",
-    Network:"Check your internet connection",
-    NotAuthenticated:"Please Login to continue",
-    AccessDenied:"You don't have permission to access this action",
-    NotFound:"Nothing found!",
-    Server:"Server Error. try again later",
-    UserDataInvalid:"User Data is invalid",
-    EmailAlreadyExists:"This email already exists",
-    UsernameAlreadyExists:"This username already exists",
-    UsernamePasswordRequired:"Username and password are required",
-    UsernamePasswordIncorrect:"Username or Password is incorrect",
-    TokenInvalidLogin:"Token is incorrect , login for this operation",
+    Network: "Check your internet connection",
+    NotAuthenticated: "Please Login to continue",
+    AccessDenied: "You don't have permission to access this action",
+    NotFound: "Nothing found!",
+    Server: "Server Error. try again later",
+    UserDataInvalid: "User Data is invalid",
+    EmailAlreadyExists: "This email already exists",
+    UsernameAlreadyExists: "This username already exists",
+    UsernamePasswordRequired: "Username and password are required",
+    UsernamePasswordIncorrect: "Username or Password is incorrect",
+    TokenInvalidLogin: "Token is incorrect , login for this operation",
     action: {
       retry: "Retry",
     },

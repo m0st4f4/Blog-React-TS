@@ -3,6 +3,10 @@ export const ar = {
     siteName: "TechMag",
   },
 
+  form: {
+    noChangeToSave: "No change to Save",
+  },
+
   search: {
     placeholder: "بحث...",
   },
@@ -89,6 +93,23 @@ export const ar = {
 
   category: {
     noResult: "No category found",
+  },
+
+  user: {
+    notFound: "User not found",
+  },
+
+  comment: {
+    title: "Comment",
+    successMsg: "Comment successfully submitted!",
+    accessMsg: "Login to site for submit comment",
+    fields: {
+      content: "Comment",
+    },
+    actions: {
+      reset: "Reset",
+      submit: "submit",
+    },
   },
 
   auth: {

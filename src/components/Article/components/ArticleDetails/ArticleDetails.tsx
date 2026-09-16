@@ -14,11 +14,13 @@ import MingcuteCommentLine from "@/icons/MingcuteCommentLine.tsx";
 import MingcuteTimeDurationLine from "@/icons/MingcuteTimeDurationLine.tsx";
 
 import type { ArticleType } from "@/types/article.types.ts";
+import { Button } from "@/components/ui/button.tsx";
 
 type Props = {
   item: ArticleType;
+  onCommentClick?: () => void;
 };
-export const ArticleDetails = ({ item }: Props): ReactNode => {
+export const ArticleDetails = ({ item ,onCommentClick}: Props): ReactNode => {
   const sanitizedHtml = DOMPurify.sanitize(item.content);
 
   const { t } = useTranslation();
@@ -48,15 +50,15 @@ export const ArticleDetails = ({ item }: Props): ReactNode => {
           <h1 className="text-2xl font-bold">{item.title}</h1>
           <div className="flex gap-6 flex-col items-start sm:flex-row sm:items-end justify-between mt-4 mb-4 ">
             <AuthorDetails item={item.user} />
-            <div className="flex flex-row gap-4 justify-between w-full sm:w-auto">
+            <div className="flex flex-row gap-4 justify-between w-full sm:w-auto items-center">
               <div className="flex gap-1 text-sm">
                 <MingcuteCalendar2Line />
                 <div>{formatDate(item.createdAt, "medium")}</div>
               </div>
-              <div className="flex gap-1 text-sm">
+              <Button variant="ghost" className="flex gap-1 text-sm" onClick={onCommentClick}>
                 <MingcuteCommentLine />
                 {t("article.commentsCount", { count: item.commentCount })}
-              </div>
+              </Button>
             </div>
           </div>
         </div>
