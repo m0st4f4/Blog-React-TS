@@ -1,23 +1,29 @@
 import { type ReactNode } from "react";
 
 import { cn } from "@/lib/utils.ts";
-import type { CommentResponse } from "@/services/commentService.ts";
 import DOMPurify from "dompurify";
 
 import { AuthorDetails } from "@/components/AuthorDetails/AuthorDetails.tsx";
 
 import { useLocalizedDate } from "@/hooks/useLocalizedDate.ts";
 
+import type { CommentResponseType } from "@/types/comment.type.ts";
+
 type Props = {
   className?: string;
-  item: CommentResponse;
+  item: CommentResponseType;
 };
 
 export const CommentItem = ({ className = "", item }: Props): ReactNode => {
   const sanitizedHtml = DOMPurify.sanitize(item?.content);
   const { formatDate } = useLocalizedDate();
   return (
-    <div className={cn(className, "p-6 rounded shadow-2xs")}>
+    <div
+      className={cn(
+        className,
+        "p-6 rounded shadow-2xs border border-transparent hover:border-border",
+      )}
+    >
       <div className="flex justify-between">
         {item?.user && <AuthorDetails item={item?.user} />}
 

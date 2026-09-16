@@ -3,6 +3,10 @@ export const fa = {
     siteName: "TechMag",
   },
 
+  form: {
+    noChangeToSave: "تغییری برای ذخیره وجود نداردّ",
+  },
+
   search: {
     placeholder: "جستجو...",
   },
@@ -96,6 +100,15 @@ export const fa = {
 
   comment: {
     title: "نظرات",
+    successMsg: "نظر ارسال شد",
+    accessMsg: "برای ارسال نظر وارد شوید",
+    fields: {
+      content: "متن",
+    },
+    actions: {
+      reset: "بازنشانی",
+      submit: "ثبت",
+    },
   },
 
   auth: {

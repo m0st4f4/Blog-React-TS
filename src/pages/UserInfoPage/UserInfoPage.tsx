@@ -9,6 +9,7 @@ import {
   type UserPayloadType,
   UserSchema,
 } from "@/schema/user-schema.ts";
+import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
@@ -22,6 +23,7 @@ type Props = {
 
 export const UserInfoPage = ({ className = "" }: Props): ReactNode => {
   const { user } = useAuth();
+  const { t } = useTranslation();
   const { isError, error, mutateAsync, isPending } = useChangeUserInfo();
   const form = useForm<UserInfoType>({
     values: user ?? undefined,
@@ -48,7 +50,7 @@ export const UserInfoPage = ({ className = "" }: Props): ReactNode => {
     }, {});
 
     if (Object.keys(changedValues).length === 0) {
-      toast.info("No changes to save");
+      toast.info(t("form.noChangeToSave"));
       return;
     }
 
