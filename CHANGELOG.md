@@ -1,3 +1,13 @@
+# [1.0.0-dev.35](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.34...v1.0.0-dev.35) (2026-09-17)
+
+
+* feat!: initial authentication [#97](https://github.com/m0st4f4/Blog-React-TS/issues/97) ([#109](https://github.com/m0st4f4/Blog-React-TS/issues/109)) ([3924192](https://github.com/m0st4f4/Blog-React-TS/commit/39241925351e84c2cc9a8263adafc9056a4d49f4))
+
+
+### BREAKING CHANGES
+
+* refactor authentication
+
 # [1.0.0-dev.34](https://github.com/m0st4f4/Blog-React-TS/compare/v1.0.0-dev.33...v1.0.0-dev.34) (2026-09-16)
 
 
