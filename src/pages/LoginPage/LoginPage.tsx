@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, Navigate, useLocation, useNavigate } from "react-router";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type SubmitHandler, useForm } from "react-hook-form";
@@ -12,6 +12,7 @@ import { LoginSchema } from "@/schema/login-schema.ts";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
 import { Button } from "@/components/ui/button.tsx";
 
+import { useAuth } from "@/hooks/useAuth.ts";
 import { useLoginUser } from "@/hooks/useLoginUser.ts";
 
 type Values = z.infer<typeof LoginSchema>;
@@ -20,6 +21,7 @@ type LocationState = {
 };
 
 export const LoginPage = (): ReactNode => {
+  const { isAuthenticated } = useAuth();
   const { mutateAsync, isPending, isSuccess, data, isError, error } =
     useLoginUser();
 
@@ -37,6 +39,10 @@ export const LoginPage = (): ReactNode => {
     await mutateAsync(data);
     navigate(fromLocation, { replace: true });
   };
+
+  if (isAuthenticated) {
+    return <Navigate to="/profile" />;
+  }
   return (
     <>
       {isError && <ErrorMessage error={error} className="mt-4" />}
