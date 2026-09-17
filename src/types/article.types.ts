@@ -45,3 +45,24 @@ export type CategoryType = {
   order: number;
   createdAt: string;
 };
+export type fetchArticlesParamsType = Partial<
+  Pick<
+    ArticleType,
+    | "id"
+    | "title"
+    | "content"
+    | "status"
+    | "userId"
+    | "categoryId"
+    | "isFeatured"
+    | "isPremium"
+  > & {
+    q: string;
+    _sort: string;
+    _order: "desc" | "asc";
+    _embed: string[];
+    _expand: string[];
+    _page: number;
+    _limit: number;
+  }
+>;

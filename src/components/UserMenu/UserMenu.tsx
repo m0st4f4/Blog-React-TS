@@ -1,4 +1,4 @@
-import { type ReactNode, useContext, useState } from "react";
+import { type ReactNode, useState } from "react";
 
 import { useTranslation } from "react-i18next";
 
@@ -8,12 +8,12 @@ import { UserDropdownMenu } from "@/components/UserMenu/components/UserDropdownM
 import { ResetPassword } from "@/components/UserMenu/components/resetPassword/ResetPassword.tsx";
 import { Button } from "@/components/ui/button.tsx";
 
-import { AuthContext } from "@/context/auth-context.ts";
+import { useAuth } from "@/hooks/useAuth.ts";
 
 import MingcuteUser1Line from "@/icons/MingcuteUser1Line.tsx";
 
 export const UserMenu = (): ReactNode => {
-  const { user, logout } = useContext(AuthContext);
+  const { user, logout } = useAuth();
   const { t } = useTranslation();
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const handeLoginButtonClick = () => {

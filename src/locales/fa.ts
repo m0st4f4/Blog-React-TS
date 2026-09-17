@@ -1,6 +1,7 @@
 export const fa = {
   common: {
     siteName: "TechMag",
+    loadingSite: "در حال بارگزاری...",
   },
 
   form: {

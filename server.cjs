@@ -180,6 +180,41 @@ server.post("/auth/refresh", (req, res) => {
   }
 });
 
+// --- Route (Get Current User) ---
+server.get("/auth/me", (req, res) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return res.status(401).json({ message: "Token is incorrect" });
+  }
+
+  try {
+    const token = authHeader.split(" ")[1];
+    const decoded = jwt.verify(token, SECRET_KEY);
+
+    const user = router.db.get("users").find({ id: decoded.id }).value();
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json({
+      id: user.id,
+      email: user.email,
+      username: user.username,
+      name: user.name,
+      avatar: user.avatar,
+      bio: user.bio,
+      role: user.role,
+      isActive: user.isActive,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+    });
+  } catch (err) {
+    res.status(401).json({ message: "Token is invalid or expired" });
+  }
+});
+
 // --- Route (Method-based Authorization) ---
 server.use(/^(?!\/auth).*$/, (req, res, next) => {
   if (req.method === "GET") {

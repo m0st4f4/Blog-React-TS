@@ -1,16 +1,14 @@
-import { useContext } from "react";
-
 import { useMutation } from "@tanstack/react-query";
 
-import type { UserLoginType } from "@/schema/login-schema.ts";
-import { LoginUser, type AuthResponseType } from "@/services/userService.ts";
+import { LoginUser } from "@/services/authService.ts";
 
-import { AuthContext } from "@/context/auth-context.ts";
+import { useAuth } from "@/hooks/useAuth.ts";
 
 import type { ApiError } from "@/types/api.types.ts";
+import type { AuthResponseType, UserLoginType } from "@/types/auth.types.ts";
 
 export const useLoginUser = () => {
-  const { login } = useContext(AuthContext);
+  const { login } = useAuth();
   return useMutation<AuthResponseType, ApiError, UserLoginType>({
     mutationFn: LoginUser,
     onSuccess: (data) => {

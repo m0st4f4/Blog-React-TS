@@ -1,6 +1,6 @@
 import { type ReactNode } from "react";
 
-import { Link } from "react-router";
+import { Link, Navigate } from "react-router";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { type SubmitHandler, useForm } from "react-hook-form";
@@ -12,11 +12,13 @@ import { RegisterSchema } from "@/schema/register-schema.ts";
 import { ErrorMessage } from "@/components/ErrorMessage/ErrorMessage.tsx";
 import { Button } from "@/components/ui/button.tsx";
 
+import { useAuth } from "@/hooks/useAuth.ts";
 import { useRegisterUser } from "@/hooks/useRegisterUser.ts";
 
 type Values = z.infer<typeof RegisterSchema>;
 
 export const RegisterPage = (): ReactNode => {
+  const { isAuthenticated } = useAuth();
   const { mutate, isPending, isSuccess, data, isError, error } =
     useRegisterUser();
 
@@ -27,6 +29,10 @@ export const RegisterPage = (): ReactNode => {
   const handleFormSubmit: SubmitHandler<Values> = (values: Values) => {
     mutate(values);
   };
+
+  if (isAuthenticated) {
+    return <Navigate to="/profile" />;
+  }
 
   return (
     <>
