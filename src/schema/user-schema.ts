@@ -27,6 +27,3 @@ export const UserSchema = UserBaseSchema.refine(
 export const UserPayloadSchema = UserBaseSchema.omit({
   confirmPassword: true,
 });
-
-export type UserPayloadType = z.infer<typeof UserPayloadSchema>;
-export type UserInfoType = z.infer<typeof UserSchema>;

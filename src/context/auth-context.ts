@@ -1,7 +1,6 @@
 import { createContext } from "react";
 
-import type { AuthResponseType } from "@/services/userService.ts";
-
+import type { AuthResponseType } from "@/types/auth.types.ts";
 import type { UserType } from "@/types/user.types.ts";
 
 type ContextValue = {

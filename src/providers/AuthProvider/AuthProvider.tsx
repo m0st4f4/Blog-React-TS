@@ -6,10 +6,10 @@ import {
 } from "react";
 
 import { getMe, refreshUserToken } from "@/services/authService.ts";
-import type { AuthResponseType } from "@/services/userService";
 
 import { AuthContext } from "@/context/auth-context.ts";
 
+import type { AuthResponseType } from "@/types/auth.types.ts";
 import type { UserType } from "@/types/user.types.ts";
 
 type Props = PropsWithChildren;

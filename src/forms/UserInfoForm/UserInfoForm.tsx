@@ -2,7 +2,6 @@ import { type ComponentProps, type ReactNode } from "react";
 
 import { Controller, type UseFormReturn } from "react-hook-form";
 
-import type { UserInfoType } from "@/schema/user-schema.ts";
 import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button.tsx";
@@ -15,6 +14,8 @@ import {
 } from "@/components/ui/field.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import { Spinner } from "@/components/ui/spinner.tsx";
+
+import type { UserInfoType } from "@/types/user.types.ts";
 
 type Props = ComponentProps<"form"> & {
   form: UseFormReturn<UserInfoType>;

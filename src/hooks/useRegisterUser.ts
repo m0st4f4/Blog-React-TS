@@ -1,12 +1,12 @@
 import { useMutation } from "@tanstack/react-query";
 
-import type { UserRegisterType } from "@/schema/register-schema.ts";
-import { type AuthResponseType, RegisterUser } from "@/services/userService.ts";
+import { RegisterUser } from "@/services/authService.ts";
 
 import type { ApiError } from "@/types/api.types.ts";
+import type { AuthResponseType, UserRegisterType } from "@/types/auth.types.ts";
 
 export const useRegisterUser = () => {
   return useMutation<AuthResponseType, ApiError, UserRegisterType>({
-    mutationFn: RegisterUser
+    mutationFn: RegisterUser,
   });
 };

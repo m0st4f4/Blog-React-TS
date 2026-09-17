@@ -2,7 +2,6 @@ import { type ComponentProps, type ReactNode } from "react";
 
 import { Controller, type UseFormReturn } from "react-hook-form";
 
-import type { UserLoginType } from "@/schema/login-schema.ts";
 import { useTranslation } from "react-i18next";
 
 import { Button } from "@/components/ui/button";
@@ -14,6 +13,8 @@ import {
 } from "@/components/ui/field.tsx";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
+
+import type { UserLoginType } from "@/types/auth.types.ts";
 
 type Props = ComponentProps<"form"> & {
   form: UseFormReturn<UserLoginType>;

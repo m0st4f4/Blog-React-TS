@@ -1,12 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 
-import {
-  fetchArticles,
-  type fetchArticlesParamsType,
-} from "@/services/articleService.ts";
+import { fetchArticles } from "@/services/articleService.ts";
 
 import type { ApiError } from "@/types/api.types.ts";
-import type { ArticleType } from "@/types/article.types.ts";
+import type {
+  ArticleType,
+  fetchArticlesParamsType,
+} from "@/types/article.types.ts";
 
 export const useGetLatestArticles = (params?: fetchArticlesParamsType) => {
   return useQuery<ArticleType[], ApiError>({

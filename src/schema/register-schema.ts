@@ -8,5 +8,3 @@ export const RegisterSchema = z.object({
   password: PasswordSchema,
   email: EmailSchema,
 });
-
-export type UserRegisterType = z.infer<typeof RegisterSchema>;

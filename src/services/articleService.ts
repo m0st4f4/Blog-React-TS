@@ -1,7 +1,10 @@
 import apiInstance from "@/services/api.ts";
 import type { AxiosResponse } from "axios";
 
-import type { ArticleType } from "@/types/article.types.ts";
+import type {
+  ArticleType,
+  fetchArticlesParamsType,
+} from "@/types/article.types.ts";
 
 export const fetchArticleById = async (
   id: string | number,
@@ -21,28 +24,6 @@ export const fetchArticleById = async (
   );
   return response.data;
 };
-
-export type fetchArticlesParamsType = Partial<
-  Pick<
-    ArticleType,
-    | "id"
-    | "title"
-    | "content"
-    | "status"
-    | "userId"
-    | "categoryId"
-    | "isFeatured"
-    | "isPremium"
-  > & {
-    q: string;
-    _sort: string;
-    _order: "desc" | "asc";
-    _embed: string[];
-    _expand: string[];
-    _page: number;
-    _limit: number;
-  }
->;
 
 export const fetchArticles = async (
   inputParams?: fetchArticlesParamsType,
