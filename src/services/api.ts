@@ -1,3 +1,4 @@
+import { refreshUserToken } from "@/services/authService.ts";
 import axios, {
   type AxiosError,
   type AxiosInstance,
@@ -16,25 +17,6 @@ const apiConfig: AxiosRequestConfig = {
 
 const apiInstance: AxiosInstance = axios.create(apiConfig);
 
-type RefreshResponse = {
-  accessToken: string;
-  refreshToken: string;
-};
-
-const refreshUserToken = async (): Promise<RefreshResponse> => {
-  const baseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
-  const refreshToken = localStorage.getItem("refreshToken");
-
-  if (!refreshToken) {
-    throw new Error("No refresh token available");
-  }
-
-  const response = await axios.post<RefreshResponse>(
-    `${baseURL}/auth/refresh`,
-    { refreshToken },
-  );
-  return response.data;
-};
 apiInstance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("accessToken");
@@ -71,14 +53,19 @@ apiInstance.interceptors.response.use(
         console.warn("token is invalid , getting new token");
 
         try {
-          const { accessToken, refreshToken } = await refreshUserToken();
+          const refreshToken = localStorage.getItem("refreshToken");
+          if (!refreshToken) {
+            throw new Error("Refresh token is missing");
+          }
+          const tokens = await refreshUserToken(refreshToken);
 
-          localStorage.setItem("accessToken", accessToken);
-          localStorage.setItem("refreshToken", refreshToken);
+          localStorage.setItem("accessToken", tokens.accessToken);
+          localStorage.setItem("refreshToken", tokens.refreshToken);
 
           // Append new token to previous request
           if (originalRequest.headers) {
-            originalRequest.headers["Authorization"] = `Bearer ${accessToken}`;
+            originalRequest.headers["Authorization"] =
+              `Bearer ${tokens.accessToken}`;
           }
           return apiInstance.request(originalRequest);
         } catch {

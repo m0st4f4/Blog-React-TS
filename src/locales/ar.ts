@@ -1,6 +1,7 @@
 export const ar = {
   common: {
     siteName: "TechMag",
+    loadingSite: "loading...",
   },
 
   form: {
